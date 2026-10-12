@@ -1,0 +1,42 @@
+[
+  {
+    "title": "SampleAgent: A Tool-Use Agent for Software Engineering",
+    "authors": [
+      "Alice",
+      "Bob"
+    ],
+    "abstract": "We propose a tool-use agent for software engineering tasks with reflection and memory.",
+    "url": "https://arxiv.org/abs/2501.00001",
+    "year": 2025,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.CL",
+    "is_agent": true
+  },
+  {
+    "title": "Multi-Agent Harness for Long-Horizon Web Tasks",
+    "authors": [
+      "Carol"
+    ],
+    "abstract": "A multi-agent harness that orchestrates planning, tool use, and reflection.",
+    "url": "https://arxiv.org/abs/2501.00002",
+    "year": 2025,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.AI",
+    "is_agent": true
+  },
+  {
+    "title": "SWE-Bench Evaluation of Code Agents",
+    "authors": [
+      "Dave"
+    ],
+    "abstract": "Evaluating code agents on swe-bench with function calling and planning.",
+    "url": "https://arxiv.org/abs/2501.00003",
+    "year": 2025,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.CL",
+    "is_agent": true
+  }
+]

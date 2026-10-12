@@ -1,0 +1,679 @@
+{
+  "summary": {
+    "generated_at": "2026-10-09T16:29:56",
+    "total": 14,
+    "by_year": {
+      "2025": 14
+    },
+    "by_venue": {
+      "NeurIPS": 11,
+      "agent_and_harness": 3
+    },
+    "by_keyword": {
+      "agent_and_harness": 3,
+      "general": 11
+    }
+  },
+  "by_year": {
+    "2025": [
+      {
+        "title": "NeuralPLexer3: Accurate Biomolecular Complex Structure Prediction with Flow Models",
+        "authors": [],
+        "abstract": "Biomolecular structure determination is essential to a mechanistic understanding of diseases and the development of novel therapeutics. Machine-learning-based structure prediction methods have made significant advancements by computationally predicting protein and bioassembly structures from sequences and molecular topology alone. Despite substantial progress in the field, challenges remain to deliver structure prediction models to real-world drug discovery. Here, we present NeuralPLexer3 -- a physics-inspired flow-based generative model that achieves state-of-the-art prediction accuracy on key biomolecular interaction types and improves training and sampling efficiency compared to its predecessors and alternative methodologies. Examined through existing and new benchmarks, NeuralPLexer3 excels in areas crucial to structure-based drug design, including blind docking, physical validity, and ligand-induced protein conformational changes.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0010031a1b4910aa67edbda26a705518-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "大语言模型与生成",
+        "is_agent": false
+      },
+      {
+        "title": "EngiBench: A Framework for Data-Driven Engineering Design Research",
+        "authors": [],
+        "abstract": "Engineering design optimization seeks to automatically determine the shapes, topologies, or parameters of components that maximize performance under given conditions. This process often depends on physics-based simulations, which are difficult to install, computationally expensive, and require domain-specific expertise. To mitigate these challenges, we introduce EngiBench, the first open‐source library and datasets spanning diverse domains for data‐driven engineering design. EngiBench provides a unified API and a curated set of benchmarks---covering aeronautics, heat conduction, photonics, and more---that enable fair, reproducible comparisons of optimization and machine learning algorithms, such as generative or surrogate models. We also release EngiOpt, a companion library offering a collection of such algorithms compatible with the EngiBench interface. Both libraries are modular, letting users plug in novel algorithms or problems, automate end-to-end experiment workflows, and leverage built-in utilities for visualization, dataset generation, feasibility checks, and performance analysis. We demonstrate their versatility through experiments comparing state-of-the-art techniques across multiple engineering design problems, an undertaking that was previously prohibitively time-consuming to perform. Finally, we show that these problems pose significant challenges for standard machine learning methods due to highly sensitive and constrained design manifolds.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0013efa1327c079e73154d4061c3a396-Abstract-Datasets_and_Benchmarks_Track.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "大语言模型与生成",
+        "is_agent": false
+      },
+      {
+        "title": "Zooming from Context to Cue: Hierarchical Preference Optimization for Multi-Image MLLMs",
+        "authors": [],
+        "abstract": "Multi-modal Large Language Models (MLLMs) excel at single-image tasks but struggle with multi-image understanding due to cross-modal misalignment, leading to hallucinations (context omission, conflation, and misinterpretation). Existing methods using Direct Preference Optimization (DPO) constrain optimization to a solitary image reference within the input sequence, neglecting holistic context modeling. To address this, we propose Context-to-Cue Direct Preference Optimization (CcDPO), a multi-level preference optimization framework that enhances per-image perception in multi-image settings by zooming into visual clues—from sequential context to local details. Our approach features two sequentially dependent components: (i) Context-Level Optimization: By introducing low-cost sequence preference pairs, we optimize the model to distinguish between complete and disrupted multi-image contexts, thereby correcting cognitive biases in MLLMs’ multi-image understanding. (ii) Needle-Level Optimization: By integrating region-specific visual prompts with multimodal preference supervision, we direct the model’s attention to critical visual details, effectively suppressing perceptual biases toward fine-grained visual information. To support scalable optimization, we also construct MultiScope-42k, an automatically generated multi-image dataset with hierarchical preference pairs. Experiments show that CcDPO significantly reduces hallucinations and yields consistent performance gains across general single- and multi-image tasks. Codes are available at https://github.com/LXDxmu/CcDPO.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/007ec2ca7a2079de8e7e45102d9f0feb-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "大语言模型与生成",
+        "is_agent": false
+      },
+      {
+        "title": "Stochastic Forward-Forward Learning through Representational Dimensionality Compression",
+        "authors": [],
+        "abstract": "The Forward-Forward (FF) learning algorithm provides a bottom-up alternative to backpropagation (BP) for training neural networks, relying on a layer-wise \"goodness\" function with well-designed negative samples for contrastive learning. Existing goodness functions are typically defined as the sum of squared postsynaptic activations, neglecting correlated variability between neurons. In this work, we propose a novel goodness function termed dimensionality compression that uses the effective dimensionality (ED) of fluctuating neural responses to incorporate second-order statistical structure. Our objective minimizes ED for noisy copies of individual inputs while maximizing it across the sample distribution, promoting structured representations without the need to prepare negative samples. We demonstrate that this formulation achieves competitive performance compared to other non-BP methods. Moreover, we show that noise plays a constructive role that can enhance generalization and improve inference when predictions are derived from the mean of squared output, which is equivalent to making predictions based on an energy term. Our findings contribute to the development of more biologically plausible learning algorithms and suggest a natural fit for neuromorphic computing, where stochasticity is a computational resource rather than a nuisance. The code is available at https://github.com/ZhichaoZhu/StochasticForwardForward.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/00358de35a101a372ea0412bed913c86-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "图学习",
+        "is_agent": false
+      },
+      {
+        "title": "Repurposing AlphaFold3-like Protein Folding Models for Antibody Sequence and Structure Co-design",
+        "authors": [],
+        "abstract": "Diffusion models hold great potential for accelerating antibody design, but their performance is so far limited by the number of antibody-antigen complexes used for model training. Meanwhile, AlphaFold3-like protein folding models, pre-trained on a large corpus of crystal structures, have acquired a broad understanding of biomolecular interaction. Based on this insight, we develop a new antigen-conditioned antibody design model by adapting the diffusion module of AlphaFold3-like models for sequence-structure co-diffusion. Specifically, we extend their structure diffusion module with a sequence diffusion head and fine-tune the entire protein folding model for antibody sequence-structure co-design. Our benchmark results show that sequence-structure co-diffusion models not only surpass state-of-the-art antibody design methods in performance but also maintain structure prediction accuracy comparable to the original folding model. Notably, in the antibody co-design task, our method achieves a CDR-H3 recovery rate of 65% for typical antibodies, outperforming the baselines by 87%, and attains a remarkable 63% recovery rate for nanobodies.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/007f4927e60699392425f267d43f0940-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "图学习",
+        "is_agent": false
+      },
+      {
+        "title": "The Primacy of Magnitude in Low-Rank Adaptation",
+        "authors": [],
+        "abstract": "Low-Rank Adaptation (LoRA) offers a parameter-efficient paradigm for tuning large models. While recent spectral initialization methods improve convergence and performance over the naive “Noise &amp; Zeros” scheme, their extra computational and storage overhead undermines efficiency. In this paper, we establish update magnitude as the fundamental driver of LoRA performance and propose LoRAM, a magnitude-driven “Basis &amp; Basis” initialization scheme that matches spectral methods without their inefficiencies. Our key contributions are threefold: (i) Magnitude of weight updates determines convergence. We prove low-rank structures intrinsically bound update magnitudes, unifying hyperparameter tuning in learning rate, scaling factor, and initialization as mechanisms to optimize magnitude regulation. (ii) Spectral initialization succeeds via magnitude amplification. We demystify that the presumed knowledge-driven benefit of spectral component essentially arises from the boost in the weight update magnitude. (iii) A novel and compact initialization strategy, LoRAM, scales deterministic orthogonal bases using pretrained weight magnitudes to simulate spectral gains. Extensive experiments show that LoRAM serves as a strong baseline, retaining the full efficiency of LoRA while matching or outperforming spectral initialization across benchmarks.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0010665e949927b74faf6e3ada6d7f72-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "优化与学习理论",
+        "is_agent": false
+      },
+      {
+        "title": "Mitigating Sexual Content Generation via Embedding Distortion in Text-conditioned Diffusion Models",
+        "authors": [],
+        "abstract": "Diffusion models show remarkable image generation performance following text prompts, but risk generating sexual contents. Existing approaches, such as prompt filtering, concept removal, and even sexual contents mitigation methods, struggle to defend against adversarial attacks while maintaining benign image quality. In this paper, we propose a novel approach called Distorting Embedding Space (DES), a text encoder-based defense mechanism that effectively tackles these issues through innovative embedding space control. DES transforms unsafe embeddings, extracted from a text encoder using unsafe prompts, toward carefully calculated safe embedding regions to prevent unsafe contents generation, while reproducing the original safe embeddings. DES also neutralizes the ``nudity'' embedding, by aligning it with neutral embedding to enhance robustness against adversarial attacks. As a result, extensive experiments on explicit content mitigation and adaptive attack defense show that DES achieves state-of-the-art (SOTA) defense, with attack success rate (ASR) of 9.47\\% on FLUX.1, a recent popular model, and 0.52\\% on the widely adopted Stable Diffusion v1.5. These correspond to ASR reductions of 76.5\\% and 63.9\\% compared to previous SOTA methods, EraseAnything and AdvUnlearn, respectively. Furthermore, DES maintains benign image quality, achieving Frechet Inception Distance and CLIP score comparable to those of the original FLUX.1 and Stable Diffusion v1.5.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/002262941c9edfd472a79298b2ac5e17-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "计算机视觉",
+        "is_agent": false
+      },
+      {
+        "title": "Diffusion Feature Field for Text-based 3D Editing with Gaussian Splatting",
+        "authors": [],
+        "abstract": "Recent advances in text-based image editing have motivated the extension of these techniques into the 3D domain. However, existing methods typically apply 2D diffusion models independently to multiple viewpoints, resulting in significant artifacts, most notably the Janus problem, due to inconsistencies across edited views. To address this, we propose a novel approach termed DFFSplat, which integrates a 3D-consistent diffusion feature field into the editing pipeline. By rendering and injecting these 3D-consistent structural features into intermediate layers of a 2D diffusion model, our method effectively enforces geometric alignment and semantic coherence across views. However, averaging 3D features during the feature field learning process can lead to the loss of fine texture details. To overcome this, we introduce a dual-encoder architecture to disentangle view-independent structural information from view-dependent appearance details. By encoding only the disentangled structure into the 3D field and injecting it during 2D editing, our method produces semantically and multi-view coherent edited images while maintaining high text fidelity. Additionally, we employ a time-invariance objective to ensure consistency across diffusion timesteps, enhancing the stability of learned representations. Experimental results demonstrate that our method achieves state-of-the-art performance in terms of text-fidelity, and better preserves structural and semantic consistency compared to existing approaches.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0042db0dff33e7c48979e2bdf0799896-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "计算机视觉",
+        "is_agent": false
+      },
+      {
+        "title": "Blending Complementary Memory Systems in Hybrid Quadratic-Linear Transformers",
+        "authors": [],
+        "abstract": "We develop hybrid memory architectures for general-purpose sequence processing neural networks, that combine key-value memory using softmax attention (KV-memory) with fast weight memory through dynamic synaptic modulation (FW-memory)---the core principles of quadratic and linear transformers, respectively. These two memory systems have complementary but individually limited properties: KV-memory offers precise retrieval but is constrained by quadratic complexity in sequence length, while FW-memory supports arbitrarily long sequences and enables more expressive computation but sacrifices precise recall. We propose and compare three methods to blend these two systems into a single memory system, differing in how and when input information is delivered to each system, to leverage the strengths of both. We conduct experiments on general language modeling and retrieval tasks by training 340M- and 1.3B-parameter models from scratch, as well as on synthetic algorithmic tasks designed to precisely illustrate the benefits of certain hybrid methods over others. We also evaluate our hybrid memory systems on reinforcement learning in partially observable environments. Overall, we demonstrate how a well-designed hybrid can overcome the limitations of its individual components, offering new insights into the design principle of neural memory systems.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/009e57699fe159424167f3693453e5dd-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "强化学习",
+        "is_agent": false
+      },
+      {
+        "title": "UFO-RL: Uncertainty-Focused Optimization for Efficient Reinforcement Learning Data Selection",
+        "authors": [],
+        "abstract": "A primary impediment to scaling reinforcement learning (RL) for large language model (LLM) training is the substantial computational cost, predominantly arising from the necessity of multi-sampling for policy optimization and evaluation. This underscores the critical yet challenging nature of efficient training data selection. Drawing inspiration from the Zone of Proximal Development (ZPD) theory, which posits that learners acquire knowledge more effectively from tasks of intermediate difficulty, we hypothesize that LLMs exhibit optimal learning from data they have not yet mastered but demonstrate the potential to comprehend. Conventional methodologies for assessing data difficulty or informativeness typically rely on computationally intensive multi-sampling or iterative procedures. To address this limitation, we introduce UFO-RL (**U**ncertainty-**F**ocused **O**ptimization for **R**einforcement **L**earning), a novel framework that employs a computationally efficient single-pass uncertainty estimation technique to identify informative training instances. This method, requiring only a single forward pass and obviating the need for iterative next-token computation, achieves a significant acceleration (up to 185$\\times$) in data evaluation compared to multi-sampling approaches. UFO-RL leverages this efficient metric to select data within the model's estimated ZPD for training. Extensive experimentation across diverse LLMs and mathematical benchmarks demonstrates that training with a mere 10\\% of the data, carefully selected by UFO-RL, yields performance comparable to or even surpassing that of full-data training. Furthermore, this targeted data selection results in up to a 16$\\times$ reduction in overall training time, concurrently enhancing training stability and improving generalization capabilities. Thus, UFO-RL presents a practical and highly efficient strategy for scaling RL fine-tuning of LLMs by focusing learning efforts on the most informative and valuable data, thereby mitigating the computational bottlenecks associated with traditional RL training.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/010a19805b0159022a8b29d735bb545f-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "强化学习",
+        "is_agent": false
+      },
+      {
+        "title": "GPO: Learning from Critical Steps to Improve LLM Reasoning",
+        "authors": [],
+        "abstract": "Large language models (LLMs) are increasingly used in various domains, showing impressive potential on various tasks. Recently, reasoning LLMs have been proposed to improve the \\textit{reasoning} or \\textit{thinking} capabilities of LLMs to solve complex problems. Despite the promising results of reasoning LLMs, enhancing the multi-step reasoning capabilities of LLMs still remains a significant challenge. While existing optimization methods have advanced the LLM reasoning capabilities, they often treat reasoning trajectories as a whole, without considering the underlying critical steps within the trajectory. In this paper, we introduce \\textbf{G}uided \\textbf{P}ivotal \\textbf{O}ptimization (GPO), a novel fine-tuning strategy that dives into the reasoning process to enable more effective improvements. GPO first identifies the `critical step' within a reasoning trajectory - a point that the model must carefully proceed so as to succeed at the problem. We locate the critical step by estimating the advantage function. GPO then resets the policy to the critical step and samples the new rollout and prioritizes learning process on those rollouts. This focus allows the model to learn more effectively from pivotal moments within the reasoning process to improve the reasoning performance. We demonstrate that GPO is not a standalone method, but rather a general strategy that can be integrated with various optimization methods to improve reasoning performance. Besides theoretical analysis, our experiments across challenging reasoning benchmarks show that GPO can consistently and significantly enhances the performance of existing optimization methods, showcasing its effectiveness and generalizability in improving LLM reasoning by concentrating on pivotal moments within the generation process.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/01cdd2dd02d9d2db9349bd3c019a88da-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "强化学习",
+        "is_agent": false
+      },
+      {
+        "title": "SampleAgent: A Tool-Use Agent for Software Engineering",
+        "authors": [
+          "Alice",
+          "Bob"
+        ],
+        "abstract": "We propose a tool-use agent for software engineering tasks with reflection and memory.",
+        "url": "https://arxiv.org/abs/2501.00001",
+        "year": 2025,
+        "venue": "agent_and_harness",
+        "source": "arXiv API",
+        "category": "cs.CL",
+        "is_agent": true
+      },
+      {
+        "title": "Multi-Agent Harness for Long-Horizon Web Tasks",
+        "authors": [
+          "Carol"
+        ],
+        "abstract": "A multi-agent harness that orchestrates planning, tool use, and reflection.",
+        "url": "https://arxiv.org/abs/2501.00002",
+        "year": 2025,
+        "venue": "agent_and_harness",
+        "source": "arXiv API",
+        "category": "cs.AI",
+        "is_agent": true
+      },
+      {
+        "title": "SWE-Bench Evaluation of Code Agents",
+        "authors": [
+          "Dave"
+        ],
+        "abstract": "Evaluating code agents on swe-bench with function calling and planning.",
+        "url": "https://arxiv.org/abs/2501.00003",
+        "year": 2025,
+        "venue": "agent_and_harness",
+        "source": "arXiv API",
+        "category": "cs.CL",
+        "is_agent": true
+      }
+    ]
+  },
+  "by_venue": {
+    "NeurIPS": [
+      {
+        "title": "NeuralPLexer3: Accurate Biomolecular Complex Structure Prediction with Flow Models",
+        "authors": [],
+        "abstract": "Biomolecular structure determination is essential to a mechanistic understanding of diseases and the development of novel therapeutics. Machine-learning-based structure prediction methods have made significant advancements by computationally predicting protein and bioassembly structures from sequences and molecular topology alone. Despite substantial progress in the field, challenges remain to deliver structure prediction models to real-world drug discovery. Here, we present NeuralPLexer3 -- a physics-inspired flow-based generative model that achieves state-of-the-art prediction accuracy on key biomolecular interaction types and improves training and sampling efficiency compared to its predecessors and alternative methodologies. Examined through existing and new benchmarks, NeuralPLexer3 excels in areas crucial to structure-based drug design, including blind docking, physical validity, and ligand-induced protein conformational changes.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0010031a1b4910aa67edbda26a705518-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "大语言模型与生成",
+        "is_agent": false
+      },
+      {
+        "title": "EngiBench: A Framework for Data-Driven Engineering Design Research",
+        "authors": [],
+        "abstract": "Engineering design optimization seeks to automatically determine the shapes, topologies, or parameters of components that maximize performance under given conditions. This process often depends on physics-based simulations, which are difficult to install, computationally expensive, and require domain-specific expertise. To mitigate these challenges, we introduce EngiBench, the first open‐source library and datasets spanning diverse domains for data‐driven engineering design. EngiBench provides a unified API and a curated set of benchmarks---covering aeronautics, heat conduction, photonics, and more---that enable fair, reproducible comparisons of optimization and machine learning algorithms, such as generative or surrogate models. We also release EngiOpt, a companion library offering a collection of such algorithms compatible with the EngiBench interface. Both libraries are modular, letting users plug in novel algorithms or problems, automate end-to-end experiment workflows, and leverage built-in utilities for visualization, dataset generation, feasibility checks, and performance analysis. We demonstrate their versatility through experiments comparing state-of-the-art techniques across multiple engineering design problems, an undertaking that was previously prohibitively time-consuming to perform. Finally, we show that these problems pose significant challenges for standard machine learning methods due to highly sensitive and constrained design manifolds.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0013efa1327c079e73154d4061c3a396-Abstract-Datasets_and_Benchmarks_Track.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "大语言模型与生成",
+        "is_agent": false
+      },
+      {
+        "title": "Zooming from Context to Cue: Hierarchical Preference Optimization for Multi-Image MLLMs",
+        "authors": [],
+        "abstract": "Multi-modal Large Language Models (MLLMs) excel at single-image tasks but struggle with multi-image understanding due to cross-modal misalignment, leading to hallucinations (context omission, conflation, and misinterpretation). Existing methods using Direct Preference Optimization (DPO) constrain optimization to a solitary image reference within the input sequence, neglecting holistic context modeling. To address this, we propose Context-to-Cue Direct Preference Optimization (CcDPO), a multi-level preference optimization framework that enhances per-image perception in multi-image settings by zooming into visual clues—from sequential context to local details. Our approach features two sequentially dependent components: (i) Context-Level Optimization: By introducing low-cost sequence preference pairs, we optimize the model to distinguish between complete and disrupted multi-image contexts, thereby correcting cognitive biases in MLLMs’ multi-image understanding. (ii) Needle-Level Optimization: By integrating region-specific visual prompts with multimodal preference supervision, we direct the model’s attention to critical visual details, effectively suppressing perceptual biases toward fine-grained visual information. To support scalable optimization, we also construct MultiScope-42k, an automatically generated multi-image dataset with hierarchical preference pairs. Experiments show that CcDPO significantly reduces hallucinations and yields consistent performance gains across general single- and multi-image tasks. Codes are available at https://github.com/LXDxmu/CcDPO.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/007ec2ca7a2079de8e7e45102d9f0feb-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "大语言模型与生成",
+        "is_agent": false
+      },
+      {
+        "title": "Stochastic Forward-Forward Learning through Representational Dimensionality Compression",
+        "authors": [],
+        "abstract": "The Forward-Forward (FF) learning algorithm provides a bottom-up alternative to backpropagation (BP) for training neural networks, relying on a layer-wise \"goodness\" function with well-designed negative samples for contrastive learning. Existing goodness functions are typically defined as the sum of squared postsynaptic activations, neglecting correlated variability between neurons. In this work, we propose a novel goodness function termed dimensionality compression that uses the effective dimensionality (ED) of fluctuating neural responses to incorporate second-order statistical structure. Our objective minimizes ED for noisy copies of individual inputs while maximizing it across the sample distribution, promoting structured representations without the need to prepare negative samples. We demonstrate that this formulation achieves competitive performance compared to other non-BP methods. Moreover, we show that noise plays a constructive role that can enhance generalization and improve inference when predictions are derived from the mean of squared output, which is equivalent to making predictions based on an energy term. Our findings contribute to the development of more biologically plausible learning algorithms and suggest a natural fit for neuromorphic computing, where stochasticity is a computational resource rather than a nuisance. The code is available at https://github.com/ZhichaoZhu/StochasticForwardForward.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/00358de35a101a372ea0412bed913c86-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "图学习",
+        "is_agent": false
+      },
+      {
+        "title": "Repurposing AlphaFold3-like Protein Folding Models for Antibody Sequence and Structure Co-design",
+        "authors": [],
+        "abstract": "Diffusion models hold great potential for accelerating antibody design, but their performance is so far limited by the number of antibody-antigen complexes used for model training. Meanwhile, AlphaFold3-like protein folding models, pre-trained on a large corpus of crystal structures, have acquired a broad understanding of biomolecular interaction. Based on this insight, we develop a new antigen-conditioned antibody design model by adapting the diffusion module of AlphaFold3-like models for sequence-structure co-diffusion. Specifically, we extend their structure diffusion module with a sequence diffusion head and fine-tune the entire protein folding model for antibody sequence-structure co-design. Our benchmark results show that sequence-structure co-diffusion models not only surpass state-of-the-art antibody design methods in performance but also maintain structure prediction accuracy comparable to the original folding model. Notably, in the antibody co-design task, our method achieves a CDR-H3 recovery rate of 65% for typical antibodies, outperforming the baselines by 87%, and attains a remarkable 63% recovery rate for nanobodies.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/007f4927e60699392425f267d43f0940-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "图学习",
+        "is_agent": false
+      },
+      {
+        "title": "The Primacy of Magnitude in Low-Rank Adaptation",
+        "authors": [],
+        "abstract": "Low-Rank Adaptation (LoRA) offers a parameter-efficient paradigm for tuning large models. While recent spectral initialization methods improve convergence and performance over the naive “Noise &amp; Zeros” scheme, their extra computational and storage overhead undermines efficiency. In this paper, we establish update magnitude as the fundamental driver of LoRA performance and propose LoRAM, a magnitude-driven “Basis &amp; Basis” initialization scheme that matches spectral methods without their inefficiencies. Our key contributions are threefold: (i) Magnitude of weight updates determines convergence. We prove low-rank structures intrinsically bound update magnitudes, unifying hyperparameter tuning in learning rate, scaling factor, and initialization as mechanisms to optimize magnitude regulation. (ii) Spectral initialization succeeds via magnitude amplification. We demystify that the presumed knowledge-driven benefit of spectral component essentially arises from the boost in the weight update magnitude. (iii) A novel and compact initialization strategy, LoRAM, scales deterministic orthogonal bases using pretrained weight magnitudes to simulate spectral gains. Extensive experiments show that LoRAM serves as a strong baseline, retaining the full efficiency of LoRA while matching or outperforming spectral initialization across benchmarks.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0010665e949927b74faf6e3ada6d7f72-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "优化与学习理论",
+        "is_agent": false
+      },
+      {
+        "title": "Mitigating Sexual Content Generation via Embedding Distortion in Text-conditioned Diffusion Models",
+        "authors": [],
+        "abstract": "Diffusion models show remarkable image generation performance following text prompts, but risk generating sexual contents. Existing approaches, such as prompt filtering, concept removal, and even sexual contents mitigation methods, struggle to defend against adversarial attacks while maintaining benign image quality. In this paper, we propose a novel approach called Distorting Embedding Space (DES), a text encoder-based defense mechanism that effectively tackles these issues through innovative embedding space control. DES transforms unsafe embeddings, extracted from a text encoder using unsafe prompts, toward carefully calculated safe embedding regions to prevent unsafe contents generation, while reproducing the original safe embeddings. DES also neutralizes the ``nudity'' embedding, by aligning it with neutral embedding to enhance robustness against adversarial attacks. As a result, extensive experiments on explicit content mitigation and adaptive attack defense show that DES achieves state-of-the-art (SOTA) defense, with attack success rate (ASR) of 9.47\\% on FLUX.1, a recent popular model, and 0.52\\% on the widely adopted Stable Diffusion v1.5. These correspond to ASR reductions of 76.5\\% and 63.9\\% compared to previous SOTA methods, EraseAnything and AdvUnlearn, respectively. Furthermore, DES maintains benign image quality, achieving Frechet Inception Distance and CLIP score comparable to those of the original FLUX.1 and Stable Diffusion v1.5.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/002262941c9edfd472a79298b2ac5e17-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "计算机视觉",
+        "is_agent": false
+      },
+      {
+        "title": "Diffusion Feature Field for Text-based 3D Editing with Gaussian Splatting",
+        "authors": [],
+        "abstract": "Recent advances in text-based image editing have motivated the extension of these techniques into the 3D domain. However, existing methods typically apply 2D diffusion models independently to multiple viewpoints, resulting in significant artifacts, most notably the Janus problem, due to inconsistencies across edited views. To address this, we propose a novel approach termed DFFSplat, which integrates a 3D-consistent diffusion feature field into the editing pipeline. By rendering and injecting these 3D-consistent structural features into intermediate layers of a 2D diffusion model, our method effectively enforces geometric alignment and semantic coherence across views. However, averaging 3D features during the feature field learning process can lead to the loss of fine texture details. To overcome this, we introduce a dual-encoder architecture to disentangle view-independent structural information from view-dependent appearance details. By encoding only the disentangled structure into the 3D field and injecting it during 2D editing, our method produces semantically and multi-view coherent edited images while maintaining high text fidelity. Additionally, we employ a time-invariance objective to ensure consistency across diffusion timesteps, enhancing the stability of learned representations. Experimental results demonstrate that our method achieves state-of-the-art performance in terms of text-fidelity, and better preserves structural and semantic consistency compared to existing approaches.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0042db0dff33e7c48979e2bdf0799896-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "计算机视觉",
+        "is_agent": false
+      },
+      {
+        "title": "Blending Complementary Memory Systems in Hybrid Quadratic-Linear Transformers",
+        "authors": [],
+        "abstract": "We develop hybrid memory architectures for general-purpose sequence processing neural networks, that combine key-value memory using softmax attention (KV-memory) with fast weight memory through dynamic synaptic modulation (FW-memory)---the core principles of quadratic and linear transformers, respectively. These two memory systems have complementary but individually limited properties: KV-memory offers precise retrieval but is constrained by quadratic complexity in sequence length, while FW-memory supports arbitrarily long sequences and enables more expressive computation but sacrifices precise recall. We propose and compare three methods to blend these two systems into a single memory system, differing in how and when input information is delivered to each system, to leverage the strengths of both. We conduct experiments on general language modeling and retrieval tasks by training 340M- and 1.3B-parameter models from scratch, as well as on synthetic algorithmic tasks designed to precisely illustrate the benefits of certain hybrid methods over others. We also evaluate our hybrid memory systems on reinforcement learning in partially observable environments. Overall, we demonstrate how a well-designed hybrid can overcome the limitations of its individual components, offering new insights into the design principle of neural memory systems.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/009e57699fe159424167f3693453e5dd-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "强化学习",
+        "is_agent": false
+      },
+      {
+        "title": "UFO-RL: Uncertainty-Focused Optimization for Efficient Reinforcement Learning Data Selection",
+        "authors": [],
+        "abstract": "A primary impediment to scaling reinforcement learning (RL) for large language model (LLM) training is the substantial computational cost, predominantly arising from the necessity of multi-sampling for policy optimization and evaluation. This underscores the critical yet challenging nature of efficient training data selection. Drawing inspiration from the Zone of Proximal Development (ZPD) theory, which posits that learners acquire knowledge more effectively from tasks of intermediate difficulty, we hypothesize that LLMs exhibit optimal learning from data they have not yet mastered but demonstrate the potential to comprehend. Conventional methodologies for assessing data difficulty or informativeness typically rely on computationally intensive multi-sampling or iterative procedures. To address this limitation, we introduce UFO-RL (**U**ncertainty-**F**ocused **O**ptimization for **R**einforcement **L**earning), a novel framework that employs a computationally efficient single-pass uncertainty estimation technique to identify informative training instances. This method, requiring only a single forward pass and obviating the need for iterative next-token computation, achieves a significant acceleration (up to 185$\\times$) in data evaluation compared to multi-sampling approaches. UFO-RL leverages this efficient metric to select data within the model's estimated ZPD for training. Extensive experimentation across diverse LLMs and mathematical benchmarks demonstrates that training with a mere 10\\% of the data, carefully selected by UFO-RL, yields performance comparable to or even surpassing that of full-data training. Furthermore, this targeted data selection results in up to a 16$\\times$ reduction in overall training time, concurrently enhancing training stability and improving generalization capabilities. Thus, UFO-RL presents a practical and highly efficient strategy for scaling RL fine-tuning of LLMs by focusing learning efforts on the most informative and valuable data, thereby mitigating the computational bottlenecks associated with traditional RL training.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/010a19805b0159022a8b29d735bb545f-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "强化学习",
+        "is_agent": false
+      },
+      {
+        "title": "GPO: Learning from Critical Steps to Improve LLM Reasoning",
+        "authors": [],
+        "abstract": "Large language models (LLMs) are increasingly used in various domains, showing impressive potential on various tasks. Recently, reasoning LLMs have been proposed to improve the \\textit{reasoning} or \\textit{thinking} capabilities of LLMs to solve complex problems. Despite the promising results of reasoning LLMs, enhancing the multi-step reasoning capabilities of LLMs still remains a significant challenge. While existing optimization methods have advanced the LLM reasoning capabilities, they often treat reasoning trajectories as a whole, without considering the underlying critical steps within the trajectory. In this paper, we introduce \\textbf{G}uided \\textbf{P}ivotal \\textbf{O}ptimization (GPO), a novel fine-tuning strategy that dives into the reasoning process to enable more effective improvements. GPO first identifies the `critical step' within a reasoning trajectory - a point that the model must carefully proceed so as to succeed at the problem. We locate the critical step by estimating the advantage function. GPO then resets the policy to the critical step and samples the new rollout and prioritizes learning process on those rollouts. This focus allows the model to learn more effectively from pivotal moments within the reasoning process to improve the reasoning performance. We demonstrate that GPO is not a standalone method, but rather a general strategy that can be integrated with various optimization methods to improve reasoning performance. Besides theoretical analysis, our experiments across challenging reasoning benchmarks show that GPO can consistently and significantly enhances the performance of existing optimization methods, showcasing its effectiveness and generalizability in improving LLM reasoning by concentrating on pivotal moments within the generation process.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/01cdd2dd02d9d2db9349bd3c019a88da-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "强化学习",
+        "is_agent": false
+      }
+    ],
+    "agent_and_harness": [
+      {
+        "title": "SampleAgent: A Tool-Use Agent for Software Engineering",
+        "authors": [
+          "Alice",
+          "Bob"
+        ],
+        "abstract": "We propose a tool-use agent for software engineering tasks with reflection and memory.",
+        "url": "https://arxiv.org/abs/2501.00001",
+        "year": 2025,
+        "venue": "agent_and_harness",
+        "source": "arXiv API",
+        "category": "cs.CL",
+        "is_agent": true
+      },
+      {
+        "title": "Multi-Agent Harness for Long-Horizon Web Tasks",
+        "authors": [
+          "Carol"
+        ],
+        "abstract": "A multi-agent harness that orchestrates planning, tool use, and reflection.",
+        "url": "https://arxiv.org/abs/2501.00002",
+        "year": 2025,
+        "venue": "agent_and_harness",
+        "source": "arXiv API",
+        "category": "cs.AI",
+        "is_agent": true
+      },
+      {
+        "title": "SWE-Bench Evaluation of Code Agents",
+        "authors": [
+          "Dave"
+        ],
+        "abstract": "Evaluating code agents on swe-bench with function calling and planning.",
+        "url": "https://arxiv.org/abs/2501.00003",
+        "year": 2025,
+        "venue": "agent_and_harness",
+        "source": "arXiv API",
+        "category": "cs.CL",
+        "is_agent": true
+      }
+    ]
+  },
+  "by_keyword": {
+    "agent_and_harness": [
+      {
+        "title": "SampleAgent: A Tool-Use Agent for Software Engineering",
+        "authors": [
+          "Alice",
+          "Bob"
+        ],
+        "abstract": "We propose a tool-use agent for software engineering tasks with reflection and memory.",
+        "url": "https://arxiv.org/abs/2501.00001",
+        "year": 2025,
+        "venue": "agent_and_harness",
+        "source": "arXiv API",
+        "category": "cs.CL",
+        "is_agent": true
+      },
+      {
+        "title": "Multi-Agent Harness for Long-Horizon Web Tasks",
+        "authors": [
+          "Carol"
+        ],
+        "abstract": "A multi-agent harness that orchestrates planning, tool use, and reflection.",
+        "url": "https://arxiv.org/abs/2501.00002",
+        "year": 2025,
+        "venue": "agent_and_harness",
+        "source": "arXiv API",
+        "category": "cs.AI",
+        "is_agent": true
+      },
+      {
+        "title": "SWE-Bench Evaluation of Code Agents",
+        "authors": [
+          "Dave"
+        ],
+        "abstract": "Evaluating code agents on swe-bench with function calling and planning.",
+        "url": "https://arxiv.org/abs/2501.00003",
+        "year": 2025,
+        "venue": "agent_and_harness",
+        "source": "arXiv API",
+        "category": "cs.CL",
+        "is_agent": true
+      }
+    ],
+    "general": [
+      {
+        "title": "NeuralPLexer3: Accurate Biomolecular Complex Structure Prediction with Flow Models",
+        "authors": [],
+        "abstract": "Biomolecular structure determination is essential to a mechanistic understanding of diseases and the development of novel therapeutics. Machine-learning-based structure prediction methods have made significant advancements by computationally predicting protein and bioassembly structures from sequences and molecular topology alone. Despite substantial progress in the field, challenges remain to deliver structure prediction models to real-world drug discovery. Here, we present NeuralPLexer3 -- a physics-inspired flow-based generative model that achieves state-of-the-art prediction accuracy on key biomolecular interaction types and improves training and sampling efficiency compared to its predecessors and alternative methodologies. Examined through existing and new benchmarks, NeuralPLexer3 excels in areas crucial to structure-based drug design, including blind docking, physical validity, and ligand-induced protein conformational changes.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0010031a1b4910aa67edbda26a705518-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "大语言模型与生成",
+        "is_agent": false
+      },
+      {
+        "title": "EngiBench: A Framework for Data-Driven Engineering Design Research",
+        "authors": [],
+        "abstract": "Engineering design optimization seeks to automatically determine the shapes, topologies, or parameters of components that maximize performance under given conditions. This process often depends on physics-based simulations, which are difficult to install, computationally expensive, and require domain-specific expertise. To mitigate these challenges, we introduce EngiBench, the first open‐source library and datasets spanning diverse domains for data‐driven engineering design. EngiBench provides a unified API and a curated set of benchmarks---covering aeronautics, heat conduction, photonics, and more---that enable fair, reproducible comparisons of optimization and machine learning algorithms, such as generative or surrogate models. We also release EngiOpt, a companion library offering a collection of such algorithms compatible with the EngiBench interface. Both libraries are modular, letting users plug in novel algorithms or problems, automate end-to-end experiment workflows, and leverage built-in utilities for visualization, dataset generation, feasibility checks, and performance analysis. We demonstrate their versatility through experiments comparing state-of-the-art techniques across multiple engineering design problems, an undertaking that was previously prohibitively time-consuming to perform. Finally, we show that these problems pose significant challenges for standard machine learning methods due to highly sensitive and constrained design manifolds.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0013efa1327c079e73154d4061c3a396-Abstract-Datasets_and_Benchmarks_Track.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "大语言模型与生成",
+        "is_agent": false
+      },
+      {
+        "title": "Zooming from Context to Cue: Hierarchical Preference Optimization for Multi-Image MLLMs",
+        "authors": [],
+        "abstract": "Multi-modal Large Language Models (MLLMs) excel at single-image tasks but struggle with multi-image understanding due to cross-modal misalignment, leading to hallucinations (context omission, conflation, and misinterpretation). Existing methods using Direct Preference Optimization (DPO) constrain optimization to a solitary image reference within the input sequence, neglecting holistic context modeling. To address this, we propose Context-to-Cue Direct Preference Optimization (CcDPO), a multi-level preference optimization framework that enhances per-image perception in multi-image settings by zooming into visual clues—from sequential context to local details. Our approach features two sequentially dependent components: (i) Context-Level Optimization: By introducing low-cost sequence preference pairs, we optimize the model to distinguish between complete and disrupted multi-image contexts, thereby correcting cognitive biases in MLLMs’ multi-image understanding. (ii) Needle-Level Optimization: By integrating region-specific visual prompts with multimodal preference supervision, we direct the model’s attention to critical visual details, effectively suppressing perceptual biases toward fine-grained visual information. To support scalable optimization, we also construct MultiScope-42k, an automatically generated multi-image dataset with hierarchical preference pairs. Experiments show that CcDPO significantly reduces hallucinations and yields consistent performance gains across general single- and multi-image tasks. Codes are available at https://github.com/LXDxmu/CcDPO.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/007ec2ca7a2079de8e7e45102d9f0feb-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "大语言模型与生成",
+        "is_agent": false
+      },
+      {
+        "title": "Stochastic Forward-Forward Learning through Representational Dimensionality Compression",
+        "authors": [],
+        "abstract": "The Forward-Forward (FF) learning algorithm provides a bottom-up alternative to backpropagation (BP) for training neural networks, relying on a layer-wise \"goodness\" function with well-designed negative samples for contrastive learning. Existing goodness functions are typically defined as the sum of squared postsynaptic activations, neglecting correlated variability between neurons. In this work, we propose a novel goodness function termed dimensionality compression that uses the effective dimensionality (ED) of fluctuating neural responses to incorporate second-order statistical structure. Our objective minimizes ED for noisy copies of individual inputs while maximizing it across the sample distribution, promoting structured representations without the need to prepare negative samples. We demonstrate that this formulation achieves competitive performance compared to other non-BP methods. Moreover, we show that noise plays a constructive role that can enhance generalization and improve inference when predictions are derived from the mean of squared output, which is equivalent to making predictions based on an energy term. Our findings contribute to the development of more biologically plausible learning algorithms and suggest a natural fit for neuromorphic computing, where stochasticity is a computational resource rather than a nuisance. The code is available at https://github.com/ZhichaoZhu/StochasticForwardForward.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/00358de35a101a372ea0412bed913c86-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "图学习",
+        "is_agent": false
+      },
+      {
+        "title": "Repurposing AlphaFold3-like Protein Folding Models for Antibody Sequence and Structure Co-design",
+        "authors": [],
+        "abstract": "Diffusion models hold great potential for accelerating antibody design, but their performance is so far limited by the number of antibody-antigen complexes used for model training. Meanwhile, AlphaFold3-like protein folding models, pre-trained on a large corpus of crystal structures, have acquired a broad understanding of biomolecular interaction. Based on this insight, we develop a new antigen-conditioned antibody design model by adapting the diffusion module of AlphaFold3-like models for sequence-structure co-diffusion. Specifically, we extend their structure diffusion module with a sequence diffusion head and fine-tune the entire protein folding model for antibody sequence-structure co-design. Our benchmark results show that sequence-structure co-diffusion models not only surpass state-of-the-art antibody design methods in performance but also maintain structure prediction accuracy comparable to the original folding model. Notably, in the antibody co-design task, our method achieves a CDR-H3 recovery rate of 65% for typical antibodies, outperforming the baselines by 87%, and attains a remarkable 63% recovery rate for nanobodies.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/007f4927e60699392425f267d43f0940-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "图学习",
+        "is_agent": false
+      },
+      {
+        "title": "The Primacy of Magnitude in Low-Rank Adaptation",
+        "authors": [],
+        "abstract": "Low-Rank Adaptation (LoRA) offers a parameter-efficient paradigm for tuning large models. While recent spectral initialization methods improve convergence and performance over the naive “Noise &amp; Zeros” scheme, their extra computational and storage overhead undermines efficiency. In this paper, we establish update magnitude as the fundamental driver of LoRA performance and propose LoRAM, a magnitude-driven “Basis &amp; Basis” initialization scheme that matches spectral methods without their inefficiencies. Our key contributions are threefold: (i) Magnitude of weight updates determines convergence. We prove low-rank structures intrinsically bound update magnitudes, unifying hyperparameter tuning in learning rate, scaling factor, and initialization as mechanisms to optimize magnitude regulation. (ii) Spectral initialization succeeds via magnitude amplification. We demystify that the presumed knowledge-driven benefit of spectral component essentially arises from the boost in the weight update magnitude. (iii) A novel and compact initialization strategy, LoRAM, scales deterministic orthogonal bases using pretrained weight magnitudes to simulate spectral gains. Extensive experiments show that LoRAM serves as a strong baseline, retaining the full efficiency of LoRA while matching or outperforming spectral initialization across benchmarks.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0010665e949927b74faf6e3ada6d7f72-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "优化与学习理论",
+        "is_agent": false
+      },
+      {
+        "title": "Mitigating Sexual Content Generation via Embedding Distortion in Text-conditioned Diffusion Models",
+        "authors": [],
+        "abstract": "Diffusion models show remarkable image generation performance following text prompts, but risk generating sexual contents. Existing approaches, such as prompt filtering, concept removal, and even sexual contents mitigation methods, struggle to defend against adversarial attacks while maintaining benign image quality. In this paper, we propose a novel approach called Distorting Embedding Space (DES), a text encoder-based defense mechanism that effectively tackles these issues through innovative embedding space control. DES transforms unsafe embeddings, extracted from a text encoder using unsafe prompts, toward carefully calculated safe embedding regions to prevent unsafe contents generation, while reproducing the original safe embeddings. DES also neutralizes the ``nudity'' embedding, by aligning it with neutral embedding to enhance robustness against adversarial attacks. As a result, extensive experiments on explicit content mitigation and adaptive attack defense show that DES achieves state-of-the-art (SOTA) defense, with attack success rate (ASR) of 9.47\\% on FLUX.1, a recent popular model, and 0.52\\% on the widely adopted Stable Diffusion v1.5. These correspond to ASR reductions of 76.5\\% and 63.9\\% compared to previous SOTA methods, EraseAnything and AdvUnlearn, respectively. Furthermore, DES maintains benign image quality, achieving Frechet Inception Distance and CLIP score comparable to those of the original FLUX.1 and Stable Diffusion v1.5.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/002262941c9edfd472a79298b2ac5e17-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "计算机视觉",
+        "is_agent": false
+      },
+      {
+        "title": "Diffusion Feature Field for Text-based 3D Editing with Gaussian Splatting",
+        "authors": [],
+        "abstract": "Recent advances in text-based image editing have motivated the extension of these techniques into the 3D domain. However, existing methods typically apply 2D diffusion models independently to multiple viewpoints, resulting in significant artifacts, most notably the Janus problem, due to inconsistencies across edited views. To address this, we propose a novel approach termed DFFSplat, which integrates a 3D-consistent diffusion feature field into the editing pipeline. By rendering and injecting these 3D-consistent structural features into intermediate layers of a 2D diffusion model, our method effectively enforces geometric alignment and semantic coherence across views. However, averaging 3D features during the feature field learning process can lead to the loss of fine texture details. To overcome this, we introduce a dual-encoder architecture to disentangle view-independent structural information from view-dependent appearance details. By encoding only the disentangled structure into the 3D field and injecting it during 2D editing, our method produces semantically and multi-view coherent edited images while maintaining high text fidelity. Additionally, we employ a time-invariance objective to ensure consistency across diffusion timesteps, enhancing the stability of learned representations. Experimental results demonstrate that our method achieves state-of-the-art performance in terms of text-fidelity, and better preserves structural and semantic consistency compared to existing approaches.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0042db0dff33e7c48979e2bdf0799896-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "计算机视觉",
+        "is_agent": false
+      },
+      {
+        "title": "Blending Complementary Memory Systems in Hybrid Quadratic-Linear Transformers",
+        "authors": [],
+        "abstract": "We develop hybrid memory architectures for general-purpose sequence processing neural networks, that combine key-value memory using softmax attention (KV-memory) with fast weight memory through dynamic synaptic modulation (FW-memory)---the core principles of quadratic and linear transformers, respectively. These two memory systems have complementary but individually limited properties: KV-memory offers precise retrieval but is constrained by quadratic complexity in sequence length, while FW-memory supports arbitrarily long sequences and enables more expressive computation but sacrifices precise recall. We propose and compare three methods to blend these two systems into a single memory system, differing in how and when input information is delivered to each system, to leverage the strengths of both. We conduct experiments on general language modeling and retrieval tasks by training 340M- and 1.3B-parameter models from scratch, as well as on synthetic algorithmic tasks designed to precisely illustrate the benefits of certain hybrid methods over others. We also evaluate our hybrid memory systems on reinforcement learning in partially observable environments. Overall, we demonstrate how a well-designed hybrid can overcome the limitations of its individual components, offering new insights into the design principle of neural memory systems.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/009e57699fe159424167f3693453e5dd-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "强化学习",
+        "is_agent": false
+      },
+      {
+        "title": "UFO-RL: Uncertainty-Focused Optimization for Efficient Reinforcement Learning Data Selection",
+        "authors": [],
+        "abstract": "A primary impediment to scaling reinforcement learning (RL) for large language model (LLM) training is the substantial computational cost, predominantly arising from the necessity of multi-sampling for policy optimization and evaluation. This underscores the critical yet challenging nature of efficient training data selection. Drawing inspiration from the Zone of Proximal Development (ZPD) theory, which posits that learners acquire knowledge more effectively from tasks of intermediate difficulty, we hypothesize that LLMs exhibit optimal learning from data they have not yet mastered but demonstrate the potential to comprehend. Conventional methodologies for assessing data difficulty or informativeness typically rely on computationally intensive multi-sampling or iterative procedures. To address this limitation, we introduce UFO-RL (**U**ncertainty-**F**ocused **O**ptimization for **R**einforcement **L**earning), a novel framework that employs a computationally efficient single-pass uncertainty estimation technique to identify informative training instances. This method, requiring only a single forward pass and obviating the need for iterative next-token computation, achieves a significant acceleration (up to 185$\\times$) in data evaluation compared to multi-sampling approaches. UFO-RL leverages this efficient metric to select data within the model's estimated ZPD for training. Extensive experimentation across diverse LLMs and mathematical benchmarks demonstrates that training with a mere 10\\% of the data, carefully selected by UFO-RL, yields performance comparable to or even surpassing that of full-data training. Furthermore, this targeted data selection results in up to a 16$\\times$ reduction in overall training time, concurrently enhancing training stability and improving generalization capabilities. Thus, UFO-RL presents a practical and highly efficient strategy for scaling RL fine-tuning of LLMs by focusing learning efforts on the most informative and valuable data, thereby mitigating the computational bottlenecks associated with traditional RL training.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/010a19805b0159022a8b29d735bb545f-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "强化学习",
+        "is_agent": false
+      },
+      {
+        "title": "GPO: Learning from Critical Steps to Improve LLM Reasoning",
+        "authors": [],
+        "abstract": "Large language models (LLMs) are increasingly used in various domains, showing impressive potential on various tasks. Recently, reasoning LLMs have been proposed to improve the \\textit{reasoning} or \\textit{thinking} capabilities of LLMs to solve complex problems. Despite the promising results of reasoning LLMs, enhancing the multi-step reasoning capabilities of LLMs still remains a significant challenge. While existing optimization methods have advanced the LLM reasoning capabilities, they often treat reasoning trajectories as a whole, without considering the underlying critical steps within the trajectory. In this paper, we introduce \\textbf{G}uided \\textbf{P}ivotal \\textbf{O}ptimization (GPO), a novel fine-tuning strategy that dives into the reasoning process to enable more effective improvements. GPO first identifies the `critical step' within a reasoning trajectory - a point that the model must carefully proceed so as to succeed at the problem. We locate the critical step by estimating the advantage function. GPO then resets the policy to the critical step and samples the new rollout and prioritizes learning process on those rollouts. This focus allows the model to learn more effectively from pivotal moments within the reasoning process to improve the reasoning performance. We demonstrate that GPO is not a standalone method, but rather a general strategy that can be integrated with various optimization methods to improve reasoning performance. Besides theoretical analysis, our experiments across challenging reasoning benchmarks show that GPO can consistently and significantly enhances the performance of existing optimization methods, showcasing its effectiveness and generalizability in improving LLM reasoning by concentrating on pivotal moments within the generation process.",
+        "url": "https://papers.nips.cc/paper_files/paper/2025/hash/01cdd2dd02d9d2db9349bd3c019a88da-Abstract-Conference.html",
+        "year": 2025,
+        "venue": "NeurIPS",
+        "source": "NeurIPS Proceedings",
+        "category": "强化学习",
+        "is_agent": false
+      }
+    ]
+  },
+  "papers": [
+    {
+      "title": "NeuralPLexer3: Accurate Biomolecular Complex Structure Prediction with Flow Models",
+      "authors": [],
+      "abstract": "Biomolecular structure determination is essential to a mechanistic understanding of diseases and the development of novel therapeutics. Machine-learning-based structure prediction methods have made significant advancements by computationally predicting protein and bioassembly structures from sequences and molecular topology alone. Despite substantial progress in the field, challenges remain to deliver structure prediction models to real-world drug discovery. Here, we present NeuralPLexer3 -- a physics-inspired flow-based generative model that achieves state-of-the-art prediction accuracy on key biomolecular interaction types and improves training and sampling efficiency compared to its predecessors and alternative methodologies. Examined through existing and new benchmarks, NeuralPLexer3 excels in areas crucial to structure-based drug design, including blind docking, physical validity, and ligand-induced protein conformational changes.",
+      "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0010031a1b4910aa67edbda26a705518-Abstract-Conference.html",
+      "year": 2025,
+      "venue": "NeurIPS",
+      "source": "NeurIPS Proceedings",
+      "category": "大语言模型与生成",
+      "is_agent": false
+    },
+    {
+      "title": "EngiBench: A Framework for Data-Driven Engineering Design Research",
+      "authors": [],
+      "abstract": "Engineering design optimization seeks to automatically determine the shapes, topologies, or parameters of components that maximize performance under given conditions. This process often depends on physics-based simulations, which are difficult to install, computationally expensive, and require domain-specific expertise. To mitigate these challenges, we introduce EngiBench, the first open‐source library and datasets spanning diverse domains for data‐driven engineering design. EngiBench provides a unified API and a curated set of benchmarks---covering aeronautics, heat conduction, photonics, and more---that enable fair, reproducible comparisons of optimization and machine learning algorithms, such as generative or surrogate models. We also release EngiOpt, a companion library offering a collection of such algorithms compatible with the EngiBench interface. Both libraries are modular, letting users plug in novel algorithms or problems, automate end-to-end experiment workflows, and leverage built-in utilities for visualization, dataset generation, feasibility checks, and performance analysis. We demonstrate their versatility through experiments comparing state-of-the-art techniques across multiple engineering design problems, an undertaking that was previously prohibitively time-consuming to perform. Finally, we show that these problems pose significant challenges for standard machine learning methods due to highly sensitive and constrained design manifolds.",
+      "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0013efa1327c079e73154d4061c3a396-Abstract-Datasets_and_Benchmarks_Track.html",
+      "year": 2025,
+      "venue": "NeurIPS",
+      "source": "NeurIPS Proceedings",
+      "category": "大语言模型与生成",
+      "is_agent": false
+    },
+    {
+      "title": "Zooming from Context to Cue: Hierarchical Preference Optimization for Multi-Image MLLMs",
+      "authors": [],
+      "abstract": "Multi-modal Large Language Models (MLLMs) excel at single-image tasks but struggle with multi-image understanding due to cross-modal misalignment, leading to hallucinations (context omission, conflation, and misinterpretation). Existing methods using Direct Preference Optimization (DPO) constrain optimization to a solitary image reference within the input sequence, neglecting holistic context modeling. To address this, we propose Context-to-Cue Direct Preference Optimization (CcDPO), a multi-level preference optimization framework that enhances per-image perception in multi-image settings by zooming into visual clues—from sequential context to local details. Our approach features two sequentially dependent components: (i) Context-Level Optimization: By introducing low-cost sequence preference pairs, we optimize the model to distinguish between complete and disrupted multi-image contexts, thereby correcting cognitive biases in MLLMs’ multi-image understanding. (ii) Needle-Level Optimization: By integrating region-specific visual prompts with multimodal preference supervision, we direct the model’s attention to critical visual details, effectively suppressing perceptual biases toward fine-grained visual information. To support scalable optimization, we also construct MultiScope-42k, an automatically generated multi-image dataset with hierarchical preference pairs. Experiments show that CcDPO significantly reduces hallucinations and yields consistent performance gains across general single- and multi-image tasks. Codes are available at https://github.com/LXDxmu/CcDPO.",
+      "url": "https://papers.nips.cc/paper_files/paper/2025/hash/007ec2ca7a2079de8e7e45102d9f0feb-Abstract-Conference.html",
+      "year": 2025,
+      "venue": "NeurIPS",
+      "source": "NeurIPS Proceedings",
+      "category": "大语言模型与生成",
+      "is_agent": false
+    },
+    {
+      "title": "Stochastic Forward-Forward Learning through Representational Dimensionality Compression",
+      "authors": [],
+      "abstract": "The Forward-Forward (FF) learning algorithm provides a bottom-up alternative to backpropagation (BP) for training neural networks, relying on a layer-wise \"goodness\" function with well-designed negative samples for contrastive learning. Existing goodness functions are typically defined as the sum of squared postsynaptic activations, neglecting correlated variability between neurons. In this work, we propose a novel goodness function termed dimensionality compression that uses the effective dimensionality (ED) of fluctuating neural responses to incorporate second-order statistical structure. Our objective minimizes ED for noisy copies of individual inputs while maximizing it across the sample distribution, promoting structured representations without the need to prepare negative samples. We demonstrate that this formulation achieves competitive performance compared to other non-BP methods. Moreover, we show that noise plays a constructive role that can enhance generalization and improve inference when predictions are derived from the mean of squared output, which is equivalent to making predictions based on an energy term. Our findings contribute to the development of more biologically plausible learning algorithms and suggest a natural fit for neuromorphic computing, where stochasticity is a computational resource rather than a nuisance. The code is available at https://github.com/ZhichaoZhu/StochasticForwardForward.",
+      "url": "https://papers.nips.cc/paper_files/paper/2025/hash/00358de35a101a372ea0412bed913c86-Abstract-Conference.html",
+      "year": 2025,
+      "venue": "NeurIPS",
+      "source": "NeurIPS Proceedings",
+      "category": "图学习",
+      "is_agent": false
+    },
+    {
+      "title": "Repurposing AlphaFold3-like Protein Folding Models for Antibody Sequence and Structure Co-design",
+      "authors": [],
+      "abstract": "Diffusion models hold great potential for accelerating antibody design, but their performance is so far limited by the number of antibody-antigen complexes used for model training. Meanwhile, AlphaFold3-like protein folding models, pre-trained on a large corpus of crystal structures, have acquired a broad understanding of biomolecular interaction. Based on this insight, we develop a new antigen-conditioned antibody design model by adapting the diffusion module of AlphaFold3-like models for sequence-structure co-diffusion. Specifically, we extend their structure diffusion module with a sequence diffusion head and fine-tune the entire protein folding model for antibody sequence-structure co-design. Our benchmark results show that sequence-structure co-diffusion models not only surpass state-of-the-art antibody design methods in performance but also maintain structure prediction accuracy comparable to the original folding model. Notably, in the antibody co-design task, our method achieves a CDR-H3 recovery rate of 65% for typical antibodies, outperforming the baselines by 87%, and attains a remarkable 63% recovery rate for nanobodies.",
+      "url": "https://papers.nips.cc/paper_files/paper/2025/hash/007f4927e60699392425f267d43f0940-Abstract-Conference.html",
+      "year": 2025,
+      "venue": "NeurIPS",
+      "source": "NeurIPS Proceedings",
+      "category": "图学习",
+      "is_agent": false
+    },
+    {
+      "title": "The Primacy of Magnitude in Low-Rank Adaptation",
+      "authors": [],
+      "abstract": "Low-Rank Adaptation (LoRA) offers a parameter-efficient paradigm for tuning large models. While recent spectral initialization methods improve convergence and performance over the naive “Noise &amp; Zeros” scheme, their extra computational and storage overhead undermines efficiency. In this paper, we establish update magnitude as the fundamental driver of LoRA performance and propose LoRAM, a magnitude-driven “Basis &amp; Basis” initialization scheme that matches spectral methods without their inefficiencies. Our key contributions are threefold: (i) Magnitude of weight updates determines convergence. We prove low-rank structures intrinsically bound update magnitudes, unifying hyperparameter tuning in learning rate, scaling factor, and initialization as mechanisms to optimize magnitude regulation. (ii) Spectral initialization succeeds via magnitude amplification. We demystify that the presumed knowledge-driven benefit of spectral component essentially arises from the boost in the weight update magnitude. (iii) A novel and compact initialization strategy, LoRAM, scales deterministic orthogonal bases using pretrained weight magnitudes to simulate spectral gains. Extensive experiments show that LoRAM serves as a strong baseline, retaining the full efficiency of LoRA while matching or outperforming spectral initialization across benchmarks.",
+      "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0010665e949927b74faf6e3ada6d7f72-Abstract-Conference.html",
+      "year": 2025,
+      "venue": "NeurIPS",
+      "source": "NeurIPS Proceedings",
+      "category": "优化与学习理论",
+      "is_agent": false
+    },
+    {
+      "title": "Mitigating Sexual Content Generation via Embedding Distortion in Text-conditioned Diffusion Models",
+      "authors": [],
+      "abstract": "Diffusion models show remarkable image generation performance following text prompts, but risk generating sexual contents. Existing approaches, such as prompt filtering, concept removal, and even sexual contents mitigation methods, struggle to defend against adversarial attacks while maintaining benign image quality. In this paper, we propose a novel approach called Distorting Embedding Space (DES), a text encoder-based defense mechanism that effectively tackles these issues through innovative embedding space control. DES transforms unsafe embeddings, extracted from a text encoder using unsafe prompts, toward carefully calculated safe embedding regions to prevent unsafe contents generation, while reproducing the original safe embeddings. DES also neutralizes the ``nudity'' embedding, by aligning it with neutral embedding to enhance robustness against adversarial attacks. As a result, extensive experiments on explicit content mitigation and adaptive attack defense show that DES achieves state-of-the-art (SOTA) defense, with attack success rate (ASR) of 9.47\\% on FLUX.1, a recent popular model, and 0.52\\% on the widely adopted Stable Diffusion v1.5. These correspond to ASR reductions of 76.5\\% and 63.9\\% compared to previous SOTA methods, EraseAnything and AdvUnlearn, respectively. Furthermore, DES maintains benign image quality, achieving Frechet Inception Distance and CLIP score comparable to those of the original FLUX.1 and Stable Diffusion v1.5.",
+      "url": "https://papers.nips.cc/paper_files/paper/2025/hash/002262941c9edfd472a79298b2ac5e17-Abstract-Conference.html",
+      "year": 2025,
+      "venue": "NeurIPS",
+      "source": "NeurIPS Proceedings",
+      "category": "计算机视觉",
+      "is_agent": false
+    },
+    {
+      "title": "Diffusion Feature Field for Text-based 3D Editing with Gaussian Splatting",
+      "authors": [],
+      "abstract": "Recent advances in text-based image editing have motivated the extension of these techniques into the 3D domain. However, existing methods typically apply 2D diffusion models independently to multiple viewpoints, resulting in significant artifacts, most notably the Janus problem, due to inconsistencies across edited views. To address this, we propose a novel approach termed DFFSplat, which integrates a 3D-consistent diffusion feature field into the editing pipeline. By rendering and injecting these 3D-consistent structural features into intermediate layers of a 2D diffusion model, our method effectively enforces geometric alignment and semantic coherence across views. However, averaging 3D features during the feature field learning process can lead to the loss of fine texture details. To overcome this, we introduce a dual-encoder architecture to disentangle view-independent structural information from view-dependent appearance details. By encoding only the disentangled structure into the 3D field and injecting it during 2D editing, our method produces semantically and multi-view coherent edited images while maintaining high text fidelity. Additionally, we employ a time-invariance objective to ensure consistency across diffusion timesteps, enhancing the stability of learned representations. Experimental results demonstrate that our method achieves state-of-the-art performance in terms of text-fidelity, and better preserves structural and semantic consistency compared to existing approaches.",
+      "url": "https://papers.nips.cc/paper_files/paper/2025/hash/0042db0dff33e7c48979e2bdf0799896-Abstract-Conference.html",
+      "year": 2025,
+      "venue": "NeurIPS",
+      "source": "NeurIPS Proceedings",
+      "category": "计算机视觉",
+      "is_agent": false
+    },
+    {
+      "title": "Blending Complementary Memory Systems in Hybrid Quadratic-Linear Transformers",
+      "authors": [],
+      "abstract": "We develop hybrid memory architectures for general-purpose sequence processing neural networks, that combine key-value memory using softmax attention (KV-memory) with fast weight memory through dynamic synaptic modulation (FW-memory)---the core principles of quadratic and linear transformers, respectively. These two memory systems have complementary but individually limited properties: KV-memory offers precise retrieval but is constrained by quadratic complexity in sequence length, while FW-memory supports arbitrarily long sequences and enables more expressive computation but sacrifices precise recall. We propose and compare three methods to blend these two systems into a single memory system, differing in how and when input information is delivered to each system, to leverage the strengths of both. We conduct experiments on general language modeling and retrieval tasks by training 340M- and 1.3B-parameter models from scratch, as well as on synthetic algorithmic tasks designed to precisely illustrate the benefits of certain hybrid methods over others. We also evaluate our hybrid memory systems on reinforcement learning in partially observable environments. Overall, we demonstrate how a well-designed hybrid can overcome the limitations of its individual components, offering new insights into the design principle of neural memory systems.",
+      "url": "https://papers.nips.cc/paper_files/paper/2025/hash/009e57699fe159424167f3693453e5dd-Abstract-Conference.html",
+      "year": 2025,
+      "venue": "NeurIPS",
+      "source": "NeurIPS Proceedings",
+      "category": "强化学习",
+      "is_agent": false
+    },
+    {
+      "title": "UFO-RL: Uncertainty-Focused Optimization for Efficient Reinforcement Learning Data Selection",
+      "authors": [],
+      "abstract": "A primary impediment to scaling reinforcement learning (RL) for large language model (LLM) training is the substantial computational cost, predominantly arising from the necessity of multi-sampling for policy optimization and evaluation. This underscores the critical yet challenging nature of efficient training data selection. Drawing inspiration from the Zone of Proximal Development (ZPD) theory, which posits that learners acquire knowledge more effectively from tasks of intermediate difficulty, we hypothesize that LLMs exhibit optimal learning from data they have not yet mastered but demonstrate the potential to comprehend. Conventional methodologies for assessing data difficulty or informativeness typically rely on computationally intensive multi-sampling or iterative procedures. To address this limitation, we introduce UFO-RL (**U**ncertainty-**F**ocused **O**ptimization for **R**einforcement **L**earning), a novel framework that employs a computationally efficient single-pass uncertainty estimation technique to identify informative training instances. This method, requiring only a single forward pass and obviating the need for iterative next-token computation, achieves a significant acceleration (up to 185$\\times$) in data evaluation compared to multi-sampling approaches. UFO-RL leverages this efficient metric to select data within the model's estimated ZPD for training. Extensive experimentation across diverse LLMs and mathematical benchmarks demonstrates that training with a mere 10\\% of the data, carefully selected by UFO-RL, yields performance comparable to or even surpassing that of full-data training. Furthermore, this targeted data selection results in up to a 16$\\times$ reduction in overall training time, concurrently enhancing training stability and improving generalization capabilities. Thus, UFO-RL presents a practical and highly efficient strategy for scaling RL fine-tuning of LLMs by focusing learning efforts on the most informative and valuable data, thereby mitigating the computational bottlenecks associated with traditional RL training.",
+      "url": "https://papers.nips.cc/paper_files/paper/2025/hash/010a19805b0159022a8b29d735bb545f-Abstract-Conference.html",
+      "year": 2025,
+      "venue": "NeurIPS",
+      "source": "NeurIPS Proceedings",
+      "category": "强化学习",
+      "is_agent": false
+    },
+    {
+      "title": "GPO: Learning from Critical Steps to Improve LLM Reasoning",
+      "authors": [],
+      "abstract": "Large language models (LLMs) are increasingly used in various domains, showing impressive potential on various tasks. Recently, reasoning LLMs have been proposed to improve the \\textit{reasoning} or \\textit{thinking} capabilities of LLMs to solve complex problems. Despite the promising results of reasoning LLMs, enhancing the multi-step reasoning capabilities of LLMs still remains a significant challenge. While existing optimization methods have advanced the LLM reasoning capabilities, they often treat reasoning trajectories as a whole, without considering the underlying critical steps within the trajectory. In this paper, we introduce \\textbf{G}uided \\textbf{P}ivotal \\textbf{O}ptimization (GPO), a novel fine-tuning strategy that dives into the reasoning process to enable more effective improvements. GPO first identifies the `critical step' within a reasoning trajectory - a point that the model must carefully proceed so as to succeed at the problem. We locate the critical step by estimating the advantage function. GPO then resets the policy to the critical step and samples the new rollout and prioritizes learning process on those rollouts. This focus allows the model to learn more effectively from pivotal moments within the reasoning process to improve the reasoning performance. We demonstrate that GPO is not a standalone method, but rather a general strategy that can be integrated with various optimization methods to improve reasoning performance. Besides theoretical analysis, our experiments across challenging reasoning benchmarks show that GPO can consistently and significantly enhances the performance of existing optimization methods, showcasing its effectiveness and generalizability in improving LLM reasoning by concentrating on pivotal moments within the generation process.",
+      "url": "https://papers.nips.cc/paper_files/paper/2025/hash/01cdd2dd02d9d2db9349bd3c019a88da-Abstract-Conference.html",
+      "year": 2025,
+      "venue": "NeurIPS",
+      "source": "NeurIPS Proceedings",
+      "category": "强化学习",
+      "is_agent": false
+    },
+    {
+      "title": "SampleAgent: A Tool-Use Agent for Software Engineering",
+      "authors": [
+        "Alice",
+        "Bob"
+      ],
+      "abstract": "We propose a tool-use agent for software engineering tasks with reflection and memory.",
+      "url": "https://arxiv.org/abs/2501.00001",
+      "year": 2025,
+      "venue": "agent_and_harness",
+      "source": "arXiv API",
+      "category": "cs.CL",
+      "is_agent": true
+    },
+    {
+      "title": "Multi-Agent Harness for Long-Horizon Web Tasks",
+      "authors": [
+        "Carol"
+      ],
+      "abstract": "A multi-agent harness that orchestrates planning, tool use, and reflection.",
+      "url": "https://arxiv.org/abs/2501.00002",
+      "year": 2025,
+      "venue": "agent_and_harness",
+      "source": "arXiv API",
+      "category": "cs.AI",
+      "is_agent": true
+    },
+    {
+      "title": "SWE-Bench Evaluation of Code Agents",
+      "authors": [
+        "Dave"
+      ],
+      "abstract": "Evaluating code agents on swe-bench with function calling and planning.",
+      "url": "https://arxiv.org/abs/2501.00003",
+      "year": 2025,
+      "venue": "agent_and_harness",
+      "source": "arXiv API",
+      "category": "cs.CL",
+      "is_agent": true
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+#weijinzi
+# 用途：每日自动从 arXiv 抓取 agent / harness 相关论文。
+# 前因：用户希望持续跟进 agent / harness 领域最新成果。
+# 原因：手动检索成本高，预印本更新快，需要自动化。
+# 内容：每天定时请求 arXiv RSS，按关键词过滤，结果落盘到 agent_and_harness。
+# 行为：拉取 cs.CL / cs.AI / cs.LG 三个分类的最近论文，匹配关键词后写入。
+# 存储：每日一个 JSON 文件，文件名按日期命名，便于历史回溯。
+# 提交：将新增文件自动提交回仓库，方便本地同步。
+# 触发：cron 定时 + 手动 workflow_dispatch。
+# 依赖：仅使用 actions/checkout 和内置 Python，无需额外密钥。
+---
+name: Daily Agent & Harness Papers
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch arXiv agent papers
+        env:
+          OUT_DIR: "agent_and_harness"
+          CATEGORIES: "cs.CL,cs.AI,cs.LG"
+          QUERY: "agent OR harness OR tool+use OR function+calling OR multi-agent OR planning OR memory OR reflection OR swe-bench OR webarena"
+          MAX_RESULTS: "60"
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          import sys
+          import time
+          import urllib.parse
+          import xml.etree.ElementTree as ET
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          import requests
+
+          categories = [c.strip() for c in os.environ["CATEGORIES"].split(",") if c.strip()]
+          query = os.environ["QUERY"]
+          max_results = int(os.environ["MAX_RESULTS"])
+          out_dir = Path(os.environ["OUT_DIR"])
+          out_dir.mkdir(parents=True, exist_ok=True)
+
+          ns = {"atom": "http://www.w3.org/2005/Atom", "a": "http://www.w3.org/2005/Atom"}
+          keyword_re = re.compile(
+              r"\b(agent|harness|tool[- ]?use|function[- ]?call|multi[- ]?agent|"
+              r"planner|reflection|memory|swe[- ]?bench|webarena|gastown|aider|"
+              r"orchestrat|scaffold|code[- ]?agent|computer[- ]?use)\b",
+              re.IGNORECASE,
+          )
+
+          collected = []
+          for cat in categories:
+              url = (
+                  "http://export.arxiv.org/api/query?"
+                  + urllib.parse.urlencode(
+                      {
+                          "search_query": f"cat:{cat} AND ({query})",
+                          "sortBy": "submittedDate",
+                          "sortOrder": "descending",
+                          "max_results": max_results,
+                      }
+                  )
+              )
+              resp = requests.get(url, timeout=60)
+              resp.raise_for_status()
+              root = ET.fromstring(resp.text)
+              for entry in root.findall("a:entry", ns):
+                  title = "".join(entry.find("a:title", ns).itertext()).strip()
+                  summary = "".join(entry.find("a:summary", ns).itertext()).strip()
+                  link = entry.find("a:id", ns).text.strip()
+                  published = entry.find("a:published", ns).text.strip()
+                  authors = [
+                      "".join(a.find("a:name", ns).itertext()).strip()
+                      for a in entry.findall("a:author", ns)
+                  ]
+                  if not keyword_re.search(f"{title} {summary}"):
+                      continue
+                  collected.append(
+                      {
+                          "title": title,
+                          "authors": authors,
+                          "abstract": summary,
+                          "url": link,
+                          "category": cat,
+                          "published": published,
+                      }
+                  )
+              time.sleep(3)
+
+          today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+          out_path = out_dir / f"arxiv_agent_{today}.json"
+          out_path.write_text(
+              __import__("json").dumps(
+                  {
+                      "source": "arXiv API",
+                      "fetched_at": datetime.now(timezone.utc).isoformat(),
+                      "categories": categories,
+                      "count": len(collected),
+                      "papers": collected,
+                  },
+                  ensure_ascii=False,
+                  indent=2,
+              ),
+              encoding="utf-8",
+          )
+          print(f"saved {len(collected)} papers -> {out_path}")
+          if not collected:
+            sys.exit(0)
+          PY
+
+      - name: Quality filter
+        run: |
+          python code/paper_quality_filter.py \
+            --agent-dir agent_and_harness \
+            || echo "quality filter failed, skip"
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add agent_and_harness
+          if git diff --cached --quiet; then
+              echo "no changes"
+            else
+              git commit -m "chore: 每日拉取 agent/harness 论文 ($(date -u +%F))"
+              git push
+          fi
