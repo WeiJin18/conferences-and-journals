@@ -63,6 +63,7 @@ jobs:
 
       - name: Crawl arXiv 18-month window
         if: steps.gate.outputs.run == 'true'
+        continue-on-error: true
         run: python code/crawl_arxiv_window.py
 
       - name: Crawl NeurIPS/ICML/ICLR via Semantic Scholar

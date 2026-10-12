@@ -34,7 +34,8 @@ CATEGORIES = ["cs.AI", "cs.CL", "cs.LG"]
 ARXIV_API = "http://export.arxiv.org/api/query"
 ARXIV_PAGE_SIZE = 100
 ARXIV_INTERVAL = 3.0       # arXiv 官方建议的请求间隔（秒）
-ARXIV_MAX_RETRIES = 5      # 429 限速重试次数
+ARXIV_MAX_RETRIES = 5      # 限速或网络错误重试次数
+ARXIV_TIMEOUT = (20, 120)  # 连接超时、读取超时（秒）
 MONTHLY_LIMIT = 300        # 每个月分片最多拉取条数，控制 Actions 运行时间
 MAX_FETCH = 10000           # 单次运行拉取条数总上限（保护，超限直接截断并警告）
 
@@ -102,16 +103,25 @@ def fetch_arxiv_slice(start: datetime, end: datetime, slice_limit: int) -> list[
         }
         resp = None
         for attempt in range(ARXIV_MAX_RETRIES):
-            resp = requests.get(ARXIV_API, params=params, timeout=60)
-            if resp.status_code == 429:
-                wait = float(resp.headers.get("Retry-After", 10 * (attempt + 1)))
-                print(f"[warn] arXiv 429，等待 {wait}s 重试（第 {attempt + 1} 次）", file=sys.stderr)
+            try:
+                resp = requests.get(ARXIV_API, params=params, timeout=ARXIV_TIMEOUT)
+                if resp.status_code == 429:
+                    wait = float(resp.headers.get("Retry-After", 10 * (attempt + 1)))
+                    print(f"[warn] arXiv 429，等待 {wait}s 重试（第 {attempt + 1} 次）", file=sys.stderr)
+                    time.sleep(wait)
+                    continue
+                resp.raise_for_status()
+                break
+            except requests.RequestException as exc:
+                if attempt == ARXIV_MAX_RETRIES - 1:
+                    raise RuntimeError(
+                        f"arXiv 请求失败（重试 {ARXIV_MAX_RETRIES} 次）：{exc}"
+                    ) from exc
+                wait = min(10 * (attempt + 1), 60)
+                print(f"[warn] arXiv 请求失败，等待 {wait}s 重试：{exc}", file=sys.stderr)
                 time.sleep(wait)
-                continue
-            break
-        if resp is None or resp.status_code == 429:
-            raise RuntimeError(f"arXiv 持续限速（重试 {ARXIV_MAX_RETRIES} 次仍 429）")
-        resp.raise_for_status()
+        if resp is None:
+            raise RuntimeError("arXiv 未返回响应")
         root = ET.fromstring(resp.text)
         entries = root.findall("a:entry", ns)
         if not entries:
@@ -164,7 +174,14 @@ def fetch_arxiv_window(start: datetime, end: datetime, monthly_limit: int = MONT
             print(f"[warn] 达到 MAX_FETCH={MAX_FETCH}，剩余分片跳过", file=sys.stderr)
             break
         remaining = MAX_FETCH - len(papers)
-        batch = fetch_arxiv_slice(slice_start, slice_end, min(monthly_limit, remaining))
+        try:
+            batch = fetch_arxiv_slice(slice_start, slice_end, min(monthly_limit, remaining))
+        except RuntimeError as exc:
+            print(
+                f"[warn] arXiv 时间片失败，保留此前已抓取的 {len(papers)} 篇并停止后续时间片：{exc}",
+                file=sys.stderr,
+            )
+            break
         fresh = [p for p in batch if p["url"] not in seen_urls]
         seen_urls.update(p["url"] for p in fresh)
         papers.extend(fresh)
