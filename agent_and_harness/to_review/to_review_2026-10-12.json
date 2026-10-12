@@ -314,10 +314,10 @@
       "s2_citationCount": 0,
       "s2_venue": "",
       "github": {
-        "found": true,
-        "stars": 3,
-        "pushed_at": "2026-09-27T06:21:33Z",
-        "repo": "OpenBMB/T2Mem"
+        "found": false,
+        "stars": 0,
+        "pushed_at": "",
+        "repo": ""
       }
     }
   },
@@ -2101,18 +2101,18 @@
     "scores": {
       "venue": 0,
       "citations": 0,
-      "github": 1,
+      "github": 0,
       "leaderboard": 0,
-      "total": 1
+      "total": 0
     },
     "signals": {
       "s2_citationCount": 0,
       "s2_venue": "",
       "github": {
-        "found": true,
-        "stars": 317,
-        "pushed_at": "2026-09-25T16:28:34Z",
-        "repo": "Alibaba-NLP/qqr"
+        "found": false,
+        "stars": 0,
+        "pushed_at": "",
+        "repo": ""
       }
     }
   },
@@ -2309,10 +2309,10 @@
       "s2_citationCount": 0,
       "s2_venue": "",
       "github": {
-        "found": true,
-        "stars": 7,
-        "pushed_at": "2026-10-08T08:59:11Z",
-        "repo": "bilemond/ChemDiffAgent"
+        "found": false,
+        "stars": 0,
+        "pushed_at": "",
+        "repo": ""
       }
     }
   },
@@ -2622,10 +2622,10 @@
       "s2_citationCount": 0,
       "s2_venue": "",
       "github": {
-        "found": true,
-        "stars": 1,
-        "pushed_at": "2026-10-11T13:13:28Z",
-        "repo": "drylab-bio/DRYLAB-Bench"
+        "found": false,
+        "stars": 0,
+        "pushed_at": "",
+        "repo": ""
       }
     }
   },
@@ -4218,6 +4218,449 @@
     "signals": {
       "s2_citationCount": 0,
       "s2_venue": "",
+      "github": {
+        "found": false,
+        "stars": 0,
+        "pushed_at": "",
+        "repo": ""
+      }
+    }
+  },
+  {
+    "title": "WebDancer: Towards Autonomous Information Seeking Agency",
+    "arxiv_id": "2505.22648",
+    "url": "http://arxiv.org/abs/2505.22648v3",
+    "authors": [
+      "Jialong Wu",
+      "Baixuan Li",
+      "Runnan Fang",
+      "Wenbiao Yin",
+      "Liwen Zhang",
+      "Zhengwei Tao",
+      "Dingchu Zhang",
+      "Zekun Xi",
+      "Gang Fu",
+      "Yong Jiang",
+      "Pengjun Xie",
+      "Fei Huang",
+      "Jingren Zhou"
+    ],
+    "abstract": "Addressing intricate real-world problems necessitates in-depth information seeking and multi-step reasoning. Recent progress in agentic systems, exemplified by Deep Research, underscores the potential for autonomous multi-step research. In this work, we present a cohesive paradigm for building end-to-end agentic information seeking agents from a data-centric and training-stage perspective. Our approach consists of four key stages: (1) browsing data construction, (2) trajectories sampling, (3) supervised fine-tuning for effective cold start, and (4) reinforcement learning for enhanced generalisation. We instantiate this framework in a web agent based on the ReAct, WebDancer. Empirical evaluations on the challenging information seeking benchmarks, GAIA and WebWalkerQA, demonstrate the strong performance of WebDancer, achieving considerable results and highlighting the efficacy of our training paradigm. Further analysis of agent training provides valuable insights and actionable, systematic pathways for developing more capable agentic models. The codes and demo will be released in https://github.com/Alibaba-NLP/WebAgent.",
+    "published": "2025-05-28T17:57:07Z",
+    "scores": {
+      "venue": 0,
+      "citations": 2,
+      "github": 0,
+      "leaderboard": 0,
+      "total": 2
+    },
+    "signals": {
+      "s2_citationCount": 197,
+      "s2_venue": "Neural Information Processing Systems",
+      "github": {
+        "found": true,
+        "stars": 20034,
+        "pushed_at": "2026-02-27T13:12:11Z",
+        "repo": "Alibaba-NLP/WebAgent"
+      }
+    }
+  },
+  {
+    "title": "ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning",
+    "arxiv_id": "2507.16815",
+    "url": "http://arxiv.org/abs/2507.16815v2",
+    "authors": [
+      "Chi-Pin Huang",
+      "Yueh-Hua Wu",
+      "Min-Hung Chen",
+      "Yu-Chiang Frank Wang",
+      "Fu-En Yang"
+    ],
+    "abstract": "Vision-language-action (VLA) reasoning tasks require agents to interpret multimodal instructions, perform long-horizon planning, and act adaptively in dynamic environments. Existing approaches typically train VLA models in an end-to-end fashion, directly mapping inputs to actions without explicit reasoning, which hinders their ability to plan over multiple steps or adapt to complex task variations. In this paper, we propose ThinkAct, a dual-system framework that bridges high-level reasoning with low-level action execution via reinforced visual latent planning. ThinkAct trains a multimodal LLM to generate embodied reasoning plans guided by reinforcing action-aligned visual rewards based on goal completion and trajectory consistency. These reasoning plans are compressed into a visual plan latent that conditions a downstream action model for robust action execution on target environments. Extensive experiments on embodied reasoning and robot manipulation benchmarks demonstrate that ThinkAct enables few-shot adaptation, long-horizon planning, and self-correction behaviors in complex embodied AI tasks.",
+    "published": "2025-07-22T17:59:46Z",
+    "scores": {
+      "venue": 0,
+      "citations": 2,
+      "github": 0,
+      "leaderboard": 0,
+      "total": 2
+    },
+    "signals": {
+      "s2_citationCount": 183,
+      "s2_venue": "Neural Information Processing Systems",
+      "github": {
+        "found": false,
+        "stars": 0,
+        "pushed_at": "",
+        "repo": ""
+      }
+    }
+  },
+  {
+    "title": "WASP: Benchmarking Web Agent Security Against Prompt Injection Attacks",
+    "arxiv_id": "2504.18575",
+    "url": "http://arxiv.org/abs/2504.18575v3",
+    "authors": [
+      "Ivan Evtimov",
+      "Arman Zharmagambetov",
+      "Aaron Grattafiori",
+      "Chuan Guo",
+      "Kamalika Chaudhuri"
+    ],
+    "abstract": "Autonomous UI agents powered by AI have tremendous potential to boost human productivity by automating routine tasks such as filing taxes and paying bills. However, a major challenge in unlocking their full potential is security, which is exacerbated by the agent's ability to take action on their user's behalf. Existing tests for prompt injections in web agents either over-simplify the threat by testing unrealistic scenarios or giving the attacker too much power, or look at single-step isolated tasks. To more accurately measure progress for secure web agents, we introduce WASP -- a new publicly available benchmark for end-to-end evaluation of Web Agent Security against Prompt injection attacks. Evaluating with WASP shows that even top-tier AI models, including those with advanced reasoning capabilities, can be deceived by simple, low-effort human-written injections in very realistic scenarios. Our end-to-end evaluation reveals a previously unobserved insight: while attacks partially succeed in up to 86% of the case, even state-of-the-art agents often struggle to fully complete the attacker goals -- highlighting the current state of security by incompetence.",
+    "published": "2025-04-22T17:51:03Z",
+    "scores": {
+      "venue": 0,
+      "citations": 2,
+      "github": 0,
+      "leaderboard": 0,
+      "total": 2
+    },
+    "signals": {
+      "s2_citationCount": 180,
+      "s2_venue": "Neural Information Processing Systems",
+      "github": {
+        "found": false,
+        "stars": 0,
+        "pushed_at": "",
+        "repo": ""
+      }
+    }
+  },
+  {
+    "title": "Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills",
+    "arxiv_id": "2603.25158",
+    "url": "http://arxiv.org/abs/2603.25158v5",
+    "authors": [
+      "Jingwei Ni",
+      "Yihao Liu",
+      "Xinpeng Liu",
+      "Yutao Sun",
+      "Mengyu Zhou",
+      "Pengyu Cheng",
+      "Dexin Wang",
+      "Erchao Zhao",
+      "Xiaoxi Jiang",
+      "Guanjun Jiang"
+    ],
+    "abstract": "Large Language Model (LLM) agents increasingly rely on domain-specific skills, yet manually authoring such skills does not scale, and skills generated purely from parametric knowledge often miss critical operational pitfalls. We introduce Trace2Skill, a framework that consolidates broad execution trajectories in parallel into a unified skill directory through inductive reasoning over agent experience. Trace2Skill supports both deepening existing human-written skills and creating useful skills from weak LLM-generated drafts. Experiments demonstrate the effectiveness of Trace2Skill across diverse domains, including office workflows, math reasoning, and vision QA. Importantly, the evolved skills are not merely memorized artifacts of the trajectories used to create them: they often transfer across model scales, across model families, and to out-of-distribution settings. For example, skills evolved from Qwen3.5-35B trajectories improve a Qwen3.5-122B agent by up to $57.65$ percentage points on WikiTableQuestions. Further analyses show that Trace2Skill outperforms sequential skill editing and ReasoningBank-style retrieval memories, compresses recurring failures and workarounds into standard operating procedures (SoPs), and yields portable skills that can be reused without parameter updates or test-time retrieval.",
+    "published": "2026-03-26T08:26:38Z",
+    "scores": {
+      "venue": 0,
+      "citations": 2,
+      "github": 0,
+      "leaderboard": 0,
+      "total": 2
+    },
+    "signals": {
+      "s2_citationCount": 179,
+      "s2_venue": "arXiv.org",
+      "github": {
+        "found": false,
+        "stars": 0,
+        "pushed_at": "",
+        "repo": ""
+      }
+    }
+  },
+  {
+    "title": "A Survey on Code Generation with LLM-based Agents",
+    "arxiv_id": "2508.00083",
+    "url": "http://arxiv.org/abs/2508.00083v2",
+    "authors": [
+      "Yihong Dong",
+      "Xue Jiang",
+      "Jiaru Qian",
+      "Tian Wang",
+      "Kechi Zhang",
+      "Zhi Jin",
+      "Ge Li"
+    ],
+    "abstract": "Code generation agents powered by large language models (LLMs) are revolutionizing the software development paradigm. Distinct from previous code generation techniques, code generation agents are characterized by three core features. 1) Autonomy: the ability to independently manage the entire workflow, from task decomposition to coding and debugging. 2) Expanded task scope: capabilities that extend beyond generating code snippets to encompass the full software development lifecycle (SDLC). 3) Enhancement of engineering practicality: a shift in research emphasis from algorithmic innovation toward practical engineering challenges, such as system reliability, process management, and tool integration. This domain has recently witnessed rapid development and an explosion in research, demonstrating significant application potential. This paper presents a systematic survey of the field of LLM-based code generation agents. We trace the technology's developmental trajectory from its inception and systematically categorize its core techniques, including both single-agent and multi-agent architectures. Furthermore, this survey details the applications of LLM-based agents across the full SDLC, summarizes mainstream evaluation benchmarks and metrics, and catalogs representative tools. Finally, by analyzing the primary challenges, we identify and propose several foundational, long-term research directions for the future work of the field.",
+    "published": "2025-07-31T18:17:36Z",
+    "scores": {
+      "venue": 0,
+      "citations": 2,
+      "github": 0,
+      "leaderboard": 0,
+      "total": 2
+    },
+    "signals": {
+      "s2_citationCount": 168,
+      "s2_venue": "arXiv.org",
+      "github": {
+        "found": false,
+        "stars": 0,
+        "pushed_at": "",
+        "repo": ""
+      }
+    }
+  },
+  {
+    "title": "OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction",
+    "arxiv_id": "2509.26633",
+    "url": "http://arxiv.org/abs/2509.26633v3",
+    "authors": [
+      "Lujie Yang",
+      "Xiaoyu Huang",
+      "Zhen Wu",
+      "Angjoo Kanazawa",
+      "Pieter Abbeel",
+      "Carmelo Sferrazza",
+      "C. Karen Liu",
+      "Rocky Duan",
+      "Guanya Shi"
+    ],
+    "abstract": "A dominant paradigm for teaching humanoid robots complex skills is to retarget human motions as kinematic references to train reinforcement learning (RL) policies. However, existing retargeting pipelines often struggle with the significant embodiment gap between humans and robots, producing physically implausible artifacts like foot-skating and penetration. More importantly, common retargeting methods neglect the rich human-object and human-environment interactions essential for expressive locomotion and loco-manipulation. To address this, we introduce OmniRetarget, an interaction-preserving data generation engine based on an interaction mesh that explicitly models and preserves the crucial spatial and contact relationships between an agent, the terrain, and manipulated objects. By minimizing the Laplacian deformation between the human and robot meshes while enforcing kinematic constraints, OmniRetarget generates kinematically feasible trajectories. Moreover, preserving task-relevant interactions enables efficient data augmentation, from a single demonstration to different robot embodiments, terrains, and object configurations. We comprehensively evaluate OmniRetarget by retargeting motions from OMOMO, LAFAN1, and our in-house MoCap datasets, generating over 8-hour trajectories that achieve better kinematic constraint satisfaction and contact preservation than widely used baselines. Such high-quality data enables proprioceptive RL policies to successfully execute long-horizon (up to 30 seconds) parkour and loco-manipulation skills on a Unitree G1 humanoid, trained with only 5 reward terms and simple domain randomization shared by all tasks, without any learning curriculum.",
+    "published": "2025-09-30T17:59:02Z",
+    "scores": {
+      "venue": 0,
+      "citations": 2,
+      "github": 0,
+      "leaderboard": 0,
+      "total": 2
+    },
+    "signals": {
+      "s2_citationCount": 165,
+      "s2_venue": "IEEE International Conference on Robotics and Automation",
+      "github": {
+        "found": false,
+        "stars": 0,
+        "pushed_at": "",
+        "repo": ""
+      }
+    }
+  },
+  {
+    "title": "OWL: Optimized Workforce Learning for General Multi-Agent Assistance in Real-World Task Automation",
+    "arxiv_id": "2505.23885",
+    "url": "http://arxiv.org/abs/2505.23885v2",
+    "authors": [
+      "Mengkang Hu",
+      "Yuhang Zhou",
+      "Wendong Fan",
+      "Yuzhou Nie",
+      "Bowei Xia",
+      "Tao Sun",
+      "Ziyu Ye",
+      "Zhaoxuan Jin",
+      "Yingru Li",
+      "Qiguang Chen",
+      "Zeyu Zhang",
+      "Yifeng Wang",
+      "Qianshuo Ye",
+      "Bernard Ghanem",
+      "Ping Luo",
+      "Guohao Li"
+    ],
+    "abstract": "Large Language Model (LLM)-based multi-agent systems show promise for automating real-world tasks but struggle to transfer across domains due to their domain-specific nature. Current approaches face two critical shortcomings: they require complete architectural redesign and full retraining of all components when applied to new domains. We introduce Workforce, a hierarchical multi-agent framework that decouples strategic planning from specialized execution through a modular architecture comprising: (i) a domain-agnostic Planner for task decomposition, (ii) a Coordinator for subtask management, and (iii) specialized Workers with domain-specific tool-calling capabilities. This decoupling enables cross-domain transferability during both inference and training phases: During inference, Workforce seamlessly adapts to new domains by adding or modifying worker agents; For training, we introduce Optimized Workforce Learning (OWL), which improves generalization across domains by optimizing a domain-agnostic planner with reinforcement learning from real-world feedback. To validate our approach, we evaluate Workforce on the GAIA benchmark, covering various realistic, multi-domain agentic tasks. Experimental results demonstrate Workforce achieves open-source state-of-the-art performance (69.70%), outperforming commercial systems like OpenAI's Deep Research by 2.34%. More notably, our OWL-trained 32B model achieves 52.73% accuracy (+16.37%) and demonstrates performance comparable to GPT-4o on challenging tasks. To summarize, by enabling scalable generalization and modular domain transfer, our work establishes a foundation for the next generation of general-purpose AI assistants.",
+    "published": "2025-05-29T17:51:58Z",
+    "scores": {
+      "venue": 0,
+      "citations": 2,
+      "github": 0,
+      "leaderboard": 0,
+      "total": 2
+    },
+    "signals": {
+      "s2_citationCount": 159,
+      "s2_venue": "Neural Information Processing Systems",
+      "github": {
+        "found": false,
+        "stars": 0,
+        "pushed_at": "",
+        "repo": ""
+      }
+    }
+  },
+  {
+    "title": "Securing AI Agents with Information-Flow Control",
+    "arxiv_id": "2505.23643",
+    "url": "http://arxiv.org/abs/2505.23643v2",
+    "authors": [
+      "Manuel Costa",
+      "Boris Köpf",
+      "Aashish Kolluri",
+      "Andrew Paverd",
+      "Mark Russinovich",
+      "Ahmed Salem",
+      "Shruti Tople",
+      "Lukas Wutschitz",
+      "Santiago Zanella-Béguelin"
+    ],
+    "abstract": "As AI agents become increasingly autonomous and capable, ensuring their security against vulnerabilities such as prompt injection becomes critical. This paper explores the use of information-flow control (IFC) to provide security guarantees for AI agents. We present a formal model to reason about the security and expressiveness of agent planners. Using this model, we characterize the class of properties enforceable by dynamic taint-tracking and construct a taxonomy of tasks to evaluate security and utility trade-offs of planner designs. Informed by this exploration, we present Fides, a planner that tracks confidentiality and integrity labels, deterministically enforces security policies, and introduces novel primitives for selectively hiding information. Its evaluation in AgentDojo demonstrates that this approach enables us to complete a broad range of tasks with security guarantees. A tutorial to walk readers through the the concepts introduced in the paper can be found at https://github.com/microsoft/fides",
+    "published": "2025-05-29T16:50:41Z",
+    "scores": {
+      "venue": 0,
+      "citations": 2,
+      "github": 0,
+      "leaderboard": 0,
+      "total": 2
+    },
+    "signals": {
+      "s2_citationCount": 147,
+      "s2_venue": "arXiv.org",
+      "github": {
+        "found": true,
+        "stars": 120,
+        "pushed_at": "2025-05-30T16:17:47Z",
+        "repo": "microsoft/fides"
+      }
+    }
+  },
+  {
+    "title": "A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence",
+    "arxiv_id": "2507.21046",
+    "url": "http://arxiv.org/abs/2507.21046v4",
+    "authors": [
+      "Huan-ang Gao",
+      "Jiayi Geng",
+      "Wenyue Hua",
+      "Mengkang Hu",
+      "Xinzhe Juan",
+      "Hongzhang Liu",
+      "Shilong Liu",
+      "Jiahao Qiu",
+      "Xuan Qi",
+      "Yiran Wu",
+      "Hongru Wang",
+      "Han Xiao",
+      "Yuhang Zhou",
+      "Shaokun Zhang",
+      "Jiayi Zhang",
+      "Jinyu Xiang",
+      "Yixiong Fang",
+      "Qiwen Zhao",
+      "Dongrui Liu",
+      "Qihan Ren",
+      "Cheng Qian",
+      "Zhenhailong Wang",
+      "Minda Hu",
+      "Huazheng Wang",
+      "Qingyun Wu",
+      "Heng Ji",
+      "Mengdi Wang"
+    ],
+    "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities across diverse tasks but remain fundamentally static, unable to adapt their internal parameters to novel tasks, evolving knowledge domains, or dynamic interaction contexts. As LLMs are increasingly deployed in open-ended, interactive environments, this static nature has become a critical bottleneck, necessitating agents that can adaptively reason, act, and evolve in real time. This paradigm shift -- from scaling static models to developing self-evolving agents -- has sparked growing interest in architectures and methods enabling continual learning and adaptation from data, interactions, and experiences. This survey provides the first systematic and comprehensive review of self-evolving agents, organizing the field around three foundational dimensions: what, when, and how to evolve. We examine evolutionary mechanisms across agent components (e.g., models, memory, tools, architecture), categorize adaptation methods by stages (e.g., intra-test-time, inter-test-time), and analyze the algorithmic and architectural designs that guide evolutionary adaptation (e.g., scalar rewards, textual feedback, single-agent and multi-agent systems). Additionally, we analyze evaluation metrics and benchmarks tailored for self-evolving agents, highlight applications in domains such as coding, education, and healthcare, and identify critical challenges and research directions in safety, scalability, and co-evolutionary dynamics. By providing a structured framework for understanding and designing self-evolving agents, this survey establishes a roadmap for advancing more adaptive, robust, and versatile agentic systems in both research and real-world deployments, and ultimately sheds light on the realization of Artificial Super Intelligence (ASI) where agents evolve autonomously and perform beyond human-level intelligence across tasks.",
+    "published": "2025-07-28T17:59:05Z",
+    "scores": {
+      "venue": 0,
+      "citations": 2,
+      "github": 0,
+      "leaderboard": 0,
+      "total": 2
+    },
+    "signals": {
+      "s2_citationCount": 146,
+      "s2_venue": "",
+      "github": {
+        "found": false,
+        "stars": 0,
+        "pushed_at": "",
+        "repo": ""
+      }
+    }
+  },
+  {
+    "title": "InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners",
+    "arxiv_id": "2504.14239",
+    "url": "http://arxiv.org/abs/2504.14239v1",
+    "authors": [
+      "Yuhang Liu",
+      "Pengxiang Li",
+      "Congkai Xie",
+      "Xavier Hu",
+      "Xiaotian Han",
+      "Shengyu Zhang",
+      "Hongxia Yang",
+      "Fei Wu"
+    ],
+    "abstract": "Multimodal Large Language Models (MLLMs) have powered Graphical User Interface (GUI) Agents, showing promise in automating tasks on computing devices. Recent works have begun exploring reasoning in GUI tasks with encouraging results. However, many current approaches rely on manually designed reasoning templates, which may result in reasoning that is not sufficiently robust and adaptive for complex GUI environments. Meanwhile, some existing agents continue to operate as Reactive Actors, relying primarily on implicit reasoning that may lack sufficient depth for GUI tasks demanding planning and error recovery. We argue that advancing these agents requires a shift from reactive acting towards acting based on deliberate reasoning. To facilitate this transformation, we introduce InfiGUI-R1, an MLLM-based GUI agent developed through our Actor2Reasoner framework, a reasoning-centric, two-stage training approach designed to progressively evolve agents from Reactive Actors to Deliberative Reasoners. The first stage, Reasoning Injection, focuses on establishing a basic reasoner. We employ Spatial Reasoning Distillation to transfer cross-modal spatial reasoning capabilities from teacher models to MLLMs through trajectories with explicit reasoning steps, enabling models to integrate GUI visual-spatial information with logical reasoning before action generation. The second stage, Deliberation Enhancement, refines the basic reasoner into a deliberative one using Reinforcement Learning. This stage introduces two approaches: Sub-goal Guidance, which rewards models for generating accurate intermediate sub-goals, and Error Recovery Scenario Construction, which creates failure-and-recovery training scenarios from identified prone-to-error steps. Experimental results show InfiGUI-R1 achieves strong performance in GUI grounding and trajectory tasks. Resources at https://github.com/Reallm-Labs/InfiGUI-R1.",
+    "published": "2025-04-19T09:25:55Z",
+    "scores": {
+      "venue": 0,
+      "citations": 2,
+      "github": 0,
+      "leaderboard": 0,
+      "total": 2
+    },
+    "signals": {
+      "s2_citationCount": 143,
+      "s2_venue": "arXiv.org",
+      "github": {
+        "found": true,
+        "stars": 66,
+        "pushed_at": "2025-12-04T13:36:09Z",
+        "repo": "Reallm-Labs/InfiGUI-R1"
+      }
+    }
+  },
+  {
+    "title": "Deep Research Agents: A Systematic Examination And Roadmap",
+    "arxiv_id": "2506.18096",
+    "url": "http://arxiv.org/abs/2506.18096v2",
+    "authors": [
+      "Yuxuan Huang",
+      "Yihang Chen",
+      "Haozheng Zhang",
+      "Kang Li",
+      "Huichi Zhou",
+      "Meng Fang",
+      "Linyi Yang",
+      "Xiaoguang Li",
+      "Lifeng Shang",
+      "Songcen Xu",
+      "Jianye Hao",
+      "Kun Shao",
+      "Jun Wang"
+    ],
+    "abstract": "The rapid progress of Large Language Models (LLMs) has given rise to a new category of autonomous AI systems, referred to as Deep Research (DR) agents. These agents are designed to tackle complex, multi-turn informational research tasks by leveraging a combination of dynamic reasoning, adaptive long-horizon planning, multi-hop information retrieval, iterative tool use, and the generation of structured analytical reports. In this paper, we conduct a detailed analysis of the foundational technologies and architectural components that constitute Deep Research agents. We begin by reviewing information acquisition strategies, contrasting API-based retrieval methods with browser-based exploration. We then examine modular tool-use frameworks, including code execution, multimodal input processing, and the integration of Model Context Protocols (MCPs) to support extensibility and ecosystem development. To systematize existing approaches, we propose a taxonomy that differentiates between static and dynamic workflows, and we classify agent architectures based on planning strategies and agent composition, including single-agent and multi-agent configurations. We also provide a critical evaluation of current benchmarks, highlighting key limitations such as restricted access to external knowledge, sequential execution inefficiencies, and misalignment between evaluation metrics and the practical objectives of DR agents. Finally, we outline open challenges and promising directions for future research. A curated and continuously updated repository of DR agent research is available at: {https://github.com/ai-agents-2030/awesome-deep-research-agent}.",
+    "published": "2025-06-22T16:52:48Z",
+    "scores": {
+      "venue": 0,
+      "citations": 2,
+      "github": 0,
+      "leaderboard": 0,
+      "total": 2
+    },
+    "signals": {
+      "s2_citationCount": 143,
+      "s2_venue": "arXiv.org",
+      "github": {
+        "found": true,
+        "stars": 640,
+        "pushed_at": "2025-09-18T18:48:52Z",
+        "repo": "ai-agents-2030/awesome-deep-research-agent"
+      }
+    }
+  },
+  {
+    "title": "SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents",
+    "arxiv_id": "2505.20411",
+    "url": "http://arxiv.org/abs/2505.20411v2",
+    "authors": [
+      "Ibragim Badertdinov",
+      "Alexander Golubev",
+      "Maksim Nekrashevich",
+      "Anton Shevtsov",
+      "Simon Karasik",
+      "Andrei Andriushchenko",
+      "Maria Trofimova",
+      "Daria Litvintseva",
+      "Boris Yangel"
+    ],
+    "abstract": "LLM-based agents have shown promising capabilities in a growing range of software engineering (SWE) tasks. However, advancing this field faces two critical challenges. First, high-quality training data is scarce, especially data that reflects real-world SWE scenarios, where agents must interact with development environments, execute code and adapt behavior based on the outcomes of their actions. Existing datasets are either limited to one-shot code generation or comprise small, manually curated collections of interactive tasks, lacking both scale and diversity. Second, the lack of fresh interactive SWE tasks affects evaluation of rapidly improving models, as static benchmarks quickly become outdated due to contamination issues. To address these limitations, we introduce a novel, automated, and scalable pipeline to continuously extract real-world interactive SWE tasks from diverse GitHub repositories. Using this pipeline, we construct SWE-rebench, a public dataset comprising over 21,000 interactive Python-based SWE tasks, suitable for reinforcement learning of SWE agents at scale. Additionally, we use continuous supply of fresh tasks collected using SWE-rebench methodology to build a contamination-free benchmark for agentic software engineering. We compare results of various LLMs on this benchmark to results on SWE-bench Verified and show that performance of some language models might be inflated due to contamination issues.",
+    "published": "2025-05-26T18:01:00Z",
+    "scores": {
+      "venue": 0,
+      "citations": 2,
+      "github": 0,
+      "leaderboard": 0,
+      "total": 2
+    },
+    "signals": {
+      "s2_citationCount": 142,
+      "s2_venue": "Neural Information Processing Systems",
       "github": {
         "found": false,
         "stars": 0,

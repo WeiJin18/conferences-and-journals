@@ -5,7 +5,8 @@
 # 内容：门控通过后依次运行 crawl_arxiv_window / crawl_top_conferences / crawl_nature，
 #       再跑 paper_quality_filter 评分归档与 dedupe_and_categorize 重建统一索引。
 # 行为：门控规则 = 距上次抓取提交 ≥45 天，或手动 workflow_dispatch 触发；
-#       任一抓取步骤失败即中止（失败要响），避免半截数据被提交。
+#       三大顶会以 Semantic Scholar 为主渠道，OpenReview 仅可选补充且失败不阻塞；
+#       主抓取失败仍中止，避免半截数据被提交。
 # 存储：结果写入 agent_and_harness/、combinatorial_optimization/、NeurIPS|ICML|ICLR/、Nature/、_index/。
 # 提交：有变更才提交推送，提交信息带运行日期，作者为 github-actions bot。
 # 依赖：actions/checkout + 内置 Python 3.11 + requests + beautifulsoup4。
@@ -64,8 +65,9 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         run: python code/crawl_arxiv_window.py
 
-      - name: Crawl NeurIPS/ICML/ICLR via OpenReview
+      - name: Crawl NeurIPS/ICML/ICLR via Semantic Scholar
         if: steps.gate.outputs.run == 'true'
+        continue-on-error: true
         run: python code/crawl_top_conferences.py
 
       - name: Crawl Nature & NMI via Crossref

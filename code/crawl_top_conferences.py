@@ -42,6 +42,16 @@ WINDOW_TOLERANCE_DAYS = 30 # 窗口起点容差，避免边界届次被误排除
 OPENREVIEW_API = "https://api2.openreview.net/notes"
 OR_PAGE_SIZE = 1000
 OR_INTERVAL = 1.0
+S2_SEARCH_URL = "https://api.semanticscholar.org/graph/v1/paper/search"
+S2_PAGE_SIZE = 100
+S2_INTERVAL = 1.2
+S2_MAX_RETRIES = 5
+
+VENUE_ALIASES = {
+    "NeurIPS": ("neurips", "advances in neural information processing systems"),
+    "ICML": ("icml", "international conference on machine learning"),
+    "ICLR": ("iclr", "international conference on learning representations"),
+}
 
 # 领域关键词表（与 code/crawl_neurips.py 的 FIELDS 保持一致）
 FIELDS = {
@@ -76,9 +86,9 @@ CO_RE = re.compile(
     re.IGNORECASE,
 )
 
-S2_SEARCH_URL = "https://api.semanticscholar.org/graph/v1/paper/search"
-S2_INTERVAL = 1.2
+S2_FIELDS = "title,authors,abstract,url,year,citationCount,venue,publicationVenue"
 TITLE_MATCH_THRESHOLD = 0.85  # S2 返回标题与本地的相似度下限，防撞车
+S2_QUERY_TERMS: tuple[str, ...] = ()
 
 # ================================================================
 
@@ -94,6 +104,7 @@ def conferences_in_window(now: datetime) -> list[dict[str, Any]]:
     start = now - timedelta(days=WINDOW_DAYS + WINDOW_TOLERANCE_DAYS)
     result = []
     for conf in CONFERENCES:
+        # Include every calendar year touched by the time window; the date check below filters boundary years.
         for year in range(start.year, now.year + 1):
             conf_date = datetime(year, conf["month"], 15, tzinfo=timezone.utc)
             if start <= conf_date <= now:
@@ -103,6 +114,83 @@ def conferences_in_window(now: datetime) -> list[dict[str, Any]]:
     if not result:
         raise RuntimeError(f"窗口 [{start.date()} ~ {now.date()}] 内没有会议届次")
     return result
+
+
+def _s2_authors(item: dict[str, Any]) -> list[str]:
+    return [str(author.get("name", "")).strip() for author in item.get("authors") or [] if author.get("name")]
+
+
+def _venue_matches(venue: str, item: dict[str, Any]) -> bool:
+    item_venue = str(item.get("venue") or "")
+    publication_venue = item.get("publicationVenue") or {}
+    venue_text = " ".join((item_venue, str(publication_venue.get("name") or ""))).lower()
+    return any(alias in venue_text for alias in VENUE_ALIASES[venue])
+
+
+def _s2_get(session: requests.Session, params: dict[str, Any]) -> dict[str, Any]:
+    for attempt in range(S2_MAX_RETRIES):
+        try:
+            resp = session.get(S2_SEARCH_URL, params=params, timeout=60)
+            if resp.status_code == 429:
+                retry_after = float(resp.headers.get("Retry-After", 2 ** attempt))
+                wait = min(retry_after, 60.0)
+                print(f"[warn] S2 429，等待 {wait:.1f}s 后重试", file=sys.stderr)
+                time.sleep(wait)
+                continue
+            resp.raise_for_status()
+            return resp.json()
+        except (requests.RequestException, ValueError) as exc:
+            if attempt == S2_MAX_RETRIES - 1:
+                raise RuntimeError(f"Semantic Scholar 请求失败: {exc}") from exc
+            wait = min(2 ** attempt, 30)
+            print(f"[warn] S2 请求失败，{wait}s 后重试: {exc}", file=sys.stderr)
+            time.sleep(wait)
+    raise RuntimeError("Semantic Scholar 请求重试耗尽")
+
+
+def semantic_scholar_fetch(venue: str, year: int, max_notes: int) -> list[dict[str, Any]]:
+    """按 venue/year 分页查询 S2，并用会议别名严格校验来源。"""
+    session = requests.Session()
+    results: list[dict[str, Any]] = []
+    seen_titles: set[str] = set()
+    for query in (f"{venue} {year}", *S2_QUERY_TERMS):
+        offset = 0
+        while len(results) < max_notes:
+            payload = _s2_get(session, {
+                "query": query,
+                "limit": S2_PAGE_SIZE,
+                "offset": offset,
+                "year": str(year),
+                "venue": venue,
+                "fields": S2_FIELDS,
+            })
+            batch = payload.get("data") or []
+            for item in batch:
+                if item.get("year") != year or not _venue_matches(venue, item):
+                    continue
+                title = str(item.get("title") or "").strip()
+                normalized = normalize_title(title)
+                if not title or normalized in seen_titles:
+                    continue
+                seen_titles.add(normalized)
+                results.append({
+                    "title": title,
+                    "authors": _s2_authors(item),
+                    "abstract": str(item.get("abstract") or "").strip(),
+                    "url": str(item.get("url") or ""),
+                    "year": year,
+                    "citation_count": int(item.get("citationCount", 0) or 0),
+                    "venue": venue,
+                    "source": "Semantic Scholar API (venue/year search; may be incomplete)",
+                    "category": "",
+                })
+                if len(results) >= max_notes:
+                    return results
+            if len(batch) < S2_PAGE_SIZE:
+                break
+            offset += len(batch)
+            time.sleep(S2_INTERVAL)
+    return results
 
 
 def openreview_fetch_all(venueid: str, max_notes: int) -> list[dict[str, Any]]:
@@ -206,7 +294,7 @@ def write_output(path: Path, papers: list[dict[str, Any]], venue: str, year: int
         return
     path.parent.mkdir(parents=True, exist_ok=True)
     payload = {
-        "source": "OpenReview API",
+        "source": sorted({p.get("source", "unknown") for p in papers}),
         "venue": venue,
         "year": year,
         "fetched_at": datetime.now(timezone.utc).isoformat(),
@@ -223,6 +311,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-notes", type=int, default=6000, help="每届会议拉取上限")
     parser.add_argument("--fast", action="store_true", help="跳过 S2 引用查询（快速验证）")
     parser.add_argument("--dry-run", action="store_true", help="只统计不落盘")
+    parser.add_argument("--openreview", action="store_true", help="尝试用 OpenReview 补充；403/失败仅告警，不影响 S2 主流程")
     return parser.parse_args()
 
 
@@ -236,11 +325,21 @@ def main() -> None:
     for conf in confs:
         venue, year = conf["venue"], conf["year"]
         venueid = conf["venueid_tpl"].format(year=year)
-        notes = openreview_fetch_all(venueid, args.max_notes)
+        notes = semantic_scholar_fetch(venue, year, args.max_notes)
+        if not notes:
+            print(f"[warn] S2 未返回 {venue} {year}；主渠道无可用结果，该届跳过", file=sys.stderr)
+        if args.openreview:
+            try:
+                supplement = openreview_fetch_all(venueid, args.max_notes)
+                known = {normalize_title(note["title"]) for note in notes}
+                notes.extend(note for note in supplement if normalize_title(note["title"]) not in known)
+                print(f"[or] {venue} {year} 新增 {len(notes) - len(known)} 篇", flush=True)
+            except Exception as exc:
+                print(f"[warn] OpenReview 补充失败（不影响 S2 主渠道）{venueid}: {exc}", file=sys.stderr)
         for note in notes:
             note["year"] = year
             note["venue"] = venue
-            note["source"] = "OpenReview API"
+            note.setdefault("source", "OpenReview API")
             note["category"] = ""
         pools = classify(notes)
         print(f"[{venue} {year}] 总 {len(notes)}，agent {len(pools['agent'])}，co {len(pools['co'])}")
@@ -248,8 +347,9 @@ def main() -> None:
         if not args.fast:
             for pool in pools.values():
                 for note in pool:
-                    note["citation_count"] = fetch_citation_by_title(note["title"])
-                    time.sleep(S2_INTERVAL)
+                    if not note.get("citation_count"):
+                        note["citation_count"] = fetch_citation_by_title(note["title"])
+                        time.sleep(S2_INTERVAL)
 
         if args.dry_run:
             for note in take_top(pools["agent"], 3):

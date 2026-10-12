@@ -1,1 +1,1039 @@
-[]
+[
+  {
+    "title": "Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization",
+    "authors": [
+      "Minh Hieu Ha",
+      "Hung Phan",
+      "Tung Duy Doan",
+      "Tung Dao",
+      "Dao Tran",
+      "Huynh Thi Thanh Binh"
+    ],
+    "abstract": "Multi-objective combinatorial optimization problems (MOCOP) frequently arise in practical applications that require the simultaneous optimization of conflicting objectives. Although traditional evolutionary algorithms can be effective, they typically depend on domain knowledge and repeated parameter tuning, limiting flexibility when applied to unseen MOCOP instances. Recently, integration of Large Language Models (LLMs) into evolutionary computation has opened new avenues for automatic heuristic generation, using their advanced language understanding and code synthesis capabilities. Nevertheless, most existing approaches predominantly focus on single-objective tasks, often neglecting key considerations such as runtime efficiency and heuristic diversity in multi-objective settings. To bridge this gap, we introduce Multi-heuristics for MOCOP via Pareto-Grid-guided Evolution of LLMs (MPaGE), a novel enhancement of the Simple Evolutionary Multiobjective Optimization (SEMO) framework that leverages LLMs and Pareto Front Grid (PFG) technique. By partitioning the objective space into grids and retaining top-performing candidates to guide heuristic generation, MPaGE utilizes LLMs to prioritize heuristics with semantically distinct logical structures during variation, thus promoting diversity and mitigating redundancy within the population. Through extensive evaluations, MPaGE demonstrates superior performance over existing LLM-based frameworks, and achieves competitive results to traditional Multi-objective evolutionary algorithms (MOEAs), with significantly faster runtime. Our code is available at: https://github.com/langkhachhoha/MPaGE.",
+    "url": "http://arxiv.org/abs/2507.20923v3",
+    "year": 2025,
+    "venue": "agent_and_harness",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": true,
+    "is_co": true,
+    "citation_count": 9,
+    "s2_venue": "AAAI Conference on Artificial Intelligence"
+  },
+  {
+    "title": "LLM-QUBO: An End-to-End Framework for Automated QUBO Transformation from Natural Language Problem Descriptions",
+    "authors": [
+      "Huixiang Zhang",
+      "Mahzabeen Emu",
+      "Salimur Choudhury"
+    ],
+    "abstract": "Quantum annealing offers a promising paradigm for solving NP-hard combinatorial optimization problems, but its practical application is severely hindered by two challenges: the complex, manual process of translating problem descriptions into the requisite Quadratic Unconstrained Binary Optimization (QUBO) format and the scalability limitations of current quantum hardware. To address these obstacles, we propose a novel end-to-end framework, LLM-QUBO, that automates this entire formulation-to-solution pipeline. Our system leverages a Large Language Model (LLM) to parse natural language, automatically generating a structured mathematical representation. To overcome hardware limitations, we integrate a hybrid quantum-classical Benders' decomposition method. This approach partitions the problem, compiling the combinatorial complex master problem into a compact QUBO format, while delegating linearly structured sub-problems to classical solvers. The correctness of the generated QUBO and the scalability of the hybrid approach are validated using classical solvers, establishing a robust performance baseline and demonstrating the framework's readiness for quantum hardware. Our primary contribution is a synergistic computing paradigm that bridges classical AI and quantum computing, addressing key challenges in the practical application of optimization problem. This automated workflow significantly reduces the barrier to entry, providing a viable pathway to transform quantum devices into accessible accelerators for large-scale, real-world optimization challenges.",
+    "url": "http://arxiv.org/abs/2509.00099v1",
+    "year": 2025,
+    "venue": "agent_and_harness",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": true,
+    "is_co": true,
+    "citation_count": 6,
+    "s2_venue": "AAAI Fall Symposia"
+  },
+  {
+    "title": "Stable Voting and the Splitting of Cycles",
+    "authors": [
+      "Wesley H. Holliday",
+      "Milan Mossé",
+      "Chase Norman",
+      "Eric Pacuit",
+      "Cynthia Wang"
+    ],
+    "abstract": "Algorithms for resolving majority cycles in preference aggregation have been studied extensively in computational social choice. Several sophisticated cycle-resolving methods, including Tideman's Ranked Pairs, Schulze's Beat Path, and Heitzig's River, are refinements of the Split Cycle (SC) method that resolves majority cycles by discarding the weakest majority victories in each cycle. Recently, Holliday and Pacuit proposed a new refinement of Split Cycle, dubbed Stable Voting, and a simplification thereof, called Simple Stable Voting (SSV). They conjectured that SSV is a refinement of SC whenever no two majority victories are of the same size. In this paper, we prove the conjecture up to 6 alternatives and refute it for more than 6 alternatives. While our proof of the conjecture for up to 5 alternatives uses traditional mathematical reasoning, our 6-alternative proof and 7-alternative counterexample were obtained with the use of SAT solving. The SAT encoding underlying this proof and counterexample is applicable far beyond SC and SSV: it can be used to test properties of any voting method whose choice of winners depends only on the ordering of margins of victory by size.",
+    "url": "http://arxiv.org/abs/2512.00616v2",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "AAAI Conference on Artificial Intelligence"
+  },
+  {
+    "title": "PEOAT: Personalization-Guided Evolutionary Question Assembly for One-Shot Adaptive Testing",
+    "authors": [
+      "Xiaoshan Yu",
+      "Ziwei Huang",
+      "Shangshang Yang",
+      "Ziwen Wang",
+      "Haiping Ma",
+      "Xingyi Zhang"
+    ],
+    "abstract": "With the rapid advancement of intelligent education, Computerized Adaptive Testing (CAT) has attracted increasing attention by integrating educational psychology with deep learning technologies. Unlike traditional paper-and-pencil testing, CAT aims to efficiently and accurately assess examinee abilities by adaptively selecting the most suitable items during the assessment process. However, its real-time and sequential nature presents limitations in practical scenarios, particularly in large-scale assessments where interaction costs are high, or in sensitive domains such as psychological evaluations where minimizing noise and interference is essential. These challenges constrain the applicability of conventional CAT methods in time-sensitive or resourceconstrained environments. To this end, we first introduce a novel task called one-shot adaptive testing (OAT), which aims to select a fixed set of optimal items for each test-taker in a one-time selection. Meanwhile, we propose PEOAT, a Personalization-guided Evolutionary question assembly framework for One-shot Adaptive Testing from the perspective of combinatorial optimization. Specifically, we began by designing a personalization-aware initialization strategy that integrates differences between examinee ability and exercise difficulty, using multi-strategy sampling to construct a diverse and informative initial population. Building on this, we proposed a cognitive-enhanced evolutionary framework incorporating schema-preserving crossover and cognitively guided mutation to enable efficient exploration through informative signals. To maintain diversity without compromising fitness, we further introduced a diversity-aware environmental selection mechanism. The effectiveness of PEOAT is validated through extensive experiments on two datasets, complemented by case studies that uncovered valuable insights.",
+    "url": "http://arxiv.org/abs/2512.00439v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "AAAI Conference on Artificial Intelligence"
+  },
+  {
+    "title": "On the Dataless Training of Neural Networks",
+    "authors": [
+      "Alvaro Velasquez",
+      "Susmit Jha",
+      "Ismail R. Alkhouri"
+    ],
+    "abstract": "This paper surveys studies on the use of neural networks for optimization in the training-data-free setting. Specifically, we examine the dataless application of neural network architectures in optimization by re-parameterizing problems using fully connected (or MLP), convolutional, graph, and quadratic neural networks. Although MLPs have been used to solve linear programs a few decades ago, this approach has recently gained increasing attention due to its promising results across diverse applications, including those based on combinatorial optimization, inverse problems, and partial differential equations. The motivation for this setting stems from two key (possibly over-lapping) factors: (i) data-driven learning approaches are still underdeveloped and have yet to demonstrate strong results, as seen in combinatorial optimization, and (ii) the availability of training data is inherently limited, such as in medical image reconstruction and other scientific applications. In this paper, we define the dataless setting and categorize it into two variants based on how a problem instance -- defined by a single datum -- is encoded onto the neural network: (i) architecture-agnostic methods and (ii) architecture-specific methods. Additionally, we discuss similarities and clarify distinctions between the dataless neural network (dNN) settings and related concepts such as zero-shot learning, one-shot learning, lifting in optimization, and over-parameterization.",
+    "url": "http://arxiv.org/abs/2510.25962v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 0,
+    "s2_venue": "AAAI Conference on Artificial Intelligence"
+  },
+  {
+    "title": "Linear Ordering Problem: Time for a Change",
+    "authors": [
+      "Fabrizio Fagiolo",
+      "Marco Baioletti",
+      "Valentino Santucci"
+    ],
+    "abstract": "The Linear Ordering Problem (LOP) is a fundamental combinatorial optimization problem with important applications in areas such as economics, social choice, and machine learning. Its most prominent use is the triangulation of economic input-output tables, which helps identify critical industries in an economy. Most existing algorithms have been evaluated on benchmarks derived from outdated macroeconomic data, which no longer reflect the structure of contemporary economies. Furthermore, LOP instances often exhibit many distinct global optima that can differ substantially from one another, creating challenges for applications that rely on a single solution. To address these limitations, we introduce a novel benchmark suite derived from up-to-date real-world economic data and an algorithmic scheme that leverages state-of-the-art LOP metaheuristics to generate diverse sets of high-quality solutions, together with metrics for assessing both quality and diversity. Experiments were conducted to report results on the proposed benchmark suite under both the traditional single-solution setting and the newly introduced multi-solution scenario",
+    "url": "http://arxiv.org/abs/2605.31051v2",
+    "year": 2026,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 0,
+    "s2_venue": "Parallel Problem Solving from Nature"
+  },
+  {
+    "title": "Efficient learning by implicit exploration in bandit problems with side observations",
+    "authors": [
+      "Tomas Kocak",
+      "Gergely Neu",
+      "Michal Valko",
+      "Remi Munos"
+    ],
+    "abstract": "We consider online learning problems under a partial observability model capturing situations where the information conveyed to the learner is between full information and bandit feedback. In the simplest variant, we assume that in addition to its own loss, the learner also gets to observe losses of some other actions. The revealed losses depend on the learner's action and a directed observation system chosen by the environment. For this setting, we propose the first algorithm that enjoys near-optimal regret guarantees without having to know the observation system before selecting its actions. Along similar lines, we also define a new partial information setting that models online combinatorial optimization problems where the feedback received by the learner is between semi-bandit and full feedback. As the predictions of our first algorithm cannot be always computed efficiently in this setting, we propose another algorithm with similar properties and with the benefit of always being computationally efficient, at the price of a slightly more complicated tuning mechanism. Both algorithms rely on a novel exploration strategy called implicit exploration, which is shown to be more efficient both computationally and information-theoretically than previously studied exploration strategies for the problem.",
+    "url": "http://arxiv.org/abs/2604.24555v1",
+    "year": 2026,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 148,
+    "s2_venue": "Neural Information Processing Systems"
+  },
+  {
+    "title": "Learning for routing: A guided review of recent developments and future directions",
+    "authors": [
+      "Fangting Zhou",
+      "Attila Lischka",
+      "Balazs Kulcsar",
+      "Jiaming Wu",
+      "Morteza Haghir Chehreghani",
+      "Gilbert Laporte"
+    ],
+    "abstract": "This paper reviews the current progress in applying machine learning (ML) tools to solve NP-hard combinatorial optimization problems, with a focus on routing problems such as the traveling salesman problem (TSP) and the vehicle routing problem (VRP). Due to the inherent complexity of these problems, exact algorithms often require excessive computational time to find optimal solutions, while heuristics can only provide approximate solutions without guaranteeing optimality. With the recent success of machine learning models, there is a growing trend in proposing and implementing diverse ML techniques to enhance the resolution of these challenging routing problems. We propose a taxonomy categorizing ML-based routing methods into construction-based and improvement-based approaches, highlighting their applicability to various problem characteristics. This review aims to integrate traditional OR methods with state-of-the-art ML techniques, providing a structured framework to guide future research and address emerging VRP variants.",
+    "url": "http://arxiv.org/abs/2507.00218v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 30,
+    "s2_venue": "Transportation Research Part E: Logistics and Transportation Review"
+  },
+  {
+    "title": "Generalizable Heuristic Generation Through LLMs with Meta-Optimization",
+    "authors": [
+      "Yiding Shi",
+      "Jianan Zhou",
+      "Wen Song",
+      "Jieyi Bi",
+      "Yaoxin Wu",
+      "Zhiguang Cao",
+      "Jie Zhang"
+    ],
+    "abstract": "Heuristic design with large language models (LLMs) has emerged as a promising approach for tackling combinatorial optimization problems (COPs). However, existing approaches often rely on manually predefined evolutionary computation (EC) heuristic-optimizers and single-task training schemes, which may constrain the exploration of diverse heuristic algorithms and hinder the generalization of the resulting heuristics. To address these issues, we propose Meta-Optimization of Heuristics (MoH), a novel framework that operates at the optimizer level, discovering effective heuristic-optimizers through the principle of meta-learning. Specifically, MoH leverages LLMs to iteratively refine a meta-optimizer that autonomously constructs diverse heuristic-optimizers through (self-)invocation, thereby eliminating the reliance on a predefined EC heuristic-optimizer. These constructed heuristic-optimizers subsequently evolve heuristics for downstream tasks, enabling broader heuristic exploration. Moreover, MoH employs a multi-task training scheme to promote its generalization capability. Experiments on classic COPs demonstrate that MoH constructs an effective and interpretable meta-optimizer, achieving state-of-the-art performance across various downstream tasks, particularly in cross-size settings. Our code is available at: https://github.com/yiding-s/MoH.",
+    "url": "http://arxiv.org/abs/2505.20881v2",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 16,
+    "s2_venue": ""
+  },
+  {
+    "title": "URS: A Unified Neural Routing Solver for Cross-Problem Zero-Shot Generalization",
+    "authors": [
+      "Changliang Zhou",
+      "Canhong Yu",
+      "Shunyu Yao",
+      "Xi Lin",
+      "Zhenkun Wang",
+      "Yu Zhou",
+      "Qingfu Zhang"
+    ],
+    "abstract": "Multi-task neural routing solvers have emerged as a promising paradigm for their ability to solve multiple vehicle routing problems (VRPs) using a single model. However, existing neural solvers typically rely on predefined problem constraints or require per-problem fine-tuning, which substantially limits their zero-shot generalization ability to unseen VRP variants. To address this critical bottleneck, we propose URS, a unified neural routing solver that achieves zero-shot generalization across a wide range of unseen VRPs with a single model. We propose a unified data representation (UDR) that replaces problem enumeration with data unification, thereby broadening the problem coverage and reducing reliance on domain expertise. In addition, we introduce a mixed bias module (MBM) during encoding to improve node embeddings, which efficiently captures multiple priors inherent to various problems. On top of the UDR, we develop a problem-conditioned parameter generator to further improve zero-shot generalization. Extensive experiments show that URS consistently produces high-quality solutions for 110 VRP variants (including 99 unseen variants) while demonstrating impressive scalability to large-scale instances with up to 7000 nodes. To the best of our knowledge, URS is the first neural solver to handle over 100 VRP variants with a single model. Our code is available at https://github.com/CIAM-Group/URS.",
+    "url": "http://arxiv.org/abs/2509.23413v3",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 14,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees",
+    "authors": [
+      "Fu Luo",
+      "Yaoxin Wu",
+      "Zhi Zheng",
+      "Zhenkun Wang"
+    ],
+    "abstract": "Recent neural combinatorial optimization (NCO) methods have shown promising problem-solving ability without requiring domain-specific expertise. Most existing NCO methods use training and testing data with a fixed constraint value and lack research on the effect of constraint tightness on the performance of NCO methods. This paper takes the capacity-constrained vehicle routing problem (CVRP) as an example to empirically analyze the NCO performance under different tightness degrees of the capacity constraint. Our analysis reveals that existing NCO methods overfit the capacity constraint, and they can only perform satisfactorily on a small range of the constraint values but poorly on other values. To tackle this drawback of existing NCO methods, we develop an efficient training scheme that explicitly considers varying degrees of constraint tightness and proposes a multi-expert module to learn a generally adaptable solving strategy. Experimental results show that the proposed method can effectively overcome the overfitting issue, demonstrating superior performances on the CVRP and CVRP with time windows (CVRPTW) with various constraint tightness degrees.",
+    "url": "http://arxiv.org/abs/2505.24627v3",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 12,
+    "s2_venue": "Neural Information Processing Systems"
+  },
+  {
+    "title": "EFormer: An Effective Edge-based Transformer for Vehicle Routing Problems",
+    "authors": [
+      "Dian Meng",
+      "Zhiguang Cao",
+      "Yaoxin Wu",
+      "Yaqing Hou",
+      "Hongwei Ge",
+      "Qiang Zhang"
+    ],
+    "abstract": "Recent neural heuristics for the Vehicle Routing Problem (VRP) primarily rely on node coordinates as input, which may be less effective in practical scenarios where real cost metrics-such as edge-based distances-are more relevant. To address this limitation, we introduce EFormer, an Edge-based Transformer model that uses edge as the sole input for VRPs. Our approach employs a precoder module with a mixed-score attention mechanism to convert edge information into temporary node embeddings. We also present a parallel encoding strategy characterized by a graph encoder and a node encoder, each responsible for processing graph and node embeddings in distinct feature spaces, respectively. This design yields a more comprehensive representation of the global relationships among edges. In the decoding phase, parallel context embedding and multi-query integration are used to compute separate attention mechanisms over the two encoded embeddings, facilitating efficient path construction. We train EFormer using reinforcement learning in an autoregressive manner. Extensive experiments on the Traveling Salesman Problem (TSP) and Capacitated Vehicle Routing Problem (CVRP) reveal that EFormer outperforms established baselines on synthetic datasets, including large-scale and diverse distributions. Moreover, EFormer demonstrates strong generalization on real-world instances from TSPLib and CVRPLib. These findings confirm the effectiveness of EFormer's core design in solving VRPs.",
+    "url": "http://arxiv.org/abs/2506.16428v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 10,
+    "s2_venue": "International Joint Conference on Artificial Intelligence"
+  },
+  {
+    "title": "Reinforcement Learning for Search Tree Size Minimization in Constraint Programming: New Results on Scheduling Benchmarks",
+    "authors": [
+      "Vilém Heinz",
+      "Petr Vilím",
+      "Zdeněk Hanzálek"
+    ],
+    "abstract": "Failure-Directed Search (FDS) is a significant complete generic search algorithm used in Constraint Programming (CP) to efficiently explore the search space, proven particularly effective on scheduling problems. This paper analyzes FDS's properties, showing that minimizing the size of its search tree guided by ranked branching decisions is closely related to the Multi-armed bandit (MAB) problem. Building on this insight, MAB reinforcement learning algorithms are applied to FDS, extended with problem-specific refinements and parameter tuning, and evaluated on the two most fundamental scheduling problems, the Job Shop Scheduling Problem (JSSP) and Resource-Constrained Project Scheduling Problem (RCPSP). The resulting enhanced FDS, using the best extended MAB algorithm and configuration, performs 1.7 times faster on the JSSP and 2.1 times faster on the RCPSP benchmarks compared to the original implementation in a new solver called OptalCP, while also being 3.5 times faster on the JSSP and 2.1 times faster on the RCPSP benchmarks than the current state-of-the-art FDS algorithm in IBM CP Optimizer 22.1. Furthermore, using only a 900-second time limit per instance, the enhanced FDS improved the existing state-of-the-art lower bounds of 78 of 84 JSSP and 226 of 393 RCPSP standard open benchmark instances while also completely closing a few of them.",
+    "url": "http://arxiv.org/abs/2508.20056v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 10,
+    "s2_venue": "Computers & industrial engineering"
+  },
+  {
+    "title": "QAOA Parameter Transferability for Maximum Independent Set using Graph Attention Networks",
+    "authors": [
+      "Hanjing Xu",
+      "Xiaoyuan Liu",
+      "Alex Pothen",
+      "Ilya Safro"
+    ],
+    "abstract": "The quantum approximate optimization algorithm (QAOA) is one of the promising variational approaches of quantum computing to solve combinatorial optimization problems. In QAOA, variational parameters need to be optimized by solving a series of nonlinear, nonconvex optimization programs. In this work, we propose a QAOA parameter transfer scheme using Graph Attention Networks (GAT) to solve Maximum Independent Set (MIS) problems. We prepare optimized parameters for graphs of 12 and 14 vertices and use GATs to transfer their parameters to larger graphs. Additionally, we design a hybrid distributed resource-aware algorithm for MIS (HyDRA-MIS), which decomposes large problems into smaller ones that can fit onto noisy intermediate-scale quantum (NISQ) computers. We integrate our GAT-based parameter transfer approach to HyDRA-MIS and demonstrate competitive results compared to KaMIS, a state-of-the-art classical MIS solver, on graphs with several thousands vertices.",
+    "url": "http://arxiv.org/abs/2504.21135v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 9,
+    "s2_venue": "IEEE Conference on High Performance Extreme Computing"
+  },
+  {
+    "title": "ORGEval: Graph-Theoretic Evaluation of LLMs in Optimization Modeling",
+    "authors": [
+      "Zhuohan Wang",
+      "Ziwei Zhu",
+      "Ziniu Li",
+      "Congliang Chen",
+      "Yizhou Han",
+      "Yufeng Lin",
+      "Zhihang Lin",
+      "Angyang Gu",
+      "Xinglin Hu",
+      "Ruoyu Sun",
+      "Tian Ding"
+    ],
+    "abstract": "Formulating optimization problems for industrial applications demands significant manual effort and domain expertise. While Large Language Models (LLMs) show promise in automating this process, evaluating their performance remains difficult due to the absence of robust metrics. Existing solver-based approaches often face inconsistency, infeasibility issues, and high computational costs. To address these issues, we propose ORGEval, a graph-theoretic evaluation framework for assessing LLMs' capabilities in formulating linear and mixed-integer linear programs. ORGEval represents optimization models as graphs, reducing equivalence detection to graph isomorphism testing. We identify and prove a sufficient condition, when the tested graphs are symmetric decomposable (SD), under which the Weisfeiler-Lehman (WL) test is guaranteed to correctly detect isomorphism. Building on this, ORGEval integrates a tailored variant of the WL-test with an SD detection algorithm to evaluate model equivalence. By focusing on structural equivalence rather than instance-level configurations, ORGEval is robust to numerical variations. Experimental results show that our method can successfully detect model equivalence and produce 100\\% consistent results across random parameter configurations, while significantly outperforming solver-based methods in runtime, especially on difficult problems. Leveraging ORGEval, we construct the Bench4Opt dataset and benchmark state-of-the-art LLMs on optimization modeling. Our results reveal that although optimization modeling remains challenging for all LLMs, DeepSeek-V3 and Claude-Opus-4 achieve the highest accuracies under direct prompting, outperforming even leading reasoning models.",
+    "url": "http://arxiv.org/abs/2510.27610v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 9,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Survey on Neural Routing Solvers",
+    "authors": [
+      "Yunpeng Ba",
+      "Xi Lin",
+      "Changliang Zhou",
+      "Ruihao Zheng",
+      "Zhenkun Wang",
+      "Xinyan Liang",
+      "Zhichao Lu",
+      "Jianyong Sun",
+      "Yuhua Qian",
+      "Qingfu Zhang"
+    ],
+    "abstract": "Neural routing solvers (NRSs) that leverage deep learning to tackle vehicle routing problems have demonstrated notable potential for practical applications. By learning implicit heuristic rules from data, NRSs replace the handcrafted counterparts in classic heuristic frameworks, thereby reducing reliance on costly manual design and trial-and-error adjustments. This survey makes two main contributions: (1) The heuristic nature of NRSs is highlighted, and existing NRSs are reviewed from the perspective of heuristics. A hierarchical taxonomy based on heuristic principles is further introduced. (2) A generalization-focused evaluation pipeline is proposed to address limitations of the conventional pipeline. Comparative benchmarking of representative NRSs across both pipelines uncovers a series of previously unreported gaps in current research.",
+    "url": "http://arxiv.org/abs/2602.21761v2",
+    "year": 2026,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 8,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "SVRPBench: A Realistic Benchmark for Stochastic Vehicle Routing Problem",
+    "authors": [
+      "Ahmed Heakl",
+      "Yahia Salaheldin Shaaban",
+      "Martin Takac",
+      "Salem Lahlou",
+      "Zangir Iklassov"
+    ],
+    "abstract": "Robust routing under uncertainty is central to real-world logistics, yet most benchmarks assume static, idealized settings. We present SVRPBench, the first open benchmark to capture high-fidelity stochastic dynamics in vehicle routing at urban scale. Spanning more than 500 instances with up to 1000 customers, it simulates realistic delivery conditions: time-dependent congestion, log-normal delays, probabilistic accidents, and empirically grounded time windows for residential and commercial clients. Our pipeline generates diverse, constraint-rich scenarios, including multi-depot and multi-vehicle setups. Benchmarking reveals that state-of-the-art RL solvers like POMO and AM degrade by over 20% under distributional shift, while classical and metaheuristic methods remain robust. To enable reproducible research, we release the dataset and evaluation suite. SVRPBench challenges the community to design solvers that generalize beyond synthetic assumptions and adapt to real-world uncertainty.",
+    "url": "http://arxiv.org/abs/2505.21887v2",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 7,
+    "s2_venue": "Neural Information Processing Systems"
+  },
+  {
+    "title": "Learning to Segment for Vehicle Routing Problems",
+    "authors": [
+      "Wenbin Ouyang",
+      "Sirui Li",
+      "Yining Ma",
+      "Cathy Wu"
+    ],
+    "abstract": "Iterative heuristics are widely recognized as state-of-the-art for Vehicle Routing Problems (VRPs). In this work, we exploit a critical observation: a large portion of the solution remains stable, i.e., unchanged across search iterations, causing redundant computations, especially for large-scale VRPs with long subtours. To address this, we pioneer the formal study of the First-Segment-Then-Aggregate (FSTA) decomposition technique to accelerate iterative solvers. FSTA preserves stable solution segments during the search, aggregates nodes within each segment into fixed hypernodes, and focuses the search only on unstable portions. Yet, a key challenge lies in identifying which segments should be aggregated. To this end, we introduce Learning-to-Segment (L2Seg), a novel neural framework to intelligently differentiate potentially stable and unstable portions for FSTA decomposition. We present three L2Seg variants: non-autoregressive (globally comprehensive but locally indiscriminate), autoregressive (locally refined but globally deficient), and their synergy. Empirical results on CVRP and VRPTW show that L2Seg accelerates state-of-the-art solvers by 2x to 7x. We further provide in-depth analysis showing why synergy achieves the best performance. Notably, L2Seg is compatible with traditional, learning-based, and hybrid solvers, while supporting various VRPs.",
+    "url": "http://arxiv.org/abs/2507.01037v2",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 7,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "A Branch-and-Price Algorithm for Fast and Equitable Last-Mile Relief Aid Distribution",
+    "authors": [
+      "Mahdi Mostajabdaveh",
+      "F. Sibel Salman",
+      "Walter J. Gutjahr"
+    ],
+    "abstract": "The distribution of relief supplies to shelters is a critical aspect of post-disaster humanitarian logistics. In major disasters, prepositioned supplies often fall short of meeting all demands. We address the problem of planning vehicle routes from a distribution center to shelters while allocating limited relief supplies. To balance efficiency and equity, we formulate a bi-objective problem: minimizing a Gini-index-based measure of inequity in unsatisfied demand for fair distribution and minimizing total travel time for timely delivery. We propose a Mixed Integer Programming (MIP) model and use the $ε$-constraint method to handle the bi-objective nature. By deriving mathematical properties of the optimal solution, we introduce valid inequalities and design an algorithm for optimal delivery allocations given feasible vehicle routes. A branch-and-price (B&P) algorithm is developed to solve the problem efficiently. Computational tests on realistic datasets from a past earthquake in Van, Turkey, and predicted data for Istanbul's Kartal region show that the B&P algorithm significantly outperforms commercial MIP solvers. Our bi-objective approach reduces aid distribution inequity by 34% without compromising efficiency. Results indicate that when time constraints are very loose or tight, lexicographic optimization prioritizing demand coverage over fairness is effective. For moderately restrictive time constraints, a balanced approach is essential to avoid inequitable outcomes.",
+    "url": "http://arxiv.org/abs/2512.19882v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 5,
+    "s2_venue": "European Journal of Operational Research"
+  },
+  {
+    "title": "Learning to Search for Vehicle Routing with Multiple Time Windows",
+    "authors": [
+      "Kuan Xu",
+      "Zhiguang Cao",
+      "Chenlong Zheng",
+      "Linong Liu"
+    ],
+    "abstract": "In this study, we propose a reinforcement learning-based adaptive variable neighborhood search (RL-AVNS) method designed for effectively solving the Vehicle Routing Problem with Multiple Time Windows (VRPMTW). Unlike traditional adaptive approaches that rely solely on historical operator performance, our method integrates a reinforcement learning framework to dynamically select neighborhood operators based on real-time solution states and learned experience. We introduce a fitness metric that quantifies customers' temporal flexibility to improve the shaking phase, and employ a transformer-based neural policy network to intelligently guide operator selection during the local search. Extensive computational experiments are conducted on realistic scenarios derived from the replenishment of unmanned vending machines, characterized by multiple clustered replenishment windows. Results demonstrate that RL-AVNS significantly outperforms traditional variable neighborhood search (VNS), adaptive VNS (AVNS), and state-of-the-art learning-based heuristics, achieving substantial improvements in solution quality and computational efficiency across various instance scales and time window complexities. Particularly notable is the algorithm's capability to generalize effectively to problem instances not encountered during training, underscoring its practical utility for complex logistics scenarios.",
+    "url": "http://arxiv.org/abs/2505.23098v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 4,
+    "s2_venue": "Computers & industrial engineering"
+  },
+  {
+    "title": "Efficient Neural Combinatorial Optimization Solver for the Min-max Heterogeneous Capacitated Vehicle Routing Problem",
+    "authors": [
+      "Xuan Wu",
+      "Di Wang",
+      "Chunguo Wu",
+      "Kaifang Qi",
+      "Chunyan Miao",
+      "Yubin Xiao",
+      "Jian Zhang",
+      "You Zhou"
+    ],
+    "abstract": "Numerous Neural Combinatorial Optimization (NCO) solvers have been proposed to address Vehicle Routing Problems (VRPs). However, most of these solvers focus exclusively on single-vehicle VRP variants, overlooking the more realistic min-max Heterogeneous Capacitated Vehicle Routing Problem (MMHCVRP), which involves multiple vehicles. Existing MMHCVRP solvers typically select a vehicle and its next node to visit at each decoding step, but often make myopic decoding decisions and overlook key properties of MMHCVRP, including local topological relationships, vehicle permutation invariance, and node symmetry, resulting in suboptimal performance. To better address these limitations, we propose ECHO, an efficient NCO solver. First, ECHO exploits the proposed dual-modality node encoder to capture local topological relationships among nodes. Subsequently, to mitigate myopic decisions, ECHO employs the proposed Parameter-Free Cross-Attention mechanism to prioritize the vehicle selected in the preceding decoding step. Finally, leveraging vehicle permutation invariance and node symmetry, we introduce a tailored data augment strategy for MMHCVRP to stabilize the Reinforcement Learning training process. To assess the performance of ECHO, we conduct extensive experiments. The experimental results demonstrate that ECHO outperforms state-of-the-art NCO solvers across varying numbers of vehicles and nodes, and exhibits well-performing generalization across both scales and distribution patterns. Finally, ablation studies validate the effectiveness of all proposed methods.",
+    "url": "http://arxiv.org/abs/2507.21386v3",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 4,
+    "s2_venue": "Expert systems with applications"
+  },
+  {
+    "title": "Comparative Analysis of Ant Colony Optimization and Google OR-Tools for Solving the Open Capacitated Vehicle Routing Problem in Logistics",
+    "authors": [
+      "Assem Omar",
+      "Youssef Omar",
+      "Marwa Solayman",
+      "Hesham Mansour"
+    ],
+    "abstract": "In modern logistics management systems, route planning requires high efficiency. The Open Capacitated Vehicle Routing Problem (OCVRP) deals with finding optimal delivery routes for a fleet of vehicles serving geographically distributed customers, without requiring the vehicles to return to the depot after deliveries. The present study is comparative in nature and speaks of two algorithms for OCVRP solution: Ant Colony Optimization (ACO), a nature-inspired metaheuristic; and Google OR-Tools, an industry-standard toolkit for optimization. Both implementations were developed in Python and using a custom dataset. Performance appraisal was based on routing efficiency, computation time, and scalability. The results show that ACO allows flexibility in routing parameters while OR-Tools runs much faster with more consistency and requires less input. This could help choose among routing strategies for scalable real-time logistics systems.",
+    "url": "http://arxiv.org/abs/2509.26216v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 4,
+    "s2_venue": "Internet, Multimedia Systems and Applications"
+  },
+  {
+    "title": "Geometric Algorithms for Neural Combinatorial Optimization with Constraints",
+    "authors": [
+      "Nikolaos Karalias",
+      "Akbar Rafiey",
+      "Yifei Xu",
+      "Zhishang Luo",
+      "Behrooz Tahmasebi",
+      "Connie Jiang",
+      "Stefanie Jegelka"
+    ],
+    "abstract": "Self-Supervised Learning (SSL) for Combinatorial Optimization (CO) is an emerging paradigm for solving combinatorial problems using neural networks. In this paper, we address a central challenge of SSL for CO: solving problems with discrete constraints. We design an end-to-end differentiable framework that enables us to solve discrete constrained optimization problems with neural networks. Concretely, we leverage algorithmic techniques from the literature on convex geometry and Carathéodory's theorem to decompose neural network outputs into convex combinations of polytope corners that correspond to feasible sets. This decomposition-based approach enables self-supervised training but also ensures efficient quality-preserving rounding of the neural net output into feasible solutions. Extensive experiments in cardinality-constrained optimization show that our approach can consistently outperform neural baselines. We further provide worked-out examples of how our method can be applied beyond cardinality-constrained problems to a diverse set of combinatorial optimization tasks, including finding independent sets in graphs, and solving matroid-constrained problems.",
+    "url": "http://arxiv.org/abs/2510.24039v3",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 4,
+    "s2_venue": "Neural Information Processing Systems"
+  },
+  {
+    "title": "QAOA-PCA: Enhancing Efficiency in the Quantum Approximate Optimization Algorithm via Principal Component Analysis",
+    "authors": [
+      "Owain Parry",
+      "Phil McMinn"
+    ],
+    "abstract": "The Quantum Approximate Optimization Algorithm (QAOA) is a promising variational algorithm for solving combinatorial optimization problems on near-term devices. However, as the number of layers in a QAOA circuit increases, which is correlated with the quality of the solution, the number of parameters to optimize grows linearly. This results in more iterations required by the classical optimizer, which results in an increasing computational burden as more circuit executions are needed. To mitigate this issue, we introduce QAOA-PCA, a novel reparameterization technique that employs Principal Component Analysis (PCA) to reduce the dimensionality of the QAOA parameter space. By extracting principal components from optimized parameters of smaller problem instances, QAOA-PCA facilitates efficient optimization with fewer parameters on larger instances. Our empirical evaluation on the prominent MaxCut problem demonstrates that QAOA-PCA consistently requires fewer iterations than standard QAOA, achieving substantial efficiency gains. While this comes at the cost of a slight reduction in approximation ratio compared to QAOA with the same number of layers, QAOA-PCA almost always outperforms standard QAOA when matched by parameter count. QAOA-PCA strikes a favorable balance between efficiency and performance, reducing optimization overhead without significantly compromising solution quality.",
+    "url": "http://arxiv.org/abs/2504.16755v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 3,
+    "s2_venue": "EASE Companion"
+  },
+  {
+    "title": "Hexcute: A Compiler Framework for Automating Layout Synthesis in GPU Programs",
+    "authors": [
+      "Xiao Zhang",
+      "Yaoyao Ding",
+      "Bolin Sun",
+      "Yang Hu",
+      "Tatiana Shpeisman",
+      "Gennady Pekhimenko"
+    ],
+    "abstract": "Efficient GPU programming is crucial for achieving high performance in deep learning (DL) applications. The performance of GPU programs depends on how data is parallelized across threads and arranged within memory subsystems. The mapping functions describing tensors on GPUs are known as \\emph{tensor layouts}. Low-level programming frameworks, such as CUTLASS and Hidet, provide expressive layout abstractions but often require \\emph{considerable programming effort} to manually specify optimal layouts. High-level GPU programming languages, such as Triton, rely on compiler heuristics to generate dataflow, layouts, and pipelining strategies in GPU programs. However, the heuristics for dataflow and pipelining strategies are not generalizable to complex operators. To balance expressiveness and programmability, we propose Hexcute, a compiler framework that automates layout synthesis while providing explicit control over dataflow and pipelining. Hexcute formalizes layout synthesis as a constraint programming problem and solves it with a type-inference-based algorithm. This approach enables systematic exploration of optimal layouts and instructions. Our evaluation shows that Hexcute matches the performance of libraries like cuBLAS and FlashAttention on GEMM, Attention, and their variants, while reducing the amount of code by 1.27$\\times$-7.94$\\times$ compared to CUTLASS. For mixed-type mixture-of-experts (MoE) operators, Hexcute achieves an average speedup of 6.46$\\times$ over Triton. In the end-to-end evaluations of vLLM, Hexcute delivers up to 2.60$\\times$ speedup on DeepSeek-R1-AWQ and 2.04$\\times$ on a Mamba-based model.",
+    "url": "http://arxiv.org/abs/2504.16214v3",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 3,
+    "s2_venue": "IEEE/ACM International Symposium on Code Generation and Optimization"
+  },
+  {
+    "title": "Interpretable Time Series Autoregression for Periodicity Quantification",
+    "authors": [
+      "Xinyu Chen",
+      "Vassilis Digalakis",
+      "Lijun Ding",
+      "Dingyi Zhuang",
+      "Jinhua Zhao"
+    ],
+    "abstract": "Time series autoregression (AR) is a classical tool for modeling auto-correlations and periodic structures in real-world systems. We revisit this model from an interpretable machine learning perspective by introducing sparse autoregression (SAR), where $\\ell_0$-norm constraints are used to isolate dominant periodicities. We formulate exact mixed-integer optimization (MIO) approaches for both stationary and non-stationary settings and introduce two scalable extensions: a decision variable pruning (DVP) strategy for temporally-varying SAR (TV-SAR), and a two-stage optimization scheme for spatially- and temporally-varying SAR (STV-SAR). These models enable scalable inference on real-world spatiotemporal datasets. We validate our framework on large-scale mobility and climate time series. On NYC ridesharing data, TV-SAR reveals interpretable daily and weekly cycles as well as long-term shifts due to COVID-19. On climate datasets, STV-SAR uncovers the evolving spatial structure of temperature and precipitation seasonality across four decades in North America and detects global sea surface temperature dynamics, including El Niño. Together, our results demonstrate the interpretability, flexibility, and scalability of sparse autoregression for periodicity quantification in complex time series.",
+    "url": "http://arxiv.org/abs/2506.22895v2",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 3,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Probing Neural Combinatorial Optimization Models",
+    "authors": [
+      "Zhiqin Zhang",
+      "Yining Ma",
+      "Zhiguang Cao",
+      "Hoong Chuin Lau"
+    ],
+    "abstract": "Neural combinatorial optimization (NCO) has achieved remarkable performance, yet its learned model representations and decision rationale remain a black box. This impedes both academic research and practical deployment, since researchers and stakeholders require deeper insights into NCO models. In this paper, we take the first critical step towards interpreting NCO models by investigating their representations through various probing tasks. Moreover, we introduce a novel probing tool named Coefficient Significance Probing (CS-Probing) to enable deeper analysis of NCO representations by examining the coefficients and statistical significance during probing. Extensive experiments and analysis reveal that NCO models encode low-level information essential for solution construction, while capturing high-level knowledge to facilitate better decisions. Using CS-Probing, we find that prevalent NCO models impose varying inductive biases on their learned representations, uncover direct evidence related to model generalization, and identify key embedding dimensions associated with specific knowledge. These insights can be potentially translated into practice, for example, with minor code modifications, we improve the generalization of the analyzed model. Our work represents a first systematic attempt to interpret black-box NCO models, showcasing probing as a promising tool for analyzing their internal mechanisms and revealing insights for the NCO community. The source code is publicly available.",
+    "url": "http://arxiv.org/abs/2510.22131v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 3,
+    "s2_venue": "Neural Information Processing Systems"
+  },
+  {
+    "title": "Thinking Out of the Box: Hybrid SAT Solving by Unconstrained Continuous Optimization",
+    "authors": [
+      "Zhiwei Zhang",
+      "Samy Wu Fung",
+      "Anastasios Kyrillidis",
+      "Stanley Osher",
+      "Moshe Y. Vardi"
+    ],
+    "abstract": "The Boolean satisfiability (SAT) problem lies at the core of many applications in combinatorial optimization, software verification, cryptography, and machine learning. While state-of-the-art solvers have demonstrated high efficiency in handling conjunctive normal form (CNF) formulas, numerous applications require non-CNF (hybrid) constraints, such as XOR, cardinality, and Not-All-Equal constraints. Recent work leverages polynomial representations to represent such hybrid constraints, but it relies on box constraints that can limit the use of powerful unconstrained optimizers. In this paper, we propose unconstrained continuous optimization formulations for hybrid SAT solving by penalty terms. We provide theoretical insights into when these penalty terms are necessary and demonstrate empirically that unconstrained optimizers (e.g., Adam) can enhance SAT solving on hybrid benchmarks. Our results highlight the potential of combining continuous optimization and machine-learning-based methods for effective hybrid SAT solving.",
+    "url": "http://arxiv.org/abs/2506.00674v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Are Your Generated Instances Truly Useful? GenBench-MILP: A Benchmark Suite for MILP Instance Generation",
+    "authors": [
+      "Yidong Luo",
+      "Chenguang Wang",
+      "Dong Li",
+      "Tianshu Yu"
+    ],
+    "abstract": "The proliferation of machine learning-based methods for Mixed-Integer Linear Programming (MILP) instance generation has surged, driven by the need for diverse training datasets. However, a critical question remains: Are these generated instances truly useful and realistic? Current evaluation protocols often rely on superficial structural metrics or simple solvability checks, which frequently fail to capture the true computational complexity of real-world problems. To bridge this gap, we introduce GenBench-MILP, a comprehensive benchmark suite designed for the standardized and objective evaluation of MILP generators. Our framework assesses instance quality across four key dimensions: mathematical validity, structural similarity, computational hardness, and utility in downstream tasks. A distinctive innovation of GenBench-MILP is the analysis of solver-internal features -- including root node gaps, heuristic success rates, and cut plane usage. By treating the solver's dynamic behavior as an expert assessment, we reveal nuanced computational discrepancies that static graph features miss. Our experiments on instance generative models demonstrate that instances with high structural similarity scores can still exhibit drastically divergent solver interactions and difficulty levels. By providing this multifaceted evaluation toolkit, GenBench-MILP aims to facilitate rigorous comparisons and guide the development of high-fidelity instance generators.",
+    "url": "http://arxiv.org/abs/2505.24779v4",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": ""
+  },
+  {
+    "title": "OTPTO: Joint Product Selection and Inventory Optimization in Fresh E-commerce Front-End Warehouses",
+    "authors": [
+      "Zheming Zhang",
+      "Yan Jiang",
+      "Qingshan Li",
+      "Ai Han"
+    ],
+    "abstract": "In China's competitive fresh e-commerce market, optimizing operational strategies, especially inventory management in front-end warehouses, is key to enhance customer satisfaction and to gain a competitive edge. Front-end warehouses are placed in residential areas to ensure the timely delivery of fresh goods and are usually in small size. This brings the challenge of deciding which goods to stock and in what quantities, taking into account capacity constraints. To address this issue, traditional predict-then-optimize (PTO) methods that predict sales and then decide on inventory often don't align prediction with inventory goals, as well as fail to prioritize consumer satisfaction. This paper proposes a multi-task Optimize-then-Predict-then-Optimize (OTPTO) approach that jointly optimizes product selection and inventory management, aiming to increase consumer satisfaction by maximizing the full order fulfillment rate. Our method employs a 0-1 mixed integer programming model OM1 to determine historically optimal inventory levels, and then uses a product selection model PM1 and the stocking model PM2 for prediction. The combined results are further refined through a post-processing algorithm OM2. Experimental results from JD.com's 7Fresh platform demonstrate the robustness and significant advantages of our OTPTO method. Compared to the PTO approach, our OTPTO method substantially enhances the full order fulfillment rate by 4.34% (a relative increase of 7.05%) and narrows the gap to the optimal full order fulfillment rate by 5.27%. These findings substantiate the efficacy of the OTPTO method in managing inventory at front-end warehouses of fresh e-commerce platforms and provide valuable insights for future research in this domain.",
+    "url": "http://arxiv.org/abs/2505.23421v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Efficient Optimization Accelerator Framework for Multistate Ising Problems",
+    "authors": [
+      "Chirag Garg",
+      "Sayeef Salahuddin"
+    ],
+    "abstract": "Ising Machines are emerging hardware architectures that efficiently solve NP-Hard combinatorial optimization problems. Generally, combinatorial problems are transformed into quadratic unconstrained binary optimization (QUBO) form, but this transformation often complicates the solution landscape, degrading performance, especially for multi-state problems. To address this challenge, we model spin interactions as generalized boolean logic function to significantly reduce the exploration space. We demonstrate the effectiveness of our approach on graph coloring problem using probabilistic Ising solvers, achieving similar accuracy compared to state-of-the-art heuristics and machine learning algorithms. It also shows significant improvement over state-of-the-art QUBO-based Ising solvers, including probabilistic Ising and simulated bifurcation machines. We also design 1024-neuron all-to-all connected probabilistic Ising accelerator on FPGA with the proposed approach that shows ~10000x performance acceleration compared to GPU-based Tabucol heuristics and reducing physical neurons by 1.5-4x over baseline Ising frameworks. Thus, this work establishes superior efficiency, scalability and solution quality for multi-state optimization problems.",
+    "url": "http://arxiv.org/abs/2505.20250v2",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Multimodal Fused Learning for Solving the Generalized Traveling Salesman Problem in Robotic Task Planning",
+    "authors": [
+      "Jiaqi Cheng",
+      "Mingfeng Fan",
+      "Xuefeng Zhang",
+      "Jingsong Liang",
+      "Yuhong Cao",
+      "Guohua Wu",
+      "Guillaume Adrien Sartoretti"
+    ],
+    "abstract": "Effective and efficient task planning is essential for mobile robots, especially in applications like warehouse retrieval and environmental monitoring. These tasks often involve selecting one location from each of several target clusters, forming a Generalized Traveling Salesman Problem (GTSP) that remains challenging to solve both accurately and efficiently. To address this, we propose a Multimodal Fused Learning (MMFL) framework that leverages both graph and image-based representations to capture complementary aspects of the problem, and learns a policy capable of generating high-quality task planning schemes in real time. Specifically, we first introduce a coordinate-based image builder that transforms GTSP instances into spatially informative representations. We then design an adaptive resolution scaling strategy to enhance adaptability across different problem scales, and develop a multimodal fusion module with dedicated bottlenecks that enables effective integration of geometric and spatial features. Extensive experiments show that our MMFL approach significantly outperforms state-of-the-art methods across various GTSP instances while maintaining the computational efficiency required for real-time robotic applications. Physical robot tests further validate its practical effectiveness in real-world scenarios.",
+    "url": "http://arxiv.org/abs/2506.16931v3",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Speeding up Local Optimization in Vehicle Routing with Tensor-based GPU Acceleration",
+    "authors": [
+      "Zhenyu Lei",
+      "Jin-Kao Hao",
+      "Qinghua Wu"
+    ],
+    "abstract": "Local search plays a central role in many effective heuristic algorithms for the vehicle routing problem (VRP) and its variants. However, neighborhood exploration is known to be computationally expensive and time consuming, especially for large instances or problems with complex constraints. In this study, we explore a promising direction to address this challenge by introducing an original tensor-based GPU acceleration method designed to speed up the commonly used local search operators in vehicle routing. By using an attribute-based representation, the method offers broad extensibility, making it applicable to different VRP variants. Its low-coupling architecture, with intensive computations completely offloaded to the GPU, ensures seamless integration in various local search-based algorithms and frameworks, leading to significant improvements in computational efficiency and potentially improved solution quality. Through comparative experiments on benchmark instances of three routing problems, we demonstrate the substantial computational advantages of the proposed approach over traditional CPU-based implementations. We also provide a detailed analysis of the strengths and limitations of the method, providing valuable insights into its performance characteristics and identifying potential bottlenecks in practical applications. These findings contribute to a better understanding and suggest directions for future improvements.",
+    "url": "http://arxiv.org/abs/2506.17357v2",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "ASP-FZN: A Translation-based Constraint Answer Set Solver",
+    "authors": [
+      "Thomas Eiter",
+      "Tobias Geibinger",
+      "Tobias Kaminski",
+      "Nysret Musliu",
+      "Johannes Oetsch"
+    ],
+    "abstract": "We present the solver asp-fzn for Constraint Answer Set Programming (CASP), which extends ASP with linear constraints. Our approach is based on translating CASP programs into the solver-independent FlatZinc language that supports several Constraint Programming and Integer Programming backend solvers. Our solver supports a rich language of linear constraints, including some common global constraints. As for evaluation, we show that asp-fzn is competitive with state-of-the-art ASP solvers on benchmarks taken from past ASP competitions. Furthermore, we evaluate it on several CASP problems from the literature and compare its performance with clingcon, which is a prominent CASP solver that supports most of the asp-fzn language. The performance of asp-fzn is very promising as it is already competitive on plain ASP and even outperforms clingcon on some CASP benchmarks.",
+    "url": "http://arxiv.org/abs/2507.22774v3",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "Theory and Practice of Logic Programming"
+  },
+  {
+    "title": "Pareto-NRPA: A Novel Monte-Carlo Search Algorithm for Multi-Objective Optimization",
+    "authors": [
+      "Noé Lallouet",
+      "Tristan Cazenave",
+      "Cyrille Enderli"
+    ],
+    "abstract": "We introduce Pareto-NRPA, a new Monte-Carlo algorithm designed for multi-objective optimization problems over discrete search spaces. Extending the Nested Rollout Policy Adaptation (NRPA) algorithm originally formulated for single-objective problems, Pareto-NRPA generalizes the nested search and policy update mechanism to multi-objective optimization. The algorithm uses a set of policies to concurrently explore different regions of the solution space and maintains non-dominated fronts at each level of search. Policy adaptation is performed with respect to the diversity and isolation of sequences within the Pareto front. We benchmark Pareto-NRPA on two classes of problems: a novel bi-objective variant of the Traveling Salesman Problem with Time Windows problem (MO-TSPTW), and a neural architecture search task on well-known benchmarks. Results demonstrate that Pareto-NRPA achieves competitive performance against state-of-the-art multi-objective algorithms, both in terms of convergence and diversity of solutions. Particularly, Pareto-NRPA strongly outperforms state-of-the-art evolutionary multi-objective algorithms on constrained search spaces. To our knowledge, this work constitutes the first adaptation of NRPA to the multi-objective setting.",
+    "url": "http://arxiv.org/abs/2507.19109v3",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "European Conference on Artificial Intelligence"
+  },
+  {
+    "title": "FORGE: Foundational Optimization Representations from Graph Embeddings",
+    "authors": [
+      "Zohair Shafi",
+      "Serdar Kadioglu"
+    ],
+    "abstract": "Combinatorial optimization problems are ubiquitous in science and engineering. Still, learning-based approaches to accelerate combinatorial optimization often require solving a large number of difficult instances to collect training data, incurring significant computational cost. Existing learning-based methods require training dedicated models for each problem distribution, for each downstream task, severely limiting their scalability and generalization. We introduce Forge: Foundational Optimization Representations from Graph Embeddings, a framework that pre-trains a vector-quantized graph autoencoder on a large, diverse collection of mixed-integer programming (MIP) instances in an unsupervised manner, without relying on optimization solvers or optimal solutions. Vector quantization produces discrete code assignments that serve as a vocabulary for representing optimization instances. We evaluate Forge in both unsupervised and supervised settings. In the unsupervised setting, Forge embeddings effectively cluster unseen instances across problem domains and sizes. In the supervised setting, we fine-tune Forge embeddings and show that a single pre-trained model helps predicting both the integrality gap for cut-generation and variable hints for search guidance across multiple problem and size distributions. In both tasks, we improve the performance of a commercial optimization solver and outperform state-of-the-art learning-based methods. Finally, we open-source our training code, pre-trained Forge weights, and embeddings for multiple MIP distributions to foster further research in representation learning for optimization problems https://skadio.github.io/forge/",
+    "url": "http://arxiv.org/abs/2508.20330v5",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "Trans. Mach. Learn. Res."
+  },
+  {
+    "title": "Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear programming",
+    "authors": [
+      "Jiajun Li",
+      "Yixuan Li",
+      "Ran Hou",
+      "Yu Ding",
+      "Shisi Guan",
+      "Jiahui Duan",
+      "Xiongwei Han",
+      "Tao Zhong",
+      "Vincent Chau",
+      "Weiwei Wu",
+      "Wanyuan Wang"
+    ],
+    "abstract": "Model reduction, which aims to learn a simpler model of the original mixed integer linear programming (MILP), can solve large-scale MILP problems much faster. Most existing model reduction methods are based on variable reduction, which predicts a solution value for a subset of variables. From a dual perspective, constraint reduction that transforms a subset of inequality constraints into equalities can also reduce the complexity of MILP, but has been largely ignored. Therefore, this paper proposes a novel constraint-based model reduction approach for the MILP. Constraint-based MILP reduction has two challenges: 1) which inequality constraints are critical such that reducing them can accelerate MILP solving while preserving feasibility, and 2) how to predict these critical constraints efficiently. To identify critical constraints, we first label these tight-constraints at the optimal solution as potential critical constraints and design a heuristic rule to select a subset of critical tight-constraints. To learn the critical tight-constraints, we propose a multi-modal representation technique that leverages information from both instance-level and abstract-level MILP formulations. The experimental results show that, compared to the state-of-the-art methods, our method improves the quality of the solution by over 50\\% and reduces the computation time by 17.47\\%.",
+    "url": "http://arxiv.org/abs/2508.18742v3",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "SPL-LNS: Sampling-Enhanced Large Neighborhood Search for Solving Integer Linear Programs",
+    "authors": [
+      "Shengyu Feng",
+      "Zhiqing Sun",
+      "Yiming Yang"
+    ],
+    "abstract": "Large Neighborhood Search (LNS) is a common heuristic in combinatorial optimization that iteratively searches over a large neighborhood of the current solution for a better one. Recently, neural network-based LNS solvers have achieved great success in solving Integer Linear Programs (ILPs) by learning to greedily predict the locally optimal solution for the next neighborhood proposal. However, this greedy approach raises two key concerns: (1) to what extent this greedy proposal suffers from local optima, and (2) how can we effectively improve its sample efficiency in the long run. To address these questions, this paper first formulates LNS as a stochastic process, and then introduces SPL-LNS, a sampling-enhanced neural LNS solver that leverages locally-informed proposals to escape local optima. We also develop a novel hindsight relabeling method to efficiently train SPL-LNS on self-generated data. Experimental results demonstrate that SPL-LNS substantially surpasses prior neural LNS solvers for various ILP problems of different sizes.",
+    "url": "http://arxiv.org/abs/2508.16171v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Machine Learning Algorithms for Improving Black Box Optimization Solvers",
+    "authors": [
+      "Morteza Kimiaei",
+      "Vyacheslav Kungurtsev"
+    ],
+    "abstract": "Black-box optimization (BBO) addresses problems where objectives are accessible only through costly queries without gradients or explicit structure. Classical derivative-free methods -- line search, direct search, and model-based solvers such as Bayesian optimization -- form the backbone of BBO, yet often struggle in high-dimensional, noisy, or mixed-integer settings. Recent advances use machine learning (ML) and reinforcement learning (RL) to enhance BBO: ML provides expressive surrogates, adaptive updates, meta-learning portfolios, and generative models, while RL enables dynamic operator configuration, robustness, and meta-optimization across tasks. This paper surveys these developments, covering representative algorithms such as NNs with the modular model-based optimization framework (mlrMBO), zeroth-order adaptive momentum methods (ZO-AdaMM), automated BBO (ABBO), distributed block-wise optimization (DiBB), partition-based Bayesian optimization (SPBOpt), the transformer-based optimizer (B2Opt), diffusion-model-based BBO, surrogate-assisted RL for differential evolution (Surr-RLDE), robust BBO (RBO), coordinate-ascent model-based optimization with relative entropy (CAS-MORE), log-barrier stochastic gradient descent (LB-SGD), policy improvement with black-box (PIBB), and offline Q-learning with Mamba backbones (Q-Mamba). We also review benchmark efforts such as the NeurIPS 2020 BBO Challenge and the MetaBox framework. Overall, we highlight how ML and RL transform classical inexact solvers into more scalable, robust, and adaptive frameworks for real-world optimization.",
+    "url": "http://arxiv.org/abs/2509.25592v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Machine Learning Guided Optimal Transmission Switching to Mitigate Wildfire Ignition Risk",
+    "authors": [
+      "Weimin Huang",
+      "Ryan Piansky",
+      "Bistra Dilkina",
+      "Daniel K. Molzahn"
+    ],
+    "abstract": "To mitigate acute wildfire ignition risks, utilities de-energize power lines in high-risk areas. The Optimal Power Shutoff (OPS) problem optimizes line energization statuses to manage wildfire ignition risks through de-energizations while reducing load shedding. OPS problems are computationally challenging Mixed-Integer Linear Programs (MILPs) that must be solved rapidly and frequently in operational settings. For a particular power system, OPS instances share a common structure with varying parameters related to wildfire risks, loads, and renewable generation. This motivates the use of Machine Learning (ML) for solving OPS problems by exploiting shared patterns across instances. In this paper, we develop an ML-guided framework that quickly produces high-quality de-energization decisions by extending existing ML-guided MILP solution methods while integrating domain knowledge on the number of energized and de-energized lines. Results on a large-scale realistic California-based synthetic test system show that the proposed ML-guided method produces high-quality solutions faster than traditional optimization methods.",
+    "url": "http://arxiv.org/abs/2510.25147v3",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "Electric power systems research"
+  },
+  {
+    "title": "Adaptive Forests For Classification",
+    "authors": [
+      "Dimitris Bertsimas",
+      "Yubing Cui"
+    ],
+    "abstract": "Random Forests (RF) and Extreme Gradient Boosting (XGBoost) are two of the most widely used and highly performing classification and regression models. They aggregate equally weighted CART trees, generated randomly in RF or sequentially in XGBoost. In this paper, we propose Adaptive Forests (AF), a novel approach that adaptively selects the weights of the underlying CART models. AF combines (a) the Optimal Predictive-Policy Trees (OP2T) framework to prescribe tailored, input-dependent unequal weights to trees and (b) Mixed Integer Optimization (MIO) to refine weight candidates dynamically, enhancing overall performance. We demonstrate that AF consistently outperforms RF, XGBoost, and other weighted RF in binary and multi-class classification problems over 20+ real-world datasets.",
+    "url": "http://arxiv.org/abs/2510.22991v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Efficient Decoder Scaling Strategy for Neural Routing Solvers",
+    "authors": [
+      "Qing Luo",
+      "Fu Luo",
+      "Ke Li",
+      "Zhenkun Wang"
+    ],
+    "abstract": "Construction-based neural routing solvers, typically composed of an encoder and a decoder, have emerged as a promising approach for solving vehicle routing problems. While recent studies suggest that shifting parameters from the encoder to the decoder enhances performance, most works restrict the decoder size to 1-3M parameters, leaving the effects of scaling largely unexplored. To address this gap, we conduct a systematic study comparing two distinct strategies: scaling depth versus scaling width. We synthesize these strategies to construct a suite of 12 model configurations, spanning a parameter range from 1M to ~150M, and extensively evaluate their scaling behaviors across three critical dimensions: parameter efficiency, data efficiency, and compute efficiency. Our empirical results reveal that parameter count is insufficient to accurately predict the model performance, highlighting the critical and distinct roles of model depth (layer count) and width (embedding dimension). Crucially, we demonstrate that scaling depth yields superior performance gains to scaling width. Based on these findings, we provide and experimentally validate a set of design principles for the efficient allocation of parameters and compute resources to enhance the model performance.",
+    "url": "http://arxiv.org/abs/2603.00430v1",
+    "year": 2026,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Unsupervised Diffusion Solver for Combinatorial Optimization via Combinatorial Adjoint Matching",
+    "authors": [
+      "Shengyu Feng",
+      "Tarun Suresh",
+      "Yiming Yang"
+    ],
+    "abstract": "Diffusion-based neural solvers have shown strong promise for combinatorial optimization (CO), but existing methods typically rely on supervised training with large collections of near-optimal solutions. In this work, we extend adjoint-based trajectory optimization methods to discrete combinatorial domains. We formulate diffusion-based CO as a stochastic control problem over Continuous-Time Markov Chains and introduce discrete adjoint dynamics for propagating optimization signals through discrete generative trajectories. Building on this formulation, we propose Combinatorial Adjoint Matching (CAM), an unsupervised training framework for discrete diffusion solvers with structured and low-variance trajectory-level optimization signals. Empirically, CAM consistently outperforms existing unsupervised diffusion baselines and achieves performance competitive with strong supervised diffusion solvers and even traditional solvers across diverse combinatorial optimization problems. Our code is available at https://github.com/Shengyu-Feng/CAM.",
+    "url": "http://arxiv.org/abs/2605.30920v2",
+    "year": 2026,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 2,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Automated Generation of Precedence Graphs in Digital Value Chains for Automotive Production",
+    "authors": [
+      "Cornelius Hake",
+      "Christian Friedrich"
+    ],
+    "abstract": "This study examines the digital value chain in automotive manufacturing, focusing on the identification, software flashing, customization, and commissioning of electronic control units in vehicle networks. A novel precedence graph design is proposed to optimize this process chain using an automated scheduling algorithm, which combines structured data extraction from heterogeneous sources via natural language processing and classification techniques with mixed integer linear programming for efficient graph generation. The results show significant improvements in key metrics. The algorithm reduces the number of production stations equipped with expensive hardware and software to execute digital value chain processes, while also increasing capacity utilization through efficient scheduling and reduced idle time. Task parallelization is optimized, resulting in streamlined workflows and increased throughput. Compared to the traditional scheduling method, the automated approach has reduced preparation time by 50% and reduced scheduling activities, as it now takes two minutes to create the precedence graph. The flexibility of the algorithm's constraints allows for vehicle-specific configurations while maintaining high responsiveness, eliminating backup stations and facilitating the integration of new topologies. Automated scheduling significantly outperforms manual methods in efficiency, functionality, and adaptability.",
+    "url": "http://arxiv.org/abs/2504.19835v2",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 1,
+    "s2_venue": "IEEE International Conference on Emerging Technologies and Factory Automation"
+  },
+  {
+    "title": "Mathematical Programming Models for Exact and Interpretable Formulation of Neural Networks",
+    "authors": [
+      "Masoud Ataei",
+      "Edrin Hasaj",
+      "Jacob Gipp",
+      "Sepideh Forouzi"
+    ],
+    "abstract": "This paper presents a unified mixed-integer programming framework for training sparse and interpretable neural networks. We develop exact formulations for both fully connected and convolutional architectures by modeling nonlinearities such as ReLU activations through binary variables and encoding structural sparsity via filter- and layer-level pruning constraints. The resulting models integrate parameter learning, architecture selection, and structural regularization within a single optimization problem, yielding globally optimal solutions with respect to a composite objective that balances prediction accuracy, weight sparsity, and architectural compactness. The mixed-integer programming formulation accommodates piecewise-linear operations, including max pooling and activation gating, and permits precise enforcement of logic-based or domain-specific constraints. By incorporating considerations of interpretability, sparsity, and verifiability directly into the training process, the proposed framework bridges a range of research areas including explainable artificial intelligence, symbolic reasoning, and formal verification.",
+    "url": "http://arxiv.org/abs/2504.14356v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 1,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Learning Distributions over Permutations and Rankings with Factorized Representations",
+    "authors": [
+      "Daniel Severo",
+      "Brian Karrer",
+      "Niklas Nolte"
+    ],
+    "abstract": "Learning distributions over permutations is a fundamental problem in machine learning, with applications in ranking, combinatorial optimization, structured prediction, and data association. Existing methods rely on mixtures of parametric families or neural networks with expensive variational inference procedures. In this work, we propose a novel approach that leverages alternative representations for permutations, including Lehmer codes, Fisher-Yates draws, and Insertion-Vectors. These representations form a bijection with the symmetric group, allowing for unconstrained learning using conventional deep learning techniques, and can represent any probability distribution over permutations. Our approach enables a trade-off between expressivity of the model family and computational requirements. In the least expressive and most computationally efficient case, our method subsumes previous families of well established probabilistic models over permutations, including Mallow's and the Repeated Insertion Model. Experiments indicate our method significantly outperforms current approaches on the jigsaw puzzle benchmark, a common task for permutation learning. However, we argue this benchmark is limited in its ability to assess learning probability distributions, as the target is a delta distribution (i.e., a single correct solution exists). We therefore propose two additional benchmarks: learning cyclic permutations and re-ranking movies based on user preference. We show that our method learns non-trivial distributions even in the least expressive mode, while traditional models fail to even generate valid permutations in this setting.",
+    "url": "http://arxiv.org/abs/2505.24664v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 1,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Collaborative Last-Mile Delivery: A Multi-Platform Vehicle Routing Problem With En-route Charging",
+    "authors": [
+      "Sumbal Malik",
+      "Majid Khonji",
+      "Khaled Elbassioni",
+      "Jorge Dias"
+    ],
+    "abstract": "The rapid growth of e-commerce and the increasing demand for timely, cost-effective last-mile delivery have increased interest in collaborative logistics. This research introduces a novel collaborative synchronized multi-platform vehicle routing problem with drones and robots (VRP-DR), where a fleet of $\\mathcal{M}$ trucks, $\\mathcal{N}$ drones and $\\mathcal{K}$ robots, cooperatively delivers parcels. Trucks serve as mobile platforms, enabling the launching, retrieving, and en-route charging of drones and robots, thereby addressing critical limitations such as restricted payload capacities, limited range, and battery constraints. The VRP-DR incorporates five realistic features: (1) multi-visit service per trip, (2) multi-trip operations, (3) flexible docking, allowing returns to the same or different trucks (4) cyclic and acyclic operations, enabling return to the same or different nodes; and (5) en-route charging, enabling drones and robots to recharge while being transported on the truck, maximizing operational efficiency by utilizing idle transit time. The VRP-DR is formulated as a mixed-integer linear program (MILP) to minimize both operational costs and makespan. To overcome the computational challenges of solving large-scale instances, a scalable heuristic algorithm, FINDER (Flexible INtegrated Delivery with Energy Recharge), is developed, to provide efficient, near-optimal solutions. Numerical experiments across various instance sizes evaluate the performance of the MILP and heuristic approaches in terms of solution quality and computation time. The results demonstrate significant time savings of the combined delivery mode over the truck-only mode and substantial cost reductions from enabling multi-visits. The study also provides insights into the effects of en-route charging, docking flexibility, drone count, speed, and payload capacity on system performance.",
+    "url": "http://arxiv.org/abs/2505.23584v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 1,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Thermodynamics-Inspired Computing with Oscillatory Neural Networks for Inverse Matrix Computation",
+    "authors": [
+      "George Tsormpatzoglou",
+      "Filip Sabo",
+      "Aida Todri-Sanial"
+    ],
+    "abstract": "We describe a thermodynamic-inspired computing paradigm based on oscillatory neural networks (ONNs). While ONNs have been widely studied as Ising machines for tackling complex combinatorial optimization problems, this work investigates their feasibility in solving linear algebra problems, specifically the inverse matrix. Grounded in thermodynamic principles, we analytically demonstrate that the linear approximation of the coupled Kuramoto oscillator model leads to the inverse matrix solution. Numerical simulations validate the theoretical framework, and we examine the parameter regimes that computation has the highest accuracy.",
+    "url": "http://arxiv.org/abs/2507.22544v1",
+    "year": 2025,
+    "venue": "combinatorial_optimization",
+    "source": "arXiv API (18-month window)",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 1,
+    "s2_venue": "arXiv.org"
+  },
+  {
+    "title": "Analog optical computer for AI inference and combinatorial optimization",
+    "authors": [
+      "Kirill P. Kalinin",
+      "Jannes Gladrow",
+      "Jiaqi Chu",
+      "James H. Clegg",
+      "Daniel Cletheroe",
+      "Douglas J. Kelly",
+      "Babak Rahmani",
+      "Grace Brennan",
+      "Burcu Canakci",
+      "Fabian Falck",
+      "Michael Hansen",
+      "Jim Kleewein",
+      "Heiner Kremer",
+      "Greg O’Shea",
+      "Lucinda Pickup",
+      "Saravan Rajmohan",
+      "Ant Rowstron",
+      "Victor Ruhle",
+      "Lee Braine",
+      "Shrirang Khedekar",
+      "Natalia G. Berloff",
+      "Christos Gkantsidis",
+      "Francesca Parmigiani",
+      "Hitesh Ballani"
+    ],
+    "abstract": "Abstract Artificial intelligence (AI) and combinatorial optimization drive applications across science and industry, but their increasing energy demands challenge the sustainability of digital computing. Most unconventional computing systems 1–7 target either AI or optimization workloads and rely on frequent, energy-intensive digital conversions, limiting efficiency. These systems also face application-hardware mismatches, whether handling memory-bottlenecked neural models, mapping real-world optimization problems or contending with inherent analog noise. Here we introduce an analog optical computer (AOC) that combines analog electronics and three-dimensional optics to accelerate AI inference and combinatorial optimization in a single platform. This dual-domain capability is enabled by a rapid fixed-point search, which avoids digital conversions and enhances noise robustness. With this fixed-point abstraction, the AOC implements emerging compute-bound neural models with recursive reasoning potential and realizes an advanced gradient-descent approach for expressive optimization. We demonstrate the benefits of co-designing the hardware and abstraction, echoing the co-evolution of digital accelerators and deep learning models, through four case studies: image classification, nonlinear regression, medical image reconstruction and financial transaction settlement. Built with scalable, consumer-grade technologies, the AOC paves a promising path for faster and sustainable computing. Its native support for iterative, compute-intensive models offers a scalable analog platform for fostering future innovation in AI and optimization.",
+    "url": "https://doi.org/10.1038/s41586-025-09430-z",
+    "year": 2025,
+    "venue": "Nature",
+    "source": "Crossref API",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 0
+  },
+  {
+    "title": "Unifying multi-sample network inference from prior knowledge and omics data with CORNETO",
+    "authors": [
+      "Pablo Rodriguez-Mier",
+      "Martin Garrido-Rodriguez",
+      "Attila Gabor",
+      "Julio Saez-Rodriguez"
+    ],
+    "abstract": "Abstract Understanding biological systems requires methods that extract interpretable insights from omics data. Networks offer a natural abstraction by representing molecules as vertices and their interactions as edges, providing a foundation for constructing context-specific models tailored to particular conditions—an essential step in many biological analyses. Most existing approaches fall into one of two categories: machine learning methods, which offer strong predictive power but lack interpretability and require large datasets, and knowledge-based methods, which are more interpretable but designed for analysing individual samples and difficult to generalize. Here we present CORNETO, a unified mathematical framework that generalizes a wide variety of methods that learn biological networks from omics data and prior knowledge. CORNETO reformulates these methods as mixed-integer optimization problems using network flows and structured sparsity, enabling joint inference across multiple samples. This improves the discovery of both shared and sample-specific molecular mechanisms while yielding sparser, more interpretable solutions. CORNETO supports a range of prior knowledge structures, including undirected, directed and signed (hyper)graphs. It extends a broad class of approaches, ranging from Steiner trees to flux balance analysis, within a unified optimization-based interface. We demonstrate CORNETO’s utility across diverse biological contexts, including signalling, metabolism and integration with biologically informed deep learning. We provide CORNETO as an open-source Python library for flexible network modelling.",
+    "url": "https://doi.org/10.1038/s42256-025-01069-9",
+    "year": 2025,
+    "venue": "Nature Machine Intelligence",
+    "source": "Crossref API",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 0
+  },
+  {
+    "title": "Reusability report: A distributed strategy for solving combinatorial optimization problems with hypergraph neural networks",
+    "authors": [
+      "Xiaodi Li",
+      "Jianfeng Gui",
+      "Wei Xue",
+      "Baochuan Wang",
+      "Kai Chen",
+      "Pijing Wei",
+      "Junfeng Xia",
+      "Zhenyu Yue"
+    ],
+    "abstract": "",
+    "url": "https://doi.org/10.1038/s42256-025-01141-4",
+    "year": 2025,
+    "venue": "Nature Machine Intelligence",
+    "source": "Crossref API",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 0
+  },
+  {
+    "title": "Large language models discover complementary heuristics for combinatorial optimization",
+    "authors": [
+      "Huatian Gong",
+      "Shuaian Wang",
+      "Dongping Song",
+      "Jiuh-Biing Sheu",
+      "Ran Yan"
+    ],
+    "abstract": "",
+    "url": "https://doi.org/10.1038/s42256-026-01307-8",
+    "year": 2026,
+    "venue": "Nature Machine Intelligence",
+    "source": "Crossref API",
+    "category": "",
+    "is_agent": false,
+    "is_co": true,
+    "citation_count": 0
+  }
+]

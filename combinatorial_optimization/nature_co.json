@@ -1,0 +1,104 @@
+{
+  "source": "Crossref API",
+  "fetched_at": "2026-10-12T11:14:31.203144+00:00",
+  "count": 4,
+  "papers": [
+    {
+      "title": "Analog optical computer for AI inference and combinatorial optimization",
+      "authors": [
+        "Kirill P. Kalinin",
+        "Jannes Gladrow",
+        "Jiaqi Chu",
+        "James H. Clegg",
+        "Daniel Cletheroe",
+        "Douglas J. Kelly",
+        "Babak Rahmani",
+        "Grace Brennan",
+        "Burcu Canakci",
+        "Fabian Falck",
+        "Michael Hansen",
+        "Jim Kleewein",
+        "Heiner Kremer",
+        "Greg O’Shea",
+        "Lucinda Pickup",
+        "Saravan Rajmohan",
+        "Ant Rowstron",
+        "Victor Ruhle",
+        "Lee Braine",
+        "Shrirang Khedekar",
+        "Natalia G. Berloff",
+        "Christos Gkantsidis",
+        "Francesca Parmigiani",
+        "Hitesh Ballani"
+      ],
+      "abstract": "Abstract Artificial intelligence (AI) and combinatorial optimization drive applications across science and industry, but their increasing energy demands challenge the sustainability of digital computing. Most unconventional computing systems 1–7 target either AI or optimization workloads and rely on frequent, energy-intensive digital conversions, limiting efficiency. These systems also face application-hardware mismatches, whether handling memory-bottlenecked neural models, mapping real-world optimization problems or contending with inherent analog noise. Here we introduce an analog optical computer (AOC) that combines analog electronics and three-dimensional optics to accelerate AI inference and combinatorial optimization in a single platform. This dual-domain capability is enabled by a rapid fixed-point search, which avoids digital conversions and enhances noise robustness. With this fixed-point abstraction, the AOC implements emerging compute-bound neural models with recursive reasoning potential and realizes an advanced gradient-descent approach for expressive optimization. We demonstrate the benefits of co-designing the hardware and abstraction, echoing the co-evolution of digital accelerators and deep learning models, through four case studies: image classification, nonlinear regression, medical image reconstruction and financial transaction settlement. Built with scalable, consumer-grade technologies, the AOC paves a promising path for faster and sustainable computing. Its native support for iterative, compute-intensive models offers a scalable analog platform for fostering future innovation in AI and optimization.",
+      "url": "https://doi.org/10.1038/s41586-025-09430-z",
+      "year": 2025,
+      "published": "2025-9-3",
+      "venue": "Nature",
+      "source": "Crossref API",
+      "category": "",
+      "citation_count": 0,
+      "is_co": true
+    },
+    {
+      "title": "Unifying multi-sample network inference from prior knowledge and omics data with CORNETO",
+      "authors": [
+        "Pablo Rodriguez-Mier",
+        "Martin Garrido-Rodriguez",
+        "Attila Gabor",
+        "Julio Saez-Rodriguez"
+      ],
+      "abstract": "Abstract Understanding biological systems requires methods that extract interpretable insights from omics data. Networks offer a natural abstraction by representing molecules as vertices and their interactions as edges, providing a foundation for constructing context-specific models tailored to particular conditions—an essential step in many biological analyses. Most existing approaches fall into one of two categories: machine learning methods, which offer strong predictive power but lack interpretability and require large datasets, and knowledge-based methods, which are more interpretable but designed for analysing individual samples and difficult to generalize. Here we present CORNETO, a unified mathematical framework that generalizes a wide variety of methods that learn biological networks from omics data and prior knowledge. CORNETO reformulates these methods as mixed-integer optimization problems using network flows and structured sparsity, enabling joint inference across multiple samples. This improves the discovery of both shared and sample-specific molecular mechanisms while yielding sparser, more interpretable solutions. CORNETO supports a range of prior knowledge structures, including undirected, directed and signed (hyper)graphs. It extends a broad class of approaches, ranging from Steiner trees to flux balance analysis, within a unified optimization-based interface. We demonstrate CORNETO’s utility across diverse biological contexts, including signalling, metabolism and integration with biologically informed deep learning. We provide CORNETO as an open-source Python library for flexible network modelling.",
+      "url": "https://doi.org/10.1038/s42256-025-01069-9",
+      "year": 2025,
+      "published": "2025-7-22",
+      "venue": "Nature Machine Intelligence",
+      "source": "Crossref API",
+      "category": "",
+      "citation_count": 0,
+      "is_co": true
+    },
+    {
+      "title": "Reusability report: A distributed strategy for solving combinatorial optimization problems with hypergraph neural networks",
+      "authors": [
+        "Xiaodi Li",
+        "Jianfeng Gui",
+        "Wei Xue",
+        "Baochuan Wang",
+        "Kai Chen",
+        "Pijing Wei",
+        "Junfeng Xia",
+        "Zhenyu Yue"
+      ],
+      "abstract": "",
+      "url": "https://doi.org/10.1038/s42256-025-01141-4",
+      "year": 2025,
+      "published": "2025-11-19",
+      "venue": "Nature Machine Intelligence",
+      "source": "Crossref API",
+      "category": "",
+      "citation_count": 0,
+      "is_co": true
+    },
+    {
+      "title": "Large language models discover complementary heuristics for combinatorial optimization",
+      "authors": [
+        "Huatian Gong",
+        "Shuaian Wang",
+        "Dongping Song",
+        "Jiuh-Biing Sheu",
+        "Ran Yan"
+      ],
+      "abstract": "",
+      "url": "https://doi.org/10.1038/s42256-026-01307-8",
+      "year": 2026,
+      "published": "2026-10-1",
+      "venue": "Nature Machine Intelligence",
+      "source": "Crossref API",
+      "category": "",
+      "citation_count": 0,
+      "is_co": true
+    }
+  ]
+}

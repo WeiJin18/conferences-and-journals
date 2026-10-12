@@ -35,8 +35,8 @@ ARXIV_API = "http://export.arxiv.org/api/query"
 ARXIV_PAGE_SIZE = 100
 ARXIV_INTERVAL = 3.0       # arXiv 官方建议的请求间隔（秒）
 ARXIV_MAX_RETRIES = 5      # 429 限速重试次数
-MONTHLY_LIMIT = 1000       # 每个月分片最多拉取条数（窗口全覆盖，月内截长尾）
-MAX_FETCH = 20000          # 单次运行拉取条数总上限（保护，超限直接截断并警告）
+MONTHLY_LIMIT = 300        # 每个月分片最多拉取条数，控制 Actions 运行时间
+MAX_FETCH = 10000           # 单次运行拉取条数总上限（保护，超限直接截断并警告）
 
 TOP_AGENT = 150            # agent/harness 主题落盘数
 TOP_CO = 50                # 组合优化主题落盘数
@@ -136,6 +136,7 @@ def fetch_arxiv_slice(start: datetime, end: datetime, slice_limit: int) -> list[
         start_idx += len(entries)
         if len(entries) < ARXIV_PAGE_SIZE:
             break
+        # 在分页请求之间限速，避免触发 arXiv API 的频率限制。
         time.sleep(ARXIV_INTERVAL)
     return papers[:slice_limit]
 
@@ -162,12 +163,14 @@ def fetch_arxiv_window(start: datetime, end: datetime, monthly_limit: int = MONT
         if len(papers) >= MAX_FETCH:
             print(f"[warn] 达到 MAX_FETCH={MAX_FETCH}，剩余分片跳过", file=sys.stderr)
             break
-        batch = fetch_arxiv_slice(slice_start, slice_end, monthly_limit)
+        remaining = MAX_FETCH - len(papers)
+        batch = fetch_arxiv_slice(slice_start, slice_end, min(monthly_limit, remaining))
         fresh = [p for p in batch if p["url"] not in seen_urls]
         seen_urls.update(p["url"] for p in fresh)
         papers.extend(fresh)
         print(f"[arxiv] {slice_start.date()}~{slice_end.date()} 片内 {len(batch)}，累计 {len(papers)}", flush=True)
-        time.sleep(ARXIV_INTERVAL)
+        if slice_end < end:
+            time.sleep(ARXIV_INTERVAL)
     return papers
 
 
