@@ -8,7 +8,8 @@
     "venue": "NeurIPS",
     "source": "NeurIPS Proceedings",
     "category": "大语言模型与生成",
-    "is_agent": false
+    "is_agent": false,
+    "is_co": false
   },
   {
     "title": "EngiBench: A Framework for Data-Driven Engineering Design Research",
@@ -19,7 +20,8 @@
     "venue": "NeurIPS",
     "source": "NeurIPS Proceedings",
     "category": "大语言模型与生成",
-    "is_agent": false
+    "is_agent": false,
+    "is_co": false
   },
   {
     "title": "Zooming from Context to Cue: Hierarchical Preference Optimization for Multi-Image MLLMs",
@@ -30,7 +32,8 @@
     "venue": "NeurIPS",
     "source": "NeurIPS Proceedings",
     "category": "大语言模型与生成",
-    "is_agent": false
+    "is_agent": false,
+    "is_co": false
   },
   {
     "title": "Stochastic Forward-Forward Learning through Representational Dimensionality Compression",
@@ -41,7 +44,8 @@
     "venue": "NeurIPS",
     "source": "NeurIPS Proceedings",
     "category": "图学习",
-    "is_agent": false
+    "is_agent": false,
+    "is_co": false
   },
   {
     "title": "Repurposing AlphaFold3-like Protein Folding Models for Antibody Sequence and Structure Co-design",
@@ -52,7 +56,8 @@
     "venue": "NeurIPS",
     "source": "NeurIPS Proceedings",
     "category": "图学习",
-    "is_agent": false
+    "is_agent": false,
+    "is_co": false
   },
   {
     "title": "The Primacy of Magnitude in Low-Rank Adaptation",
@@ -63,7 +68,8 @@
     "venue": "NeurIPS",
     "source": "NeurIPS Proceedings",
     "category": "优化与学习理论",
-    "is_agent": false
+    "is_agent": false,
+    "is_co": false
   },
   {
     "title": "Mitigating Sexual Content Generation via Embedding Distortion in Text-conditioned Diffusion Models",
@@ -74,7 +80,8 @@
     "venue": "NeurIPS",
     "source": "NeurIPS Proceedings",
     "category": "计算机视觉",
-    "is_agent": false
+    "is_agent": false,
+    "is_co": false
   },
   {
     "title": "Diffusion Feature Field for Text-based 3D Editing with Gaussian Splatting",
@@ -85,7 +92,8 @@
     "venue": "NeurIPS",
     "source": "NeurIPS Proceedings",
     "category": "计算机视觉",
-    "is_agent": false
+    "is_agent": false,
+    "is_co": false
   },
   {
     "title": "Blending Complementary Memory Systems in Hybrid Quadratic-Linear Transformers",
@@ -96,7 +104,8 @@
     "venue": "NeurIPS",
     "source": "NeurIPS Proceedings",
     "category": "强化学习",
-    "is_agent": false
+    "is_agent": false,
+    "is_co": false
   },
   {
     "title": "UFO-RL: Uncertainty-Focused Optimization for Efficient Reinforcement Learning Data Selection",
@@ -107,7 +116,8 @@
     "venue": "NeurIPS",
     "source": "NeurIPS Proceedings",
     "category": "强化学习",
-    "is_agent": false
+    "is_agent": false,
+    "is_co": false
   },
   {
     "title": "GPO: Learning from Critical Steps to Improve LLM Reasoning",
@@ -118,6 +128,521 @@
     "venue": "NeurIPS",
     "source": "NeurIPS Proceedings",
     "category": "强化学习",
-    "is_agent": false
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Adaptive DHiSparse: Speculative Decoding over a Load-Adaptive KV Hierarchy",
+    "authors": [
+      "Naji Alazhar",
+      "Wassel Alazhar"
+    ],
+    "abstract": "Long-context serving runs out of KV memory before the hardware reaches its useful throughput. HiSparse stores history in host memory and fetches only the selected entries, but it uses one cache budget at every load and does not handle draft-model speculative decoding such as DSpark and DFlash2. We present Adaptive DHiSparse, which supports speculative decoding over hierarchical sparse KV and adapts residency to load. It protects the required working set, retains additional history while GPU memory is spare, and recovers the rest through exact fused retrieval. DSpark and DFlash2 keep their proposal and acceptance rules: queries share missing-row retrieval, draft KV uses a window-bounded ring, and verification staging is reused across layer groups. At 100K context and concurrency 128, GLM-5.3 with DFlash2 delivers 793 output tokens/s per decode GPU, 1.45$\\times$ HiSparse and 1.27$\\times$ non-speculative adaptive serving. Held to the same latency bounds as HiSparse, it sustains up to 4$\\times$ the concurrency and 2.3 to 3.7$\\times$ the output, depending on the per-token bound. On DeepSeek-V4.1-Flash at 500K context and concurrency 512, Adaptive DHiSparse with DSpark delivers 1.85$\\times$ the output of resident serving with DSpark. In a load step, optional residency reduces host fetches from 14.2% to 1.4% of selected rows at low load and releases memory under pressure.",
+    "url": "http://arxiv.org/abs/2610.13708v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.CL",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Retrieval-Augmented Multimodal Language Model with Heterogeneous Evidence Integration for Clinical Prognosis",
+    "authors": [
+      "Hamza Shafiq",
+      "Jialu Tang",
+      "Ting Dang",
+      "Jun Hu",
+      "Aaqib Saeed"
+    ],
+    "abstract": "Clinical prognosis requires integrating structured measurements, physiological waveforms, longitudinal history, and population context. We introduce PRISM (Population-Retrieved Inference for Structured Multimodal Prognosis), a multimodal language model that combines per-feature numerical tokenization, recency-weighted aggregation of longitudinal ECGs, and a dual-modality population memory bank. Retrieval operates in representation space: the model receives mean-pooled embeddings of similar training-cohort encounters, while no individual retrieved record enters the prompt. On the 1,443-task MDS-ED benchmark, PRISM achieves AUROCs of 86.2% for diagnosis, 93.1% for deterioration, 91.8% for ICU admission, and 92.8% for mortality. These results use a 96-hour pre-arrival window unavailable to reported baselines. With benchmark-window inputs only, PRISM reaches 0.8895 AUROC, compared with 0.8937 for UniPACT and 0.8889 for MDS-ED. A matched-input compact fusion model using the same five evidence streams and frozen encoders reaches 0.7652 AUROC, versus 0.9092 for PRISM. Replacing numerical EHR encoding with text serialization reduces AUROC by 3.66 points; removing pre-arrival history reduces it by 1.97 points; and zeroing retrieval reduces it by 0.99 points. Genuine retrieval outperforms random-neighbor retrieval by 0.97 macro-average points, although a paired task-level sign test does not establish a uniform advantage (p=0.067). On the external MC-MED cohort, supervised fine-tuning reaches 0.8611 AUROC, compared with 0.8227 for locally trained gradient boosting and 0.7841 for source-only PRISM. These results support structure-aware multimodal integration and supervised external adaptation.",
+    "url": "http://arxiv.org/abs/2610.13510v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.CL",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Test-Time Memory Construction",
+    "authors": [
+      "Zijun Wang",
+      "Yifan Ji",
+      "Haidong Xin",
+      "Zhenghao Liu",
+      "Yukun Yan",
+      "Zulong Chen",
+      "Yu Gu",
+      "Ge Yu",
+      "Maosong Sun"
+    ],
+    "abstract": "Large Language Models (LLMs) struggle to answer questions over long interaction histories, where relevant evidence may be scattered across distant sessions. Existing memory systems typically construct and maintain sophisticated memory representations offline, before user queries are observed, incurring substantial overhead and limiting their ability to adapt memory construction to query-specific information needs. In this paper, we propose T$^2$Mem, a Test-Time Memory construction framework that defers memory construction to inference and progressively builds memory along the reasoning process. Specifically, T$^2$Mem extracts lightweight episode-level metadata offline to capture key events and temporal associations as retrieval cues, while retaining links to the original interactions to facilitate the reconstruction of dependencies across episodes. At test time, the LLM adaptively retrieves and organizes metadata and raw interactions, progressively constructing query-specific memory as reasoning unfolds. Experiments on LoCoMo and LongMemEval show the effectiveness of T$^2$Mem by consistently outperforming strong baselines across different backbone LLMs while substantially reducing the overhead of memory construction. Further analysis demonstrates that deferring memory construction to inference enables the memory construction process to dynamically adapt to the information needs of individual queries. All code is available at https://github.com/OpenBMB/T2Mem.",
+    "url": "http://arxiv.org/abs/2610.13348v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.CL",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Beyond the Final Embedding: Retrieving Memories from Token-Level Evidence",
+    "authors": [
+      "Han Luo",
+      "Zhan Zhuang",
+      "Xu He",
+      "Jujia Zhao",
+      "Yu Li",
+      "Suqin Yuan",
+      "Dong Li",
+      "Lei Feng"
+    ],
+    "abstract": "Memory-augmented assistants retrieve evidence from stored conversations and documents to answer queries. Most embedding-based retrievers compare single-vector representations of queries and memories, even when relevance depends on a small part of the content. Such local evidence can be matched to queries using the contextual token representations already computed by the same embedding models. Our method uses sparse token matching to improve retrieval without additional training. Each query token retrieves a small set of matching tokens across candidate memories. The matching scores are aggregated for each memory and combined with whole-memory similarity to rank memories. An optional low-rank query adapter can be trained with supervision while keeping the encoder and stored memory representations fixed. Our method improves retrieval across eight benchmarks and multiple model families without additional training. Query adaptation further increases the gains to 13.3 and 14.3 percentage points in average Recall@10 and NDCG@10 on Qwen3-Embedding-4B. These retrieval gains translate into higher question-answering accuracy on long-term memory benchmarks.",
+    "url": "http://arxiv.org/abs/2610.13277v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.CL",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Time Delay System for Sequence Modeling",
+    "authors": [
+      "Youshan Zhang",
+      "Jialu Li"
+    ],
+    "abstract": "Existing sequence models share a critical limitation: they lack an explicit, interpretable mechanism for content-aware temporal recall. LSTMs compress everything into a single hidden state, thereby losing information about specific past events. Transformers attend to all tokens indiscriminately at quadratic cost, while state-space models like Mamba compress history into a fixed-dimensional state without explicit content-addressable memory. To address this gap, we introduce a novel framework grounded in nonlinear time-delay systems, in which the effective delay is dynamically estimated based on the semantic similarity between current and historical inputs. Our approach features three key innovations: (i) a differentiable semantic lag estimator that computes content-aware soft attention weights over history, producing a weighted historical context and similarity score; (ii) a diagonal state space with closed-form cumulative sum solution, achieving O(1) per-step complexity with no sequential loops; and (iii) an interpretable fuzzy semantic modulation mechanism that learns context-dependent rules for balancing instantaneous processing versus historical recall, where rule centers correspond to prototypical semantic contexts. Experimental results on text classification and generation outperform state-of-the-art methods.",
+    "url": "http://arxiv.org/abs/2610.12864v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.CL",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "One Model to Loop Them All: Elastic Latent Recurrence for Language Models",
+    "authors": [
+      "Faisal Ladhak",
+      "Shantanu Acharya",
+      "Santiago Akle Serano",
+      "Simeng Sun",
+      "Boris Ginsburg",
+      "Krishna C Puvvada"
+    ],
+    "abstract": "A latent recurrent language model applies a shared block of layers repeatedly, so one checkpoint can trade inference compute for accuracy by changing the loop count. At one loop, however, such models typically fall well short of a non-recurrent model of the same size, a one-loop tax that makes a separate non-recurrent model the better choice whenever latency matters. We present Elastic Latent Recurrence (ELR), a recipe for training looped language models without this tax. At one loop, an ELR model costs the same to serve as a non-recurrent model of the same size and, trained on the same data, reaches similar accuracy. Each additional loop then buys more accuracy for more inference compute. Three choices make this work: a gated state update with a learned step size, loop counts mixed within each optimizer update, and conditioning each pass on its loop index and budget. The first two preserve one-loop accuracy, and the third lowers loss at every additional loop. Mixed depths can be introduced late in pretraining to limit the added training cost, and with zero-initialized conditioning added at the switch, this late schedule reaches lower loss than mixed-depth training from scratch. In MoE models, reusing first-loop expert routes on later loops cuts mixed-depth update time by 11.7% with no measurable change in accuracy. At inference, keeping only the last loop's attention KV cache holds attention KV memory at its one-loop level while retaining most of the gain from additional loops. On 4B dense and 30B-A3B MoE hybrid models, ELR at one loop is 0.52 points below and 1.04 points above its matched baseline on a ten-task average, and four loops add 7.25 and 4.75 points. Carried through post-training, the recipe yields Koi-4B, a single checkpoint that scores an estimated 18 on the Artificial Analysis Intelligence Index at one loop, matching Qwen3.5-4B, and 29 at four loops.",
+    "url": "http://arxiv.org/abs/2610.12582v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.CL",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "VFold: Symmetry-Aware Cross-Layer Value Cache Compression",
+    "authors": [
+      "Neha Verma",
+      "Sungwon Kim",
+      "Kenton Murray",
+      "Kevin Duh"
+    ],
+    "abstract": "While caching key-value (KV) states accelerates Large Language Model (LLM) decoding, this cache can dominate memory usage at long context lengths. One solution is to compress this memory by exploiting inter-layer cache similarities. However, most existing techniques necessitate architectural changes to LLMs and incur substantial overhead. In this work, we propose a symmetry-aware value cache merging strategy that reduces cache memory while avoiding both harmful performance degradation and architectural overhead during decoding. Furthermore, we show that this approach can be exploited alongside existing cache compression techniques, composing with high-ratio quantization or key cache pruning to reach compression ratios that neither method reaches alone, with minimal additional cost. Ultimately, our findings reveal a major source of underutilized capacity in the value cache, offering a simple yet highly effective direction for scaling context windows under memory constraints.",
+    "url": "http://arxiv.org/abs/2610.12338v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.CL",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference",
+    "authors": [
+      "Qitong Wang",
+      "Xinwei Niu",
+      "Mingluo Su",
+      "Shanwei Zhao",
+      "Shiai Zhu",
+      "Huan Wang"
+    ],
+    "abstract": "The memory-bound nature of the decoding stage of large language model (LLM) inference incurs significant latency. Layer-wise training-free network pruning approaches guided by the Hessian have been a prominent solution to this problem, as pruning reduces the number of nonzero parameters read from memory during decoding. Nevertheless, typical methods in this line compute the Hessian using pre-collected natural sequences, whereas the model is fed self-generated tokens during decoding, creating a distribution shift between the two sequences. The Hessian calculated on the natural sequence is different from that calculated on the generated sequence. We observe that this discrepancy causes the activation distribution during generation to deviate from that used for pruning, further hurting the pruned model performance. Moreover, most existing LLM pruning methods that bring actual speedup primarily target the sparse matrix-matrix (SpMM) multiplication, providing limited support for the sparse matrix-vector (SpMV) operations, which dominate decoding. To solve these problems, we introduce SparseDecoding, a principled decoding-aware pruning framework tailored for accurate and efficient LLM decoding. Specifically, at the algorithmic axis, SparseDecoding constructs calibration matrices from layer-wise activations collected during the dense-model autoregressive generation, excluding prefill, thereby aligning the pruning objective with the decoding activations. At the system axis, we develop an optimized N:M sparse matrix-vector kernel with bitmask indexing and fixed-step traversal. Substantial empirical results on representative LLMs (Llama-3.1-8B, Llama-3.3-70B, Qwen3-14B / 32B) demonstrate that our method consistently outperforms standard fixed-text calibration on the long-form generation benchmarks while achieving up to 1.48x end-to-end wall-clock decoding speedup on A100 GPUs.",
+    "url": "http://arxiv.org/abs/2610.12327v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.CL",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "NativeScope: Relation-Localized Retrieval over Native Topology with a Correct Anchor",
+    "authors": [
+      "Long Wang"
+    ],
+    "abstract": "Dense retrieval usually ranks text chunks by their semantic similarity to a question. This ignores structure that many data systems already store, including section membership, session boundaries, and native order. We propose NativeScope, a scope-then-rank method for queries with a known anchor and relation. It represents a query as q -> (A, r, B). The anchor A and relation r select native units through belonging, before, or after operators, and the target term B ranks only chunks that overlap the selected scope. An internal variant, NS-FullQ, ranks the same candidates with the full question. We evaluate both methods on 200 controlled document and memory records derived from QASPER and LongMemEval under a 1,024-token budget. NativeScope attains native-unit recall of 89.28 percent for documents and 72.50 percent for memories, improving over instance-wide Dense RAG by 42.75 and 22.00 percentage points. NS-FullQ reaches 87.78 percent and 68.50 percent; its differences from NativeScope are inconclusive, locating the primary gain in relational scoping rather than the shorter ranking query. With automatic Top-1 anchors, memory recall falls to 35.50 percent. NativeScope is therefore effective when anchor coordinates and native relations are reliable, but hard scoping inherits errors from the localization interface.",
+    "url": "http://arxiv.org/abs/2610.12243v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.CL",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Rehearse Everything, Remember Nothing: Attic-KV Rehearses What Will Be Read",
+    "authors": [
+      "Zhiyun Shi"
+    ],
+    "abstract": "Many key-value (KV) caches are compressed before anyone knows what will be asked of them: a document cached for retrieval, a prompt prefix shared across requests, the memory of a long conversation. The prevailing approach scores KV entries by rehearsal: the model rereads the context and keeps the entries it attends to, assuming that the more completely a cache rehearses its context, the better it remembers it. We show that under tight budgets this assumption backfires: rehearse everything, remember nothing. At a 3% keep ratio, rereading the whole context keeps 31.5 of 96.5 points on RULER, and on LongBench's natural-text tasks it falls below methods that rehearse nothing at all. The cause is that a cache keeps what it rehearses: rereading spreads the budget across the whole context, so the answer's own entries survive at little more than chance. Like a student before an exam, a cache remembers more by testing itself than by rereading. Two principles follow: rehearse what will be read, and rehearse as much as there is. We instantiate them as Attic-KV (Attic for short), a training-free rehearsal in which the model quizzes itself with question-answer pairs that quote the context, alongside anchor tokens in a content-adaptive amount. Changing only the rehearsal lifts three hosts that score it in three different ways: Attic alone is the best training-free method in all eight settings we test on RULER and LongBench's natural-text tasks, and plugged into the gradient-based KVgrad and the trained RestoreKV+, it raises them by up to 17.1 and 28.1 points. Its advantage grows as the budget shrinks, reaching 41.9 points over full rereading at a 3% keep ratio, and on long documents it compresses faster than rereading them.",
+    "url": "http://arxiv.org/abs/2610.12133v2",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.CL",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "ReplaySSM: Cache SSM Inputs, Not State",
+    "authors": [
+      "Ze-Wei Liou",
+      "Harris Nover",
+      "Amey Naik",
+      "Andrii Skliar",
+      "Igor Shovkun",
+      "Ido Shahaf",
+      "Tri Dao"
+    ],
+    "abstract": "State-space models (SSMs) maintain a fixed-size recurrent state, but reading and writing it at every decoding step can bottleneck hybrid models. This eager state management causes large state I/O with low arithmetic intensity, leaves speculative decoding no cheap rollback, and feeds state quantization error into subsequent recurrent updates. We introduce ReplaySSM, which unrolls the recurrence to represent the state as a checkpoint and a buffer of recent SSM inputs. This separates output computation from checkpoint updates. By updating the checkpoint periodically, ReplaySSM avoids state writes on most steps and roughly halves the dominant state memory traffic. Keeping recent inputs also makes speculative rollback a buffer-pointer operation and enables output-only verification without materializing intermediate states. The same separation allows a low-precision checkpoint to serve output computation on most steps while a higher-precision checkpoint serves recurrent updates, so rounding error in the low-precision copy never enters later updates. We implement ReplaySSM in vLLM for Mamba-2 and Gated DeltaNet. At serving batch size 256, it accelerates standard decoding by $1.20$--$1.47\\times$ over a tuned vLLM baseline across four hybrid models, and delivers about $1.8\\times$ the throughput of vLLM's speculative decoding on the two 120B-class models. Separate state precisions also reduce output KL divergence and downstream accuracy losses compared with a shared low-precision checkpoint.",
+    "url": "http://arxiv.org/abs/2610.13778v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.AI",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "DualQuant: Dual-scale Calibration-free Weight-and-Activation Quantization for LLMs",
+    "authors": [
+      "Mahsa Salmani",
+      "Sayeh Sharify",
+      "Hesham Mostafa"
+    ],
+    "abstract": "Low-bit inference on accelerators with native 4-bit support requires quantizing both weights and activations to realize the full throughput gains these formats provide. While post-training weight quantization has been extensively studied, activation quantization remains considerably more challenging and typically requires calibration data. In this work, we introduce DUALQUANT, a dual-scale, calibration-free post-training quantization framework that directly minimizes the weight-reconstruction Mean Squared Error (MSE) and, as an immediate by-product, yields per-channel activation rescalings prior to activation quantization. Our key observation is that the scaling factors obtained by minimizing weight-reconstruction error provide effective activation rescalings, enabling competitive activation quantization without calibration data. We formulate DUALQUANT as a non-differentiable weight-reconstruction problem and develop an efficient solver based on variable splitting and block coordinate descent, where each subproblem admits a closed-form update. DUALQUANT provides a unified algorithm supporting a wide range of formats, including the full MX family and NVFP4. To our knowledge, DUALQUANT is the first dual-scaling method to formally support MX and NV block formats. Across Llama and Qwen models evaluated on WikiText-2, C4, and zero-shot downstream tasks, DUALQUANT matches or exceeds the accuracy of calibration-based SmoothQuant across most models and formats, and substantially outperforms calibration-free baselines, with large gains for MX and NV block formats. We validate these gains with a real packed W4A4 inference path for Llama-3.1-8B on an RTX 4090. The resulting implementation closely matches the accuracy of fake quantization while delivering up to 2.61x memory reduction and up to 2.46x throughput speedup over BF16.",
+    "url": "http://arxiv.org/abs/2610.13767v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.AI",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Tabular Foundation Models Are Effectively Shallow",
+    "authors": [
+      "Irene Cannistraci",
+      "Julia E. Vogt"
+    ],
+    "abstract": "In-context-learning Tabular Foundation Models (TFMs) are uniquely suited to scenarios with limited resources or privacy constraints, as they solve new tasks without additional training. However, their architecture consists of multiple transformer blocks, resulting in high computational and memory footprints. Meanwhile, traditional alternatives like Gradient-Boosted Decision Trees (GBDTs) remain highly competitive and run efficiently on CPUs, suggesting that tabular tasks may not inherently require deep architectures. This contrast raises a fundamental question: can TFMs be simplified by removing architectural redundancies without sacrificing performance? To answer this, we introduce a closed-form, label-free affine translator that replaces a contiguous window of up to 96% of the blocks, leaving the rest unchanged. Evaluating eight frontier TFMs on 171 classification datasets, we reveal that tabular transformers are vastly overparameterized: replacing half of a model's blocks costs at most $0.002$ median AUROC across all architectures, with the half-depth TabFM still outperforming every other full-depth TFMs and tuned GBDTs. Furthermore, different model families are overparameterized in different ways: TabPFN-3 relies on its encoders, maintaining performance regardless of which single block is retained. Other single-axis models spread computation thinly, needing only their first block, while dual-axis models concentrate it in one critical block. Ultimately, removing depth saves up to 1.5B parameters, speeds up GPU inference by up to $6\\times$ at a median cost of $0.03$ AUROC, while a single-block TabPFN-3 serves cached queries $2.4\\times$ faster using $6\\times$ less memory at negligible cost.",
+    "url": "http://arxiv.org/abs/2610.13253v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.AI",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Does Learning Recurrent Networks Matter in Partially Observable RL?",
+    "authors": [
+      "Zekang Wang",
+      "Zhe He",
+      "Gaojie Jin"
+    ],
+    "abstract": "Reinforcement learning (RL) under partial observability typically re- lies on recurrent networks to encode temporal information, with the recurrent module trained jointly with the policy or value function. This raises a natural question: is learning the recurrent network actually necessary? In this paper, we investigate whether a frozen recurrent network can provide sufficient memory for solving par- tially observable Markov decision processes (POMDPs). Motivated by the theoretical foundations of Reservoir Computing (RC) and Generalized Reservoir Computing (GRC), we study a simple archi- tecture that combines a fixed recurrent network with a trainable nonlinear output module. We evaluate this approach across tasks with varying memory demands, observation modalities, and action spaces. Surprisingly, frozen recurrent networks support recall over hundreds of steps and achieve competitive control performance across diverse POMDPs, while using less than half the number of trainable parameters required by their fully trainable counterparts. These results suggest that learning the recurrent memory module is not always necessary for solving POMDPs. Frozen recurrent networks therefore provide a simple, parameter-efficient, and sur- prisingly strong baseline for partially observable RL. Our source code is available at https://github.com/Aphlios/FRN-POMDP",
+    "url": "http://arxiv.org/abs/2610.13197v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.AI",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "DP-MIND: Differentially private memory-guided Long context Inference",
+    "authors": [
+      "Zhihao Liu",
+      "Yitian Cheng",
+      "Shuang Liu",
+      "Rui Wen",
+      "Yuke Hu",
+      "Zhan Qin"
+    ],
+    "abstract": "LLM-as-a-Service has become a dominant paradigm for accessing large language models without requiring local deployment. However, the process raises severe privacy concerns when user queries may include sensitive or confidential contexts. Differential privacy (DP) provides a principled approach to protecting such inputs, but existing DP inference methods are primarily designed for short- or moderate-context settings and struggle with million-token-scale inputs due to limited context capacity and severe utility degradation under DP perturbation. In this paper, we propose DP-MIND, a memory-guided framework that scales differentially private inference to million-token contexts. DP-MIND enables private long-context inference by locally perturbing the input and processing it chunk by chunk with a compact memory that preserves task-relevant information across the sequence. To make this memory robust to DP noise, we optimize the memory construction policy directly on perturbed inputs using reinforcement learning, guided by both final answer correctness and memory consistency. We further recover perturbation-corrupted answer spans through a local denoising module without exposing the original context to the external model. We provide theoretical privacy analysis of DP-MIND and further conduct extensive empirical analysis across multiple long-context benchmarks with context lengths up to the million-token scale, demonstrating that DP-MIND consistently outperforms existing DP and long-context inference baselines in both scalability and utility.",
+    "url": "http://arxiv.org/abs/2610.13132v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.AI",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Prediction Is Not a Sufficient Memory State",
+    "authors": [
+      "Robert Jenkinson Alvarez"
+    ],
+    "abstract": "A memory that reproduces every current prediction may still have forgotten how to learn from the next observation. We characterize this distinction for exact cumulative learning and attention. For smooth convex residual losses with unrestricted real features and labels, a continuous recurrent state of fixed dimension exists exactly when the loss is polynomial. With ordinary, unweighted observations, degree $D$ requires precisely $r=\\binom{d+D}{D}-1$ coordinates; even among histories with one fixed current predictor, exactly $r-d$ coordinates can remain necessary for continuation. Nonpolynomial losses have unbounded requirements on such equal-prediction histories. Bounded scalar logistic examples retain this obstruction after fixing any finite derivative jet. For ridge regression, the hidden evidence is the design matrix: the exact state costs $dp+d(d+1)/2$, versus $dp$ for the predictor. On a well-conditioned zero-prediction family, optimal $B$-bit compression has average one-update error of order $d^{-1}2^{-2B/s_d}$, $s_d=d(d+1)/2$, even with arbitrary randomized codes. Kernel attention gives a second exact closure classification. The results identify what future updates reveal, rather than proposing a new regression algorithm or asserting trained-model gains.",
+    "url": "http://arxiv.org/abs/2610.13881v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "SmolWAM: A Latent World-Action Model for Robotic Manipulation on Edge Devices",
+    "authors": [
+      "Timi Owolabi",
+      "Hikmah Olawore",
+      "Frances Adelakun",
+      "Ayotomiwa Oyewumi"
+    ],
+    "abstract": "World-action models (WAMs) predict a robot's actions together with the observations those actions will produce. However, the strongest models rely on video diffusion transformers that are far too computationally expensive for resource-constrained edge devices. We present SmolWAM, a latent WAM that we derive from the 2B-parameter Cosmos Policy by keeping its pretrained trunk and rebuilding its inference interface: single-frame visual latents, cached text features that preserve the trunk's attention sinks, 12 of 28 transformer blocks, and 1,008 tokens from which actions and future visual latents are read out in one rectified-flow step. Trained in 3.6 GPU-hours, SmolWAM succeeds in 95.5% of 400 LIBERO episodes at 57 ms and 2.3 TFLOP per 16-action chunk with 2.4 GiB of GPU memory, 11x faster than its teacher with 18.5x fewer FLOPs and 3.2x less memory, and its world head still forecasts scene motion.",
+    "url": "http://arxiv.org/abs/2610.13740v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "X-AVDD: Cross-Attentive Audio-Visual Dataset Distillation",
+    "authors": [
+      "Saumyaranjan Mohanty",
+      "Aravind Reddy",
+      "Konda Reddy Mopuri"
+    ],
+    "abstract": "Audio-visual dataset distillation aims to synthesize a small dataset from a large paired audio-visual dataset, while nearly preserving the training utility for neural networks. Existing approaches such as DM and AVDD face two critical limitations: 1) they are memory-intensive, making them difficult to scale to complex architectures and higher samples-per-class (SPC) settings, and 2) they often fail to preserve strong cross-modal semantic correspondence. To tackle these issues, we propose X-AVDD, a cross-attention-based distillation method that explicitly captures inter-modal relationships during synthesis. By decoupling cross-modal alignment from joint optimization, X-AVDD is substantially more memory-efficient, reducing end-to-end synthesis cost by $\\sim 8\\times$ GPU-hours, while producing highly aligned synthetic data. Empirically, X-AVDD significantly outperforms other audio-visual distillation methods. On VGGSound, an audio-visual dataset of short YouTube clips, X-AVDD improves top-1 test accuracy from $8.2\\%\\rightarrow24.0\\%$ at SPC=$10$ and $9.8\\%\\rightarrow26.5\\%$ at SPC=$20$. Furthermore, X-AVDD improves cross-architecture generalization (e.g., $25.5\\%\\rightarrow35.3\\%$ for a ViT target on AVE dataset at SPC $=50$) and successfully scales to complex architectures such as AudioCLIP, achieving $62.3\\%$ accuracy using only $5.65\\%$ of the full dataset, against the full dataset accuracy of $72.4\\%$ while completing in $9\\times$ lower training time compared to the full dataset.",
+    "url": "http://arxiv.org/abs/2610.13687v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "BLOKS: Scaling Kernel Solvers with Sketched Block Preconditioning",
+    "authors": [
+      "Giordano Vitale",
+      "Giacomo Meanti",
+      "Marco Rando",
+      "Blanca Ayuso de Dios",
+      "Lorenzo Rosasco"
+    ],
+    "abstract": "Kernel Ridge Regression (KRR) is a theoretically sound algorithm for nonparametric learning, which is also often used to investigate properties of deep learning. However, the exact KRR formulation incurs time and memory costs preventing applicability to large datasets, motivating the development of approximate solvers. These algorithms rely on (i) iterative methods, to avoid the computational burden of direct solutions; (ii) sketching or batching, to reduce the problem size; and (iii) preconditioning, to accelerate convergence. While crucial for fast convergence, preconditioning incurs memory costs that can be managed by lowering the number of free parameters of the model, potentially at the expense of expressivity and hence accuracy. To address this challenge, we propose BLOKS, a Conjugate Gradient-based solver for Nyström-sketched KRR built around a novel preconditioner that combines a block Jacobi approximation with sketching. The BLOKS preconditioner has memory cost independent of both the dataset size and the number of parameters, allowing scaling to large models. We provide a memory-efficient, GPU-accelerated implementation and show that BLOKS achieves excellent accuracy while retaining favorable time/memory complexity. Indeed, on standard large-scale datasets used to benchmark kernel solvers, BLOKS achieves comparable or better performances than state-of-the-art methods.",
+    "url": "http://arxiv.org/abs/2610.13382v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "SBNO : Schrödinger Bridge Neural Operator for the Forward and Inverse Problems under Missing Information",
+    "authors": [
+      "Jaehyeon Park",
+      "Inhyeok Jeong",
+      "Noseong Park"
+    ],
+    "abstract": "Partial differential equation (PDE) surrogate modeling often relies on either dense observations or access to governing equations/physics constraints. In practice, observations can be sparse and partial, and the underlying physics may be partially specified or unavailable. We introduce SBNO, an equation-free paired-data diffusion bridge matching framework that learns conditional operators for both forward and inverse PDE problems under partial observations. SBNO uses diffusion Schrödinger bridge matching to learn a pair of time-dependent drifts from a mask-aware endpoint coupling that preserves empirical input-solution pairing during training and supports both PDE-task directions within a single framework. At inference time, SBNO produces a deterministic point reconstruction by integrating the probability-flow ODE constructed from the learned drift pair, without inference-time observation or PDE guidance-weight tuning. On five PDE benchmarks with 5% observations, SBNO achieves superior or comparable accuracy to baselines while demonstrating lower test-instance error dispersion. Furthermore, SBNO is at least $9.7 \\times$ faster and reduces GPU memory by at least $4.3 \\times$ compared to guided-diffusion baselines.",
+    "url": "http://arxiv.org/abs/2610.13317v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "JEPA-kMMVAE: CSI Prediction for Time-Varying Wireless Channels",
+    "authors": [
+      "Efstathios Chatziloizos",
+      "Konstantinos Vandikas",
+      "Aneta Vulgarakis Feljan",
+      "Zheng Chen",
+      "Nikolaos Pappas"
+    ],
+    "abstract": "This paper considers channel state information (CSI) prediction using neural networks for time-varying multi-antenna channels from noisy historical observations. The main challenge is to exploit temporal correlation while distinguishing channel evolution from observation noise. We propose JEPA-kMMVAE, which combines a joint-embedding predictive architecture with a k-memory Markov variational autoencoder to predict future CSI through temporally structured latent representations. The framework supports direct prediction and residual corrections relative to the latest latent state and noisy CSI observation. Simulation results show that the residual configuration outperforms the evaluated baselines at moderate and high input CSI signal-to-noise ratios, while sequence baselines remain more accurate under stronger noise.",
+    "url": "http://arxiv.org/abs/2610.13315v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Structure-Aware Numerical Stabilization for Half-Precision Proximal Policy Optimization",
+    "authors": [
+      "Linxuan Wu",
+      "Liang Chen"
+    ],
+    "abstract": "Local online training on resource-constrained platforms requires low computational and training-state overhead. We study the numerical stability and computational efficiency of half-precision proximal policy optimization (PPO) on commodity GPUs. Directly converting PPO training to FP16 is unreliable because numerical errors feed back through policy updates and subsequent data collection, while PPO repeatedly compares a current policy with a fixed behavior policy. We propose PPO-FP16 with three structure-aware modules. Global scalar protection stabilizes statistics shared across a minibatch or parameter update. Policy-change residual protection extracts and preserves small differences between the current and behavior policies. Efficient persistent-update protection stabilizes optimizer state and parameter writeback while reducing state storage. These changes preserve the PPO objective, hyperparameters, and training budget. Across six continuous-control tasks and five seeds, PPO-FP16 achieves the lowest mean return-AUC rank (1.90) among the four methods and ranks first in 17 of 30 environment-seed comparisons. Eight of nine performance configurations yield PPO update speedups ranging from 1.16 to 2.03 times. Relative to Full FP32 Adam, optimizer-state memory is reduced by 71.7 to 74.9 percent, and peak allocated GPU memory is reduced by up to 44.5 percent. The results show that protecting a small set of structurally important quantities can deliver stable, efficient FP16 PPO without retuning.",
+    "url": "http://arxiv.org/abs/2610.13306v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Monarch-MoE: Structured Experts for Multimodal Continual Instruction Tuning",
+    "authors": [
+      "Xi Zhang",
+      "Boyu Diao",
+      "Zesen Chen",
+      "Ruiqi Liu",
+      "Hangda Liu",
+      "Yongjun Xu"
+    ],
+    "abstract": "Learning new tasks in multimodal continual instruction tuning can cause catastrophic forgetting of previously acquired knowledge. Although multi-expert LoRA distributes learning across experts, updates to a dense low-rank expert can still affect many output features. We introduce Monarch-MoE, which replaces the dense factors in LoRA experts with block-diagonal factors connected by a fixed permutation. This structure provides blockwise gradient isolation: individual block-pair updates affect only one output block, while connections between all input and output blocks are maintained. To make these compact experts practical on memory-limited hardware, we combine batched computation, fused forward operators, and an optimized backward pass. Across three continual-learning methods evaluated on MLLM-DCL and UCIT with LLaVA-1.5-7B, Monarch-MoE improves first-task retention while reducing adapter parameters by approximately 75% and 50%, respectively. In the main comparison, first-task forgetting is as low as 0.52 percentage points on MLLM-DCL and 0.10 on UCIT, with method-dependent trade-offs in final performance. Our implementation supports fine-tuning and inference on a single 24 GB RTX 4090, with lower measured memory use and competitive runtime in the evaluated settings. Together, these algorithmic and systems improvements make structured experts a practical option for continual adaptation on memory-limited hardware.",
+    "url": "http://arxiv.org/abs/2610.13215v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Double-Take: Improving Capacity, Binding, and Selectivity In Long-Context Within Bidirectional Memory",
+    "authors": [
+      "Vakul Raghavan",
+      "Utkarsh Grover",
+      "Mingyang Mao",
+      "Chengwen Wang",
+      "Xiaomin Lin"
+    ],
+    "abstract": "Processing a long sequence does not guarantee that distant information remains usable. As context grows, a fixed-size memory must retain many associations, connect information across positions, and preserve relevant structure without being overwhelmed by everything it observes. These are distinct requirements: a memory may store more information without representing the relationships needed for retrieval, and it may transport those relationships without preserving the ones that matter. Thus, the challenge is not simply extending context length, but constructing a memory that remains usable as context grows. We study this problem in large-chunk test-time training (TTT) and identify two basic failures: single-step writes accumulate interference, limiting capacity, while self-associative writes cannot form cross-position bindings. We introduce Double-Take (DT), which repairs these failures with multi-step unpinned updates and cross-position mixing, and adds bidirectional change-sensitive writes for selective retention. Capacity alone leaves end-to-end recall at the $0.10$ chance floor; adding binding raises it to $0.92$. Trained only on $32\\,\\mathrm{kb}$ genomic contexts, DT reaches $0.927$ AUROC at $131\\,\\mathrm{kb}$ and $0.856$ near $1\\,\\mathrm{Mb}$, while transferring zero-shot from human to mouse. Together, these results identify capacity, binding, and selectivity as three requirements for usable long-range memory.",
+    "url": "http://arxiv.org/abs/2610.13073v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Scan-Parallel Variational Inference for event-driven Latent Jump Models",
+    "authors": [
+      "Vansh Bansal",
+      "Min Chen",
+      "James G. Scott"
+    ],
+    "abstract": "Continuous-time latent state-space models are widely used for irregularly observed time series, typically representing uncertainty through a random initial state followed by smooth ordinary differential equation (ODE) dynamics, or Brownian perturbations accumulated by a stochastic differential equation (SDE). While these constructions are natural for smooth or diffusive systems, they do not directly encode a finite set of unobserved shocks whose timing, magnitude, and effect on memory are themselves uncertain. We instead introduce latent jump models (LJMs): the latent state follows closed-form deterministic dynamics between Poisson-driven event times and undergoes a learned instantaneous jump at each event, with state-dependent intensity and mark distributions. This defines a time-homogeneous Markov process whose jumps are intrinsic state transitions rather than numerical integration steps. For training, we derive a tractable event-augmented path-space evidence lower bound (ELBO) and introduce Scan-Parallel Variational Inference (SPVI): an observation-conditioned variational posterior samples the complete latent event configuration before the state recurrence is evaluated using triangular affine scans. This enables fast and scalable training for LJMs in logarithmic temporal depth. Across synthetic stochastic systems and real irregular time series, LJMs remain competitive with continuous-time latent baselines in forecast accuracy, often with fewer latent updates than numerical solver evaluations, while training one to two orders of magnitude faster than the sequential baselines.",
+    "url": "http://arxiv.org/abs/2610.12986v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Trainable Quantum-Native Language Models: Dissipative Memory, Capacity Limits, and Hardware Validation",
+    "authors": [
+      "Deniz Yunus Göğüş"
+    ],
+    "abstract": "We study byte-level autoregressive language models whose hidden state is a small quantum register, whose transitions are learned token-conditioned quantum channels, and whose next-byte probabilities come directly from Born-rule measurements without a learned classical vocabulary projection or softmax. In the fixed-width recurrent setting, unitary dynamics cannot contract or reset stored distinctions; experimentally, unitary recurrence loses to its retrained one-token control in every tested variant. Introducing learned dissipation, then token-conditioned dissipative gating, yields useful memory beyond one token. The gated model improves test negative log-likelihood by 0.20 +/- 0.03 nats/byte over retrained parameter-matched one-token controls at context length 12, and by 0.29-0.33 at longer contexts, but never beats retrained two-token controls. A key-value recall benchmark shows a width-dependent threshold: one stored pair meets the pre-registered accuracy bar at 4-5 memory qubits, two pairs at 6-7, and three pairs remain unsolved. This is consistent with, but does not establish, a capacity explanation for the short effective memory horizon. As a secondary result, one-qubit models reach lower stationary memory entropy than a heuristically optimized classical predictive frontier at matched error in 9/9 seeds. On IBM Heron hardware, computational-basis memory-register distributions show signal against a uniform null in 12/12 circuits across prefixes of up to 12 tokens, next-bit probabilities pass pre-registered accuracy bars at four-token prefixes, and bytes are generated autoregressively by sampling physically measured bit probabilities. The tested models are classically simulable and substantially worse than classical n-gram baselines. We claim no computational quantum advantage.",
+    "url": "http://arxiv.org/abs/2610.12806v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Kernelized Parameter Sensitivity Atlases for Amortized Conditional Interpretability",
+    "authors": [
+      "Davide Wiest",
+      "Ahanaf Hasan Ariq",
+      "Abdul Monaf Chowdhury"
+    ],
+    "abstract": "Gradient-based attribution provides input-specific information about model parameters, but computing it via backpropagation for many samples is expensive, while static importance scores discard input dependence. We derive KPSA (Kernelized Parameter Sensitivity Atlas) from a block decomposition of the empirical neural tangent kernel. It measures normalized parameter-group sensitivity, embeds those sources in an explicit query space, and uses a lightweight kernel to estimate sensitivities for unseen inputs. We derive bounds that separate finite-source from irreducible representation error and give margin-based top-$k$ recovery. This paper studies two interpretability applications. Firstly, KPSA identifies parameter groups with high susceptibility to perturbations across vision, forecasting, and protein-modeling setups. Across a fivefold range of parameter budgets ($0.02$-$0.1\\%$), its selected groups attain $39$-$85\\%$ of the perturbation susceptibility of a first-order backpropagation oracle. In vision and forecasting, these parameter groups form sparse sensitivity circuits that extend across depth and vary systematically with the input. Secondly, we use KPSA on an activation-attribution problem for MLP features in transformers. It retains $81\\%$ of the gap between a backpropagation oracle and a constant-sensitivity baseline on vision while increasing batched query-time throughput from 551 to 2,041 images/s and reducing peak GPU memory from 4.55 to 0.44GB. On the protein-modeling task, it recovers $68\\%$ of this gap. An ablation of KPSA's kernel aggregation shows that nearest-neighbor retrieval in KPSA space can remain competitive. The empirics show that compact kernel atlases can store useful input-dependent parameter sensitivity while amortizing repeated gradient attribution, a step toward scalable conditional interpretability. Code can be found at https://github.com/Axym-Labs/kpsa .",
+    "url": "http://arxiv.org/abs/2610.12737v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Spatial Context or Memory? Sizing the Inputs of Neural Surrogates for Partially Observed Fields",
+    "authors": [
+      "Ruige Kong"
+    ],
+    "abstract": "Neural surrogates that forecast a physical field from sparse, noisy sensors read a window of nearby sensors and a history of past snapshots. Practitioners choose both by comparing fitted models with each other. Such comparisons cannot tell a model's shortfall from missing information. We measure the trade-off between window and history against the Bayes-optimal error of the same readings. An exact Gaussian analysis shows that noisy or sparse observation of a field with local dynamics makes the optimal forecast read distant sensors only through spatial correlation. On a forced linear field with a known optimum, trained models that read only the window come within 1% of it. We then train such models on viscous Burgers flow and the chaotic Kuramoto-Sivashinsky (KS) equation, with every deciding comparison fixed before any test evaluation. In every field except KS, eight snapshots remove a smaller fraction of the one-snapshot error as the lead time, the number of steps to the forecast target, grows. In KS, for windows up to one correlation length, they remove a larger fraction. This lead-time inversion persists across sensor densities, three architectures and a two-dimensional domain. It shrinks as damping lowers the Lyapunov exponent. Damping also removes the linear instability of KS. We therefore tie the inversion to instability and leave chaos and linear amplification unseparated. For surrogate design the results give two rules. Size the window in correlation lengths of the field. Split a fixed input budget between window and history for the lead time the model will serve, because the best split moves toward wider windows as the lead time grows. In Burgers flow the split chosen at lead time one ends with 13.5 times the best error at lead time eight.",
+    "url": "http://arxiv.org/abs/2610.12723v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "Kronecker Product Attention: Memory-Efficient KV Compression via Structured Factorization",
+    "authors": [
+      "Bahareh Nikpour",
+      "Hossein Rajabzadeh",
+      "Maryam Dialameh",
+      "Vahid Partovi Nia",
+      "Parsa Omidi"
+    ],
+    "abstract": "Efficient autoregressive generation is increasingly limited by the memory footprint of the key-value (KV) cache, which grows linearly with sequence length, batch size, and model depth. Existing approaches such as Multi-Query Attention (MQA), Grouped-Query Attention (GQA), Multi-Head Latent Attention (MLA), and Tensor Product Attention (TPA) reduce this cost through different trade-offs, but often sacrifice expressivity, require additional positional-encoding machinery, or impose restrictive low-rank structure. We propose Kronecker Product Attention (KPA), which represents key and value activations as sums of Kronecker products of compact, token-dependent matrix factors. KPA strictly generalizes TPA: rank-one vector-outer-product factorization arises as a degenerate Kronecker split, while non-degenerate matrix factors can represent richer block-structured patterns. We further show that a structured rotary embedding operator matched to the Kronecker representation preserves the relative-position property of RoPE while rotating only the compact factors, removing the need for a decoupled RoPE branch as in MLA. Empirically, KPA matches or exceeds TPA, MHA, MQA, GQA, and MLA across four model scales and nine downstream benchmarks under identical training conditions, while achieving up to 10x KV cache compression. The Kronecker head split is a tuneable hyperparameter that allows practitioners to navigate the compression-accuracy trade-off at design time without architectural changes.",
+    "url": "http://arxiv.org/abs/2610.12657v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
+  },
+  {
+    "title": "STAPLE: Static Sparse Upcycling of Pretrained Checkpoints via Embedding Modules",
+    "authors": [
+      "Ranajoy Sadhukhan",
+      "Euijin Hong",
+      "Sheng Cao",
+      "Zechun Liu",
+      "Shuowei Jin",
+      "Sha Li",
+      "Changlong Yu",
+      "Xin Liu",
+      "Qin Lu",
+      "Zhenyu Shi",
+      "Priyanka Nigam",
+      "Beidi Chen"
+    ],
+    "abstract": "Sparse computation can scale the parametric capacity of LLMs without proportionally increasing active computation, but pretraining sparse architectures remains expensive and data-hungry. Existing sparse upcycling methods mainly target Mixture-of-Experts models, where expert homogeneity, sample inefficiency, and system overheads can limit practical scalability. Static sparse memory offers predictable access and token-specific updates that can help address these challenges, but naively integrating it into pretrained computation yields poor returns. In this work, we introduce STAPLE, a recipe built upon STEM for integrating static sparse memory into pretrained models. Whereas STEM replaces FFN up-projections with token-indexed embeddings, STAPLE retains them and adds the embeddings as a residual pathway, preserving pretrained computation while learning complementary token-specific information in a scalable manner. On OLMo-2 1B, STAPLE improves over continued dense training by 4.27 points on HumanEval, 2.80 on MBPP, 2.27 on GSM8K, and 1.65 on DROP. Average performance increases with static capacity, and improvements persist on the larger OLMo-2 7B backbone. STAPLE also outperforms static sparse baselines such as STEM and an Engram-style model, and achieves a higher average score than an MoE upcycling baseline while decoding 2x faster with less than half its GPU model memory and measured GPU energy per token in our throughput-oriented decoding evaluation. Importantly, despite introducing billions of parameters late in training, our host-offloaded implementation keeps generation throughput within 1.5% and training throughput within 3% of the dense baseline, while caching only the ~5% most frequent embeddings on GPU. These results show that static sparse memory can provide a sample-efficient, scalable, and sustainable path for expanding pretrained models without sparse pretraining from scratch.",
+    "url": "http://arxiv.org/abs/2610.12599v1",
+    "year": 2026,
+    "venue": "agent_and_harness",
+    "source": "arXiv API",
+    "category": "cs.LG",
+    "is_agent": false,
+    "is_co": false
   }
 ]

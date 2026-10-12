@@ -41,6 +41,23 @@ AGENT_KEYWORDS = [
     "orchestrat",
 ]
 
+# 组合优化主题（与说明.md 的"受到特别关注的论文主题"对应）
+CO_KEYWORDS = [
+    "combinatorial optimization",
+    "mixed-integer",
+    "mixed integer",
+    "branch and bound",
+    "vehicle routing",
+    "constraint satisfaction",
+    "constraint programming",
+    "sat solving",
+    "travelling salesman",
+    "traveling salesman",
+    "graph coloring",
+    "bin packing",
+    "job shop",
+]
+
 
 @dataclass
 class Paper:
@@ -73,12 +90,17 @@ def normalize_text(value: str) -> str:
     return re.sub(r"\s+", " ", value or "").strip()
 
 
+# 非论文数据文件：质量筛选的报告与归档目录（其中的论文与原始 arxiv_*.json 重复）
+SKIP_DIRS = {"_index", "high_quality", "to_review"}
+SKIP_FILES = {"quality_report.json"}
+
+
 def load_paper_files(root: Path) -> list[Paper]:
     if not root.exists():
         raise FileNotFoundError(f"找不到论文根目录：{root}")
     papers: list[Paper] = []
     for path in sorted(root.rglob("*.json")):
-        if "_index" in path.parts or path.name.startswith("."):
+        if SKIP_DIRS & set(path.parts) or path.name in SKIP_FILES or path.name.startswith("."):
             continue
         try:
             data = json.loads(strip_comment_lines(path.read_text(encoding="utf-8")))
@@ -156,6 +178,11 @@ def is_agent_paper(paper: Paper) -> bool:
     return any(keyword in text for keyword in AGENT_KEYWORDS)
 
 
+def is_co_paper(paper: Paper) -> bool:
+    text = f"{paper.title} {paper.abstract} {paper.category}".lower()
+    return any(keyword in text for keyword in CO_KEYWORDS)
+
+
 def deduplicate(papers: list[Paper]) -> list[Paper]:
     seen: dict[str, Paper] = {}
     order: list[str] = []
@@ -190,7 +217,8 @@ def write_index(papers: list[Paper], output_dir: Path) -> dict[str, Any]:
     by_venue = group_by_venue(papers)
     by_keyword = {
         "agent_and_harness": [paper for paper in papers if is_agent_paper(paper)],
-        "general": [paper for paper in papers if not is_agent_paper(paper)],
+        "combinatorial_optimization": [paper for paper in papers if not is_agent_paper(paper) and is_co_paper(paper)],
+        "general": [paper for paper in papers if not is_agent_paper(paper) and not is_co_paper(paper)],
     }
 
     summary = {
@@ -246,6 +274,10 @@ def write_markdown(index: dict[str, Any], path: Path) -> None:
     lines.append("## agent / harness 论文（按年）")
     for paper in index["by_keyword"]["agent_and_harness"]:
         lines.append(format_paper_dict(paper))
+    lines.append("")
+    lines.append("## 组合优化论文（按年）")
+    for paper in index["by_keyword"]["combinatorial_optimization"]:
+        lines.append(format_paper_dict(paper))
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
@@ -265,6 +297,7 @@ def serialize(paper: Paper) -> dict[str, Any]:
         "source": paper.source,
         "category": paper.category,
         "is_agent": is_agent_paper(paper),
+        "is_co": is_co_paper(paper),
         **paper.extra,
     }
 

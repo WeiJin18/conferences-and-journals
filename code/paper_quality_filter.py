@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 import time
@@ -85,6 +86,15 @@ class QualityFilter:
         self.s2_cache: dict[str, dict[str, Any]] = {}
         # 榜单论文标题集合（归一化）
         self.leaderboard_titles: set[str] = set()
+        # GitHub API 认证（Actions 的 secrets.GITHUB_TOKEN）：限额 2000 req/h
+        token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+        if token:
+            self.session.headers["Authorization"] = f"Bearer {token}"
+            self.github_check_limit = 200
+        else:
+            self.github_check_limit = 50  # 未认证限额 60 req/h
+        # 仅这些标题允许做 GitHub 活跃度检查（按引用排序取前 N，见 main）
+        self.github_check_titles: set[str] = set()
 
     # ---------- 数据加载 ----------
 
@@ -230,8 +240,10 @@ class QualityFilter:
         arxiv_id = paper.get("arxiv_id") or self.extract_arxiv_id(paper.get("url", ""))
 
         s2_info = self.s2_cache.get(arxiv_id, {"citationCount": 0, "venue": "", "publicationVenue": ""})
-        gh_info = self.check_github_active(self.extract_github_repos(paper.get("abstract", ""))) \
-            if not self.no_fetch else {"found": False, "stars": 0, "pushed_at": "", "repo": ""}
+        if self.no_fetch or paper.get("title", "") not in self.github_check_titles:
+            gh_info = {"found": False, "stars": 0, "pushed_at": "", "repo": ""}
+        else:
+            gh_info = self.check_github_active(self.extract_github_repos(paper.get("abstract", "")))
 
         venue_score = self.score_venue(s2_info)
         citation_score = self.score_citations(s2_info.get("citationCount", 0))
@@ -334,13 +346,20 @@ def main() -> None:
         qf.fetch_s2_batch(valid_ids)
         qf.fetch_leaderboards()
 
+    # GitHub 活跃度检查限量：只查引用数最高的前 N 篇（认证 200 / 未认证 50），
+    # 其余论文 GitHub 信号记 0，避免超 GitHub API 限额
+    ranked = sorted(
+        papers,
+        key=lambda p: -qf.s2_cache.get(qf.extract_arxiv_id(p.get("url", "")), {}).get("citationCount", 0),
+    )
+    qf.github_check_titles = {p.get("title", "") for p in ranked[: qf.github_check_limit]}
+    print(f"[info] GitHub 活跃度检查限量 {qf.github_check_limit} 篇（按引用排序）")
+
     records = []
     for paper in papers:
         rec = qf.evaluate_paper(paper)
         records.append(rec)
         print(f"  [{rec['scores']['total']:2d}] {rec['title'][:70]}")
-        if not args.no_fetch:
-            time.sleep(REQUEST_INTERVAL)
 
     report = qf.archive(records)
     print(json.dumps({k: report[k] for k in ("total", "high_quality_count", "to_review_count", "threshold")},

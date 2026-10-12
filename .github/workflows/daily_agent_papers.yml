@@ -1,145 +1,96 @@
 #weijinzi
-# 用途：每日自动从 arXiv 抓取 agent / harness 相关论文。
-# 前因：用户希望持续跟进 agent / harness 领域最新成果。
-# 原因：手动检索成本高，预印本更新快，需要自动化。
-# 内容：每天定时请求 arXiv RSS，按关键词过滤，结果落盘到 agent_and_harness。
-# 行为：拉取 cs.CL / cs.AI / cs.LG 三个分类的最近论文，匹配关键词后写入。
-# 存储：每日一个 JSON 文件，文件名按日期命名，便于历史回溯。
-# 提交：将新增文件自动提交回仓库，方便本地同步。
-# 触发：cron 定时 + 手动 workflow_dispatch。
-# 依赖：仅使用 actions/checkout 和内置 Python，无需额外密钥。
----
-name: Daily Agent & Harness Papers
+# 用途：每 45 天自动抓取多渠道 AI 论文（arXiv 窗口 / 三大顶会 / Nature 系）并评分、建索引。
+# 前因：原每日 workflow 只抓当天 arXiv 新论文，引用信号全为 0，且用户不需要每日频率。
+# 原因：GitHub Actions cron 不支持"每 45 天"周期，故每日触发 + 45 天门控（幂等、自愈、可手动）。
+# 内容：门控通过后依次运行 crawl_arxiv_window / crawl_top_conferences / crawl_nature，
+#       再跑 paper_quality_filter 评分归档与 dedupe_and_categorize 重建统一索引。
+# 行为：门控规则 = 距上次抓取提交 ≥45 天，或手动 workflow_dispatch 触发；
+#       任一抓取步骤失败即中止（失败要响），避免半截数据被提交。
+# 存储：结果写入 agent_and_harness/、combinatorial_optimization/、NeurIPS|ICML|ICLR/、Nature/、_index/。
+# 提交：有变更才提交推送，提交信息带运行日期，作者为 github-actions bot。
+# 依赖：actions/checkout + 内置 Python 3.11 + requests + beautifulsoup4。
+# 触发：每日 cron 尝试（内部门控）+ workflow_dispatch 强制运行。
+# ---
+
+name: AI Papers Digest (45d)
+
 on:
   schedule:
-    - cron: "0 1 * * *"
-  workflow_dispatch:
+    - cron: "0 1 * * *"   # 每日尝试，是否真跑由 45 天门控决定
+  workflow_dispatch: {}   # 手动触发 = 强制运行
 
 permissions:
   contents: write
 
+concurrency:
+  group: papers-digest
+  cancel-in-progress: false
+
 jobs:
-  fetch:
+  digest:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout (full history for gating)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Gate (45-day interval)
+        id: gate
+        env:
+          DATA_PATHS: "agent_and_harness combinatorial_optimization Nature NeurIPS ICML ICLR"
+        run: |
+          LAST_TS=$(git log -1 --format=%ct -- $DATA_PATHS 2>/dev/null || echo 0)
+          NOW=$(date +%s)
+          AGE_DAYS=$(( (NOW - LAST_TS) / 86400 ))
+          echo "距上次抓取 ${AGE_DAYS} 天"
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" || $AGE_DAYS -ge 45 ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Setup Python
+        if: steps.gate.outputs.run == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests
+        if: steps.gate.outputs.run == 'true'
+        run: pip install requests beautifulsoup4
 
-      - name: Fetch arXiv agent papers
-        env:
-          OUT_DIR: "agent_and_harness"
-          CATEGORIES: "cs.CL,cs.AI,cs.LG"
-          QUERY: "agent OR harness OR tool+use OR function+calling OR multi-agent OR planning OR memory OR reflection OR swe-bench OR webarena"
-          MAX_RESULTS: "60"
-        run: |
-          python - <<'PY'
-          import os
-          import re
-          import sys
-          import time
-          import urllib.parse
-          import xml.etree.ElementTree as ET
-          from datetime import datetime, timezone
-          from pathlib import Path
+      - name: Crawl arXiv 18-month window
+        if: steps.gate.outputs.run == 'true'
+        run: python code/crawl_arxiv_window.py
 
-          import requests
+      - name: Crawl NeurIPS/ICML/ICLR via OpenReview
+        if: steps.gate.outputs.run == 'true'
+        run: python code/crawl_top_conferences.py
 
-          categories = [c.strip() for c in os.environ["CATEGORIES"].split(",") if c.strip()]
-          query = os.environ["QUERY"]
-          max_results = int(os.environ["MAX_RESULTS"])
-          out_dir = Path(os.environ["OUT_DIR"])
-          out_dir.mkdir(parents=True, exist_ok=True)
-
-          ns = {"atom": "http://www.w3.org/2005/Atom", "a": "http://www.w3.org/2005/Atom"}
-          keyword_re = re.compile(
-              r"\b(agent|harness|tool[- ]?use|function[- ]?call|multi[- ]?agent|"
-              r"planner|reflection|memory|swe[- ]?bench|webarena|gastown|aider|"
-              r"orchestrat|scaffold|code[- ]?agent|computer[- ]?use)\b",
-              re.IGNORECASE,
-          )
-
-          collected = []
-          for cat in categories:
-              url = (
-                  "http://export.arxiv.org/api/query?"
-                  + urllib.parse.urlencode(
-                      {
-                          "search_query": f"cat:{cat} AND ({query})",
-                          "sortBy": "submittedDate",
-                          "sortOrder": "descending",
-                          "max_results": max_results,
-                      }
-                  )
-              )
-              resp = requests.get(url, timeout=60)
-              resp.raise_for_status()
-              root = ET.fromstring(resp.text)
-              for entry in root.findall("a:entry", ns):
-                  title = "".join(entry.find("a:title", ns).itertext()).strip()
-                  summary = "".join(entry.find("a:summary", ns).itertext()).strip()
-                  link = entry.find("a:id", ns).text.strip()
-                  published = entry.find("a:published", ns).text.strip()
-                  authors = [
-                      "".join(a.find("a:name", ns).itertext()).strip()
-                      for a in entry.findall("a:author", ns)
-                  ]
-                  if not keyword_re.search(f"{title} {summary}"):
-                      continue
-                  collected.append(
-                      {
-                          "title": title,
-                          "authors": authors,
-                          "abstract": summary,
-                          "url": link,
-                          "category": cat,
-                          "published": published,
-                      }
-                  )
-              time.sleep(3)
-
-          today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-          out_path = out_dir / f"arxiv_agent_{today}.json"
-          out_path.write_text(
-              __import__("json").dumps(
-                  {
-                      "source": "arXiv API",
-                      "fetched_at": datetime.now(timezone.utc).isoformat(),
-                      "categories": categories,
-                      "count": len(collected),
-                      "papers": collected,
-                  },
-                  ensure_ascii=False,
-                  indent=2,
-              ),
-              encoding="utf-8",
-          )
-          print(f"saved {len(collected)} papers -> {out_path}")
-          if not collected:
-            sys.exit(0)
-          PY
+      - name: Crawl Nature & NMI via Crossref
+        if: steps.gate.outputs.run == 'true'
+        run: python code/crawl_nature.py
 
       - name: Quality filter
-        run: |
-          python code/paper_quality_filter.py \
-            --agent-dir agent_and_harness \
-            || echo "quality filter failed, skip"
+        if: steps.gate.outputs.run == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python code/paper_quality_filter.py --agent-dir agent_and_harness
 
-      - name: Commit
+      - name: Rebuild index
+        if: steps.gate.outputs.run == 'true'
+        run: python code/dedupe_and_categorize.py --root . --output _index
+
+      - name: Commit & push
+        if: steps.gate.outputs.run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add agent_and_harness
+          git add agent_and_harness combinatorial_optimization NeurIPS ICML ICLR Nature _index
           if git diff --cached --quiet; then
-              echo "no changes"
-            else
-              git commit -m "chore: 每日拉取 agent/harness 论文 ($(date -u +%F))"
-              git push
+            echo "无变更，跳过提交"
+          else
+            git commit -m "chore: 45天论文抓取流水线 ($(date -u +%F))"
+            git push
           fi
