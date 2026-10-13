@@ -320,6 +320,7 @@ def main() -> None:
     now = datetime.now(timezone.utc)
     confs = conferences_in_window(now)
     print("窗口内会议：", [(c["venue"], c["year"]) for c in confs])
+    results: dict[str, int] = {}
 
     root = Path(__file__).resolve().parents[1]
     for conf in confs:
@@ -342,6 +343,7 @@ def main() -> None:
             note.setdefault("source", "OpenReview API")
             note["category"] = ""
         pools = classify(notes)
+        results[f"{venue} {year}"] = len(notes)
         print(f"[{venue} {year}] 总 {len(notes)}，agent {len(pools['agent'])}，co {len(pools['co'])}")
 
         if not args.fast:
@@ -367,6 +369,14 @@ def main() -> None:
                 note["category"] = field
                 field_papers.append(note)
         write_output(root / venue / f"{venue.lower()}_{year}_papers.json", field_papers, venue, year)
+
+    if not args.dry_run:
+        for conf in confs:
+            venue, year = conf["venue"], conf["year"]
+            if results.get(f"{venue} {year}", 0) == 0:
+                print(f"[warn] {venue} {year} 没有从 Semantic Scholar 获取到论文", file=sys.stderr)
+        if not any(results.values()):
+            print("[warn] 所有会议均无抓取结果；不创建空会议目录", file=sys.stderr)
 
 
 if __name__ == "__main__":

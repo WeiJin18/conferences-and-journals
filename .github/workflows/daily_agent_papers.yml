@@ -90,7 +90,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add agent_and_harness combinatorial_optimization NeurIPS ICML ICLR Nature _index
+          for path in agent_and_harness combinatorial_optimization NeurIPS ICML ICLR Nature _index; do
+            if [[ -e "$path" ]]; then
+              git add "$path"
+            fi
+          done
           if git diff --cached --quiet; then
             echo "无变更，跳过提交"
           else
